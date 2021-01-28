@@ -16,8 +16,11 @@
     <sprite>sprites\spr_player2_head</sprite>
     <sprite>sprites\spr_player3</sprite>
     <sprite>sprites\spr_player3_head</sprite>
+    <sprite>sprites\spr_player3_draw</sprite>
     <sprite>sprites\spr_player3_walk</sprite>
     <sprite>sprites\spr_player4</sprite>
+    <sprite>sprites\spr_player4_walk</sprite>
+    <sprite>sprites\spr_player4_draw</sprite>
     <sprite>sprites\spr_player4_head</sprite>
     <sprite>sprites\spr_bullet</sprite>
     <sprite>sprites\spr_key</sprite>
@@ -28,6 +31,8 @@
   <backgrounds name="background">
     <background>background\bkg_saloon</background>
     <background>background\background1</background>
+    <background>background\bkg_background</background>
+    <background>background\bkg_grid</background>
   </backgrounds>
   <paths name="paths"/>
   <fonts name="fonts">

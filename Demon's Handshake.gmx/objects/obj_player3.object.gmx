@@ -107,7 +107,7 @@ if state = 'draw'
 {
     if keyboard_check(ord('N'))
     {
-        sprite_index = spr_player1_draw;
+        sprite_index = spr_player3_draw;
         if keyboard_check_pressed(ord('M')) &amp;&amp; bullet = 1
         {
             flash = true;
