@@ -30,6 +30,7 @@ image_speed = 0.25;
 flash = false;
 facing = 'right';
 bullet = 1;
+spd = 1;
 </string>
           </argument>
         </arguments>
@@ -79,7 +80,7 @@ if state = 'left'
     facing = 'left';
     if keyboard_check(ord('A'))
     {
-        x -=1; //variable spd
+        x -= spd; //variable spd
     } 
     else
     {
@@ -95,7 +96,7 @@ if state = 'right'
     facing = 'right';
     if keyboard_check(ord('D'))
     {
-        x += 1;
+        x += spd;
     } 
     else
     {
@@ -114,12 +115,12 @@ if state = 'draw'
             bullet -= 1;
             if facing = 'right'
             {
-            if !instance_exists(obj_bulletR){instance_create(x,y-8,obj_bulletR)}
+            if !instance_exists(obj_bulletR){instance_create(x+8,y-8,obj_bulletR)}
             }
                         
             if facing = 'left'
             {
-            if !instance_exists(obj_bulletR){instance_create(x,y-8,obj_bulletL)}
+            if !instance_exists(obj_bulletR){instance_create(x-8,y-8,obj_bulletL)}
             }
         }
     }
@@ -128,6 +129,15 @@ if state = 'draw'
     state = 'idle';
     }
     
+}
+
+if state = 'dead'
+{
+    sprite_index = spr_player1_death;
+    if image_index = 6
+    {
+        image_speed = 0;
+    }
 }
 
 //col
@@ -140,6 +150,11 @@ if place_meeting(x,y,obj_key)
             global.key_total += 1;
         }
     
+}
+
+if place_meeting(x,y,obj_bulletR) || place_meeting(x,y,obj_bulletL)
+{
+    state = 'dead'
 }
 
 </string>
@@ -172,6 +187,22 @@ flash = false;
 </string>
           </argument>
         </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="82">
+      <action>
+        <libid>1</libid>
+        <id>223</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_current_room</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
       </action>
     </event>
   </events>

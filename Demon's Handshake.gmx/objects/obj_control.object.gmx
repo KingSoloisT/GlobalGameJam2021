@@ -58,12 +58,14 @@ if global.player_villan = 'player4'
     draw_rectangle(1600,900,3200,1798,true);
 }
 draw_set_colour(c_white);
+draw_text(100,790,global.key_total);
 //
 
 draw_sprite_ext(spr_key,1,1350,825,20,20,0,c_white,1);
 draw_sprite_ext(spr_key,1,2950,825,20,20,0,c_white,1);
 draw_sprite_ext(spr_key,1,1350,1725,20,20,0,c_white,1);
 draw_sprite_ext(spr_key,1,2950,1725,20,20,0,c_white,1);
+
 draw_text(1475,790,global.player1_key);
 draw_text(3075,790,global.player2_key);
 draw_text(1475,1690,global.player3_key);
@@ -89,7 +91,7 @@ if obj_player3.bullet = 1
 else
 {draw_sprite_ext(spr_bullet_spent,0,1500,970,10,10,0,c_white,1);}
 
-if obj_player1.bullet = 1
+if obj_player4.bullet = 1
 {draw_sprite_ext(spr_bullet_hud,0,3100,970,10,10,0,c_white,1);}
 else
 {draw_sprite_ext(spr_bullet_spent,0,3100,970,10,10,0,c_white,1);}
