@@ -29,12 +29,18 @@
     <sprite>sprites\spr_bullet_hud</sprite>
     <sprite>sprites\spr_bullet_spent</sprite>
     <sprite>sprites\obj_door_locked</sprite>
+    <sprites name="PUZZLE SPRITES">
+      <sprite>sprites\spr_shelf</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bkg_saloon</background>
     <background>background\background1</background>
     <background>background\bkg_background</background>
     <background>background\bkg_grid</background>
+    <backgrounds name="PUZZLE TESTING">
+      <background>background\PUZZLETEST</background>
+    </backgrounds>
   </backgrounds>
   <paths name="paths"/>
   <fonts name="fonts">
@@ -50,9 +56,15 @@
     <object>objects\obj_control</object>
     <object>objects\obj_key</object>
     <object>objects\obj_door</object>
+    <objects name="PUZZLE OBJECTS">
+      <object>objects\obj_puzztestobj</object>
+      <object>objects\obj_puzz1</object>
+      <object>objects\obj_shelf</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_game</room>
+    <room>rooms\testing</room>
     <room>rooms\rm_puzz</room>
   </rooms>
   <help>

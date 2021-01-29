@@ -64,6 +64,7 @@ global.player_villan = choose('player1','player2','player3','player4');</code>
     <instance objName="obj_player4" x="605" y="160" name="inst_E32D6882" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_control" x="9" y="5" name="inst_FF22FA65" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_key" x="618" y="158" name="inst_FE1FDD3B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_puzztestobj" x="40" y="5" name="inst_04AD7B57" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
