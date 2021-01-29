@@ -22,7 +22,7 @@ global.player1_key = 0;
 global.player2_key = 0;
 global.player3_key = 0;
 global.player4_key = 0;
-global.player_villan = choose('player1','player2','player3','player4');</code>
+global.player_villan = choose('player1','player2','player3','player4');
 global.player_villan = choose('player1','player2','player4','player4');
 
 instance_create(0,0,obj_PuzzleRandomizer);</code>

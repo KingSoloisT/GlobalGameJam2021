@@ -64,7 +64,7 @@ else if (CurrentObject == obj_player3)
     key_shoot_press = keyboard_check_pressed(ord('V'));
     key_shoot_release = keyboard_check_released(ord('V'));
 }
-else if ((CurrentObject == obj_player4)
+else if (CurrentObject == obj_player4)
 //|| (CurrentObject == obj_versuspointer4))
 {
     //Keyboard 2
