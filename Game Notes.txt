@@ -1,3 +1,15 @@
 You can add any notes here if you wish.
 
 Lost & Found
+
+160 width
+90 height
+
+0	0	1
+160	90	2
+320	180	3
+480	270	4
+640	360	5
+800	450	6
+960	540	7
+//1120	//630	//8
