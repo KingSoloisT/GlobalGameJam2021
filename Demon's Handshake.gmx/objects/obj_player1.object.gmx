@@ -120,7 +120,7 @@ if state = 'draw'
                         
             if facing = 'left'
             {
-            if !instance_exists(obj_bulletR){instance_create(x-8,y-8,obj_bulletL)}
+            if !instance_exists(obj_bulletL){instance_create(x-10,y-8,obj_bulletL)}
             }
         }
     }
@@ -133,6 +133,7 @@ if state = 'draw'
 
 if state = 'dead'
 {
+
     sprite_index = spr_player1_death;
     if image_index = 6
     {

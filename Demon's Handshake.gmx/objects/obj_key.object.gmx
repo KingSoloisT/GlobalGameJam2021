@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>image_speed = 0.25;
 
-if place_meeting(x,y,obj_player1)
+if place_meeting(x,y,obj_player1) || place_meeting(x,y,obj_player2) || place_meeting(x,y,obj_player3) || place_meeting(x,y,obj_player4)
 {
     instance_destroy();
 }

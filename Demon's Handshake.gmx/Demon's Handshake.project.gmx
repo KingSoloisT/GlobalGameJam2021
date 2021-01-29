@@ -15,20 +15,25 @@
     <sprite>sprites\spr_player2</sprite>
     <sprite>sprites\spr_player2_draw</sprite>
     <sprite>sprites\spr_player2_walk</sprite>
+    <sprite>sprites\spr_player2_death</sprite>
     <sprite>sprites\spr_player2_head</sprite>
     <sprite>sprites\spr_player3</sprite>
     <sprite>sprites\spr_player3_head</sprite>
     <sprite>sprites\spr_player3_draw</sprite>
     <sprite>sprites\spr_player3_walk</sprite>
+    <sprite>sprites\spr_player3_death</sprite>
     <sprite>sprites\spr_player4</sprite>
     <sprite>sprites\spr_player4_walk</sprite>
     <sprite>sprites\spr_player4_draw</sprite>
+    <sprite>sprites\spr_player4_death</sprite>
     <sprite>sprites\spr_player4_head</sprite>
     <sprite>sprites\spr_bullet</sprite>
     <sprite>sprites\spr_key</sprite>
     <sprite>sprites\spr_bullet_hud</sprite>
     <sprite>sprites\spr_bullet_spent</sprite>
     <sprite>sprites\obj_door_locked</sprite>
+    <sprite>sprites\spr_stairs_up</sprite>
+    <sprite>sprites\spr_staris_down</sprite>
     <sprite>sprites\spr_PuzzleTemplateRED</sprite>
     <sprite>sprites\spr_PuzzleTemplateGREEN</sprite>
     <sprite>sprites\spr_PuzzleTemplateBLUE</sprite>
