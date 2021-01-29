@@ -73,23 +73,41 @@ instance_create(50,70,obj_player2)
             <string>//PLAYER 1 ENTERING SHELF SHAKE AREA
 if obj_player1.x &gt;= obj_shelf.x -20 &amp;&amp; obj_player1.x &lt;= obj_shelf.x+20
 {
-    if keyboard_check_pressed(ord('B'))
+    if !instance_exists(obj_P1exclaim)
     {
-        obj_shelf.image_speed = 1;
-        shelfshake += 1;
+        instance_create(obj_player1.x+5,obj_player1.y-6,obj_P1exclaim);
     }
-
+    if obj_player1.x &gt;= obj_shelf.x -20 &amp;&amp; obj_player1.x &lt;= obj_shelf.x+20 &amp;&amp; obj_player2.x &gt;= obj_shelf.x -20 &amp;&amp; obj_player2.x &lt;= obj_shelf.x+20
+    {   if keyboard_check_pressed(ord('B')) || keyboard_check_pressed(ord('N'))
+        {
+            obj_shelf.image_speed = 1;
+            shelfshake += 1;
+        }
+    }
 
     else
     {
         obj_shelf.image_speed = 0;
     }
+}
+
+else
+{
+        if instance_exists(obj_P1exclaim)
+        {
+            instance_destroy(obj_P1exclaim);
+        }
 }
 
 //PLAYER 2 ENTERING SHELF SHAKE AREA
 if obj_player2.x &gt;= obj_shelf.x -20 &amp;&amp; obj_player2.x &lt;= obj_shelf.x+20
 {
-    if keyboard_check_pressed(ord('N'))
+    if !instance_exists(obj_P2exclaim)
+    {
+        instance_create(obj_player2.x+5,obj_player2.y-6,obj_P2exclaim);
+    }
+    
+    if keyboard_check_pressed(ord('N')) || keyboard_check_pressed(ord('B'))
     {
         obj_shelf.image_speed = 1;
         shelfshake += 1;
@@ -102,6 +120,15 @@ if obj_player2.x &gt;= obj_shelf.x -20 &amp;&amp; obj_player2.x &lt;= obj_shelf.
     }
 }
 
+else
+{
+    if instance_exists(obj_P2exclaim)
+    {
+        instance_destroy(obj_P2exclaim);
+    }
+}
+
+//ACTUAL SHELF SHOOKETHING
 if shelfshake &gt;= 15
 {
     if instance_exists(obj_key)
@@ -116,6 +143,27 @@ if instance_exists(obj_key)
     if obj_key.y &gt;= 70
     {
         obj_key.vspeed = 0;
+    }
+}
+
+//KEY IS GONE, NO MORE SHAKE CUES
+if !instance_exists(obj_key)
+{
+    if instance_exists(obj_P1exclaim)
+    {
+        instance_destroy(obj_P1exclaim);
+    }
+        if instance_exists(obj_P2exclaim)
+    {
+        instance_destroy(obj_P2exclaim);
+    }
+        if instance_exists(obj_P3exclaim)
+    {
+        instance_destroy(obj_P3exclaim);
+    }
+        if instance_exists(obj_P4exclaim)
+    {
+        instance_destroy(obj_P4exclaim);
     }
 }
 </string>

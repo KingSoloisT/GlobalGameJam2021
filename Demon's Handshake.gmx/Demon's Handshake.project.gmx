@@ -58,8 +58,14 @@
     <object>objects\obj_door</object>
     <objects name="PUZZLE OBJECTS">
       <object>objects\obj_puzztestobj</object>
-      <object>objects\obj_puzz1</object>
       <object>objects\obj_shelf</object>
+      <object>objects\obj_P1exclaim</object>
+      <object>objects\obj_P2exclaim</object>
+      <object>objects\obj_P3exclaim</object>
+      <object>objects\obj_P4exclaim</object>
+      <objects name="Actual Puzzles">
+        <object>objects\obj_puzz1</object>
+      </objects>
     </objects>
   </objects>
   <rooms name="rooms">
