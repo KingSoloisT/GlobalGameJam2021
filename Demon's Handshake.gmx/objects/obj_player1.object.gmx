@@ -134,6 +134,8 @@ if state = 'draw'
 if place_meeting(x,y,obj_key)
 {
     global.player1_key +=1;
+    global.key_total += 1;
+    
 }
 
 </string>

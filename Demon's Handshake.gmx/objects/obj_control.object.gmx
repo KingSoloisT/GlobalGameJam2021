@@ -25,12 +25,41 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_colour(c_white);
-draw_set_font(font_hud);
+            <string>draw_set_font(font_hud);
+
+
+draw_set_colour(c_white);
 draw_rectangle(0,0,1600,900,true);
 draw_rectangle(1600,0,3200,900,true);
 draw_rectangle(0,900,1600,1798,true);
 draw_rectangle(1600,900,3200,1798,true);
+//remove later testing stuff
+if global.player_villan = 'player1'
+{
+    draw_set_colour(c_red);
+    draw_rectangle(0,0,1600,900,true);
+}
+
+if global.player_villan = 'player2'
+{
+    draw_set_colour(c_red);
+    draw_rectangle(1600,0,3200,900,true);
+}
+
+if global.player_villan = 'player3'
+{
+    draw_set_colour(c_red);
+    draw_rectangle(0,900,1600,1798,true);
+}
+
+if global.player_villan = 'player4'
+{
+    draw_set_colour(c_red);
+    draw_rectangle(1600,900,3200,1798,true);
+}
+draw_set_colour(c_white);
+//
+
 draw_sprite_ext(spr_key,1,1350,825,20,20,0,c_white,1);
 draw_sprite_ext(spr_key,1,2950,825,20,20,0,c_white,1);
 draw_sprite_ext(spr_key,1,1350,1725,20,20,0,c_white,1);
