@@ -29,6 +29,9 @@
     <sprite>sprites\spr_bullet_hud</sprite>
     <sprite>sprites\spr_bullet_spent</sprite>
     <sprite>sprites\obj_door_locked</sprite>
+    <sprite>sprites\spr_PuzzleTemplateRED</sprite>
+    <sprite>sprites\spr_PuzzleTemplateGREEN</sprite>
+    <sprite>sprites\spr_PuzzleTemplateBLUE</sprite>
     <sprites name="PUZZLE SPRITES">
       <sprite>sprites\spr_shelf</sprite>
     </sprites>
@@ -43,6 +46,14 @@
     </backgrounds>
   </backgrounds>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <script>scripts\GameControls.gml</script>
+    <script>scripts\ZeroControllers.gml</script>
+    <script>scripts\OneControllers.gml</script>
+    <script>scripts\TwoControllers.gml</script>
+    <script>scripts\ThreeControllers.gml</script>
+    <script>scripts\FourControllers.gml</script>
+  </scripts>
   <fonts name="fonts">
     <font>fonts\font_hud</font>
   </fonts>
@@ -56,6 +67,12 @@
     <object>objects\obj_control</object>
     <object>objects\obj_key</object>
     <object>objects\obj_door</object>
+    <object>objects\obj_PuzzleTemplateRED</object>
+    <object>objects\obj_PuzzleTemplateGREEN</object>
+    <object>objects\obj_PuzzleTemplateBLUE</object>
+    <object>objects\obj_PuzzleRandomizer</object>
+    <object>objects\object13</object>
+    <object>objects\obj_GameControls</object>
     <objects name="PUZZLE OBJECTS">
       <object>objects\obj_puzztestobj</object>
       <object>objects\obj_shelf</object>
