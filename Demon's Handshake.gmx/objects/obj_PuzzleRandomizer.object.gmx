@@ -36,9 +36,14 @@ for (j=0; j&lt;8; j+=1)
     {
         //ADD OBJECT PUZZLES HERE
         GameLayout[ j , i ] = choose(
-        obj_PuzzleTemplateRED, 
-        obj_PuzzleTemplateGREEN,
-        obj_PuzzleTemplateBLUE
+        //obj_PuzzleTemplateRED, 
+        //obj_PuzzleTemplateGREEN,
+        //obj_PuzzleTemplateBLUE
+        obj_P1exclaim,
+        obj_P2exclaim,
+        //obj_P3exclaim,
+        obj_P4exclaim
+        
         );
     }
 }
@@ -56,14 +61,14 @@ for (j=0; j&lt;8; j+=1) //8 is the width or amount of puzzles in the room horizo
         //Walls on the left side.
         if ((j == 0) &amp;&amp; (i == 0 || i == 1 || i == 2))
         {
-            instance_create(j * 160, i * 90, obj_end_wall);
+            instance_create(j * 160, i * 90 + 15, obj_end_wall);
         }
         
         //Walls on the right side.
         if ((j == 7) &amp;&amp; (i == 0 || i == 1 || i == 2))
         {
             //12 is the width of the spr_end_wall to move it left to be visable.
-            instance_create(j * 160 - 12, i * 90, obj_end_wall);
+            instance_create(j * 160 - 12, i * 90 + 15, obj_end_wall);
         }
         
         //Room Puzzle Width and Height

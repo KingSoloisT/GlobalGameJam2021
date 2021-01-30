@@ -95,6 +95,7 @@
     <script>scripts\test_controller2.gml</script>
     <script>scripts\test_controller3.gml</script>
     <script>scripts\test_controller4.gml</script>
+    <script>scripts\GlobalVariableInitialization.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font_hud</font>
