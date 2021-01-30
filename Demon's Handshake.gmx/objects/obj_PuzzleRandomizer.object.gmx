@@ -28,20 +28,51 @@
             <string>//instance_array = array_create(100); 
 //RoomLayoutGrid[0] = 
 //arrayRoomLayoutGrid = array_create
+//i = x?
+//j = y?
+
+//array[i, j]
+
+/*
+for (j=0; j&lt;CONDITION; j+=1)
+{
+    for (i=0; i&lt;CONDITION; i+=1)
+    {
+        STATEMENT;
+    };
+    STATEMENT;
+};
+*/
 
 
+//x,y
+//Initialize Game Puzzle Template array.
+GameLayout[0, 0] = obj_PuzzleTemplateRED;
+GameLayout[1, 0] = obj_PuzzleTemplateRED;
+GameLayout[2, 0] = obj_PuzzleTemplateRED;
+GameLayout[3, 0] = obj_PuzzleTemplateRED;
+GameLayout[4, 0] = obj_PuzzleTemplateRED;
+GameLayout[5, 0] = obj_PuzzleTemplateRED;
+GameLayout[6, 0] = obj_PuzzleTemplateRED;
+GameLayout[7, 0] = obj_PuzzleTemplateRED;
 
+GameLayout[0, 1] = obj_PuzzleTemplateGREEN;
+GameLayout[1, 1] = obj_PuzzleTemplateGREEN;
+GameLayout[2, 1] = obj_PuzzleTemplateGREEN;
+GameLayout[3, 1] = obj_PuzzleTemplateGREEN;
+GameLayout[4, 1] = obj_PuzzleTemplateGREEN;
+GameLayout[5, 1] = obj_PuzzleTemplateGREEN;
+GameLayout[6, 1] = obj_PuzzleTemplateGREEN;
+GameLayout[7, 1] = obj_PuzzleTemplateGREEN;
 
-array[0, 0] = 1;
-array[0, 1] = 2;
-array[1, 0] = "one";
-array[1, 1] = "two";
-array[1, 2] = "three";
-array[1, 3] = "four";
-array[2, 0] = "1";
-array[2, 1] = "2";
-array[2, 2] = "3";
-
+GameLayout[0, 2] = obj_PuzzleTemplateBLUE;
+GameLayout[1, 2] = obj_PuzzleTemplateBLUE;
+GameLayout[2, 2] = obj_PuzzleTemplateBLUE;
+GameLayout[3, 2] = obj_PuzzleTemplateBLUE;
+GameLayout[4, 2] = obj_PuzzleTemplateBLUE;
+GameLayout[5, 2] = obj_PuzzleTemplateBLUE;
+GameLayout[6, 2] = obj_PuzzleTemplateBLUE;
+GameLayout[7, 2] = obj_PuzzleTemplateBLUE;
 </string>
           </argument>
         </arguments>
