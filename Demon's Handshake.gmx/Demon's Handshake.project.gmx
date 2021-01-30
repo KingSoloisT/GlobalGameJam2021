@@ -87,6 +87,7 @@
     </sprites>
     <sprites name="beltpuzzle">
       <sprite>sprites\spr_belt</sprite>
+      <sprite>sprites\spr_belt_lever</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -160,10 +161,15 @@
         <object>objects\obj_puzz3</object>
         <object>objects\obj_puzz4</object>
         <object>objects\obj_puzz5</object>
+        <object>objects\obj_puzz6</object>
         <object>objects\obj_puzzX</object>
       </objects>
       <objects name="Puzzle Key Decoys">
         <object>objects\obj_puzz1key</object>
+      </objects>
+      <objects name="puzzlelocker">
+        <object>objects\obj_safe</object>
+        <object>objects\obj_safe_keyin</object>
       </objects>
     </objects>
     <object>objects\obj_goal</object>
