@@ -108,6 +108,7 @@ else
         }
 }
 
+//Lifting the Piani
     
 if player1=true &amp;&amp; (obj_player1.x &gt;= obj_piani.x -25 &amp;&amp; obj_player1.x &lt;= obj_piani.x-20) &amp;&amp; obj_player1.key_action_press &amp;&amp; global.playercount &gt;= 2//LIFT THE PIANI SIDE A (LEFT)
 {
@@ -150,7 +151,8 @@ else
         }
 }
 
-    
+//Lifting the Piani  
+  
 if player2=true &amp;&amp; (obj_player2.x &gt;= obj_piani.x -25 &amp;&amp; obj_player2.x &lt;= obj_piani.x-20) &amp;&amp; obj_player2.key_action_press &amp;&amp; global.playercount &gt;= 2//LIFT THE PIANI SIDE A (LEFT)
 {
     a_lift = true;
@@ -192,6 +194,7 @@ else
         }
 }
 
+//Lifting the Piani
     
 if player3=true &amp;&amp; (obj_player3.x &gt;= obj_piani.x -25 &amp;&amp; obj_player3.x &lt;= obj_piani.x-20) &amp;&amp; obj_player3.key_action_press &amp;&amp; global.playercount &gt;= 2//LIFT THE PIANI SIDE A (LEFT)
 {
@@ -234,6 +237,7 @@ else
         }
 }
 
+//Lifting the Piani
     
 if player4=true &amp;&amp; (obj_player4.x &gt;= obj_piani.x -25 &amp;&amp; obj_player4.x &lt;= obj_piani.x-20) &amp;&amp; obj_player4.key_action_press &amp;&amp; global.playercount &gt;= 2//LIFT THE PIANI SIDE A (LEFT)
 {

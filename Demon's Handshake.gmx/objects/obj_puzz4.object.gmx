@@ -7,7 +7,334 @@
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
-  <events/>
+  <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//increases when a 'obj_P_exclaim' is created
+global.playercount = 0;
+
+//set player check variables
+player1 = false;
+player2 = false;
+player3 = false;
+player4 = false;
+
+//bring in the barrel baby
+
+if !instance_exists(obj_whiskeybarrel)
+{
+    instance_create(room_width/2,46,obj_whiskeybarrel)
+}
+
+//bring in the bucket baby
+
+if !instance_exists(obj_bucket)
+{
+    instance_create(random_range(10,200),70,obj_bucket)
+}
+
+ladderclimbed = false;
+begin_alarm = false; //timer for when the key drops
+key_dropped = false; //you only get one key chump
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//spawn key when timer runs out
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>GameControls(obj_puzz4); //&lt;-----Initiate controller controls
+
+// CHECK WHICH PLAYERS ARE IN THE ROOM
+if instance_exists(obj_player1)
+{
+    player1=true;
+}
+if instance_exists(obj_player2)
+{
+    player2=true;
+}
+if instance_exists(obj_player3)
+{
+    player3=true;
+}
+if instance_exists(obj_player4)
+{
+    player4=true;
+}
+// puzzle code starts here
+
+//PLAYER 1 ENTERING  WHISKEY BARREL INTERACTION ZONES
+if (player1=true) &amp;&amp; (obj_player1.x &gt;= obj_whiskeybarrel.x -20 &amp;&amp; obj_player1.x &lt;= obj_whiskeybarrel.x-10) //contact with ladder
+|| (player1=true) &amp;&amp; (obj_player1.x &gt;= obj_whiskeybarrel.x +22 &amp;&amp; obj_player1.x &lt;= obj_whiskeybarrel.x +27) //contact with spout
+{
+    if !instance_exists(obj_P1exclaim)
+    {
+        instance_create(obj_player1.x+5,obj_player1.y-6,obj_P1exclaim);
+    }    
+}
+else
+{
+        if instance_exists(obj_P1exclaim)
+        {
+            instance_destroy(obj_P1exclaim);
+        }
+}
+
+//CLIMBING THE LADDER #######################################################################################################
+    
+if player1=true &amp;&amp; (obj_player1.x &gt;= obj_whiskeybarrel.x -20 &amp;&amp; obj_player1.x &lt;= obj_whiskeybarrel.x-10)//&lt;-ladder parameter
+    &amp;&amp; obj_player1.state = 'idle'//&lt;------------------------------------------------------------------------state parameter
+    &amp;&amp; obj_player1.key_action_press//&lt;----------------------------------------------------------------------press action button
+{
+    obj_player1.x = 70;
+    obj_player1.y = 35;             //yay! you're up the ladder now!
+    obj_player1.state = 'aim'
+    ladderclimbed = true;
+}
+
+if player1=true &amp;&amp; (obj_player1.x &gt;= obj_whiskeybarrel.x -20 &amp;&amp; obj_player1.x &lt;= obj_whiskeybarrel.x-10)//&lt;-position parameter
+    &amp;&amp; obj_player1.state = 'aim' //&lt;------------------------------------------------------------------------state parameter
+    &amp;&amp; obj_player1.key_action_release //&lt;-------------------------------------------------------------------release action key
+{
+    obj_player1.x = 60;
+    obj_player1.y = 70;             //you have safely descended the ladder!
+    obj_player1.state = 'idle'
+    ladderclimbed = false;
+}
+//#############################################################################################################################
+
+
+
+//MANNING THE SPOUT % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+if (player1=true) &amp;&amp; (obj_player1.x &gt;= obj_whiskeybarrel.x +22 &amp;&amp; obj_player1.x &lt;= obj_whiskeybarrel.x +27)//&lt;-----------------Position Parameter
+    &amp;&amp; obj_player1.key_action_press //&lt;----------------------------------------------------------------------------------------press action key
+    &amp;&amp; global.playercount &gt;= 2//&lt;----------------------------------------------------------------------------------------------player number parameter
+    &amp;&amp; obj_player1.state = 'idle' //&lt;------------------------------------------------------------------------------------------state parameter
+    &amp;&amp; ladderclimbed = true //&lt;------------------------------------------------------------------------------------------------check if someone is up the ladder
+{
+    obj_whiskeybarrel.image_speed = .5;
+    begin_alarm = true; //starts a timer to drop key from barrel
+    obj_player1.state = 'aim'
+}
+
+if (player1=true) &amp;&amp; (obj_player1.x &gt;= obj_whiskeybarrel.x +22 &amp;&amp; obj_player1.x &lt;= obj_whiskeybarrel.x +27)//&lt;-----------------Position Parameter
+    &amp;&amp; obj_player1.key_action_release //&lt;--------------------------------------------------------------------------------------release action key
+    &amp;&amp; obj_player1.state = 'aim'//&lt;--------------------------------------------------------------------------------------------state paramater
+    
+{
+    obj_whiskeybarrel.image_speed = 0;
+    obj_whiskeybarrel.image_index = 0;
+    begin_alarm = false;
+    obj_player1.state = 'idle'
+}
+//% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+
+
+//PLAYER 2 ENTERING WHISKEY BARREL INTERACTION ZONES
+if (player2=true) &amp;&amp; (obj_player2.x &gt;= obj_whiskeybarrel.x -20 &amp;&amp; obj_player2.x &lt;= obj_whiskeybarrel.x-10) //contact with ladder
+|| (player2=true) &amp;&amp; (obj_player2.x &gt;= obj_whiskeybarrel.x +22 &amp;&amp; obj_player2.x &lt;= obj_whiskeybarrel.x +27) //contact with spout
+{
+    if !instance_exists(obj_P2exclaim)
+    {
+        instance_create(obj_player2.x+5,obj_player2.y-6,obj_P2exclaim);
+    }    
+}
+else
+{
+        if instance_exists(obj_P2exclaim)
+        {
+            instance_destroy(obj_P2exclaim);
+        }
+}
+
+//CLIMBING THE LADDER #######################################################################################################
+    
+if player2=true &amp;&amp; (obj_player2.x &gt;= obj_whiskeybarrel.x -20 &amp;&amp; obj_player2.x &lt;= obj_whiskeybarrel.x-10)//&lt;-ladder parameter
+    &amp;&amp; obj_player2.state = 'idle'//&lt;------------------------------------------------------------------------state parameter
+    &amp;&amp; obj_player2.key_action_press//&lt;----------------------------------------------------------------------press action button
+{
+    obj_player2.x = 70;
+    obj_player2.y = 35;             //yay! you're up the ladder now!
+    obj_player2.state = 'aim'
+    ladderclimbed = true;
+}
+
+if player2=true &amp;&amp; (obj_player2.x &gt;= obj_whiskeybarrel.x -20 &amp;&amp; obj_player2.x &lt;= obj_whiskeybarrel.x-10)//&lt;-position parameter
+    &amp;&amp; obj_player2.state = 'aim' //&lt;------------------------------------------------------------------------state parameter
+    &amp;&amp; obj_player2.key_action_release //&lt;-------------------------------------------------------------------release action key
+{
+    obj_player2.x = 60;
+    obj_player2.y = 70;             //you have safely descended the ladder!
+    obj_player2.state = 'idle'
+    ladderclimbed = false;
+}
+//#############################################################################################################################
+
+//PLAYER 3 ENTERING WHISKEY BARREL INTERACTION ZONES
+if (player3=true) &amp;&amp; (obj_player3.x &gt;= obj_whiskeybarrel.x -20 &amp;&amp; obj_player3.x &lt;= obj_whiskeybarrel.x-10) //contact with ladder
+|| (player3=true) &amp;&amp; (obj_player3.x &gt;= obj_whiskeybarrel.x +22 &amp;&amp; obj_player3.x &lt;= obj_whiskeybarrel.x +27) //contact with spout
+{
+    if !instance_exists(obj_P3exclaim)
+    {
+        instance_create(obj_player3.x+5,obj_player3.y-6,obj_P3exclaim);
+    }    
+}
+else
+{
+        if instance_exists(obj_P3exclaim)
+        {
+            instance_destroy(obj_P3exclaim);
+        }
+}
+
+//CLIMBING THE LADDER #######################################################################################################
+    
+if player3=true &amp;&amp; (obj_player3.x &gt;= obj_whiskeybarrel.x -20 &amp;&amp; obj_player3.x &lt;= obj_whiskeybarrel.x-10)//&lt;-ladder parameter
+    &amp;&amp; obj_player3.state = 'idle'//&lt;------------------------------------------------------------------------state parameter
+    &amp;&amp; obj_player3.key_action_press//&lt;----------------------------------------------------------------------press action button
+{
+    obj_player3.x = 70;
+    obj_player3.y = 35;             //yay! you're up the ladder now!
+    obj_player3.state = 'aim'
+    ladderclimbed = true;
+}
+
+if player3=true &amp;&amp; (obj_player3.x &gt;= obj_whiskeybarrel.x -20 &amp;&amp; obj_player3.x &lt;= obj_whiskeybarrel.x-10)//&lt;-position parameter
+    &amp;&amp; obj_player3.state = 'aim' //&lt;------------------------------------------------------------------------state parameter
+    &amp;&amp; obj_player3.key_action_release //&lt;-------------------------------------------------------------------release action key
+{
+    obj_player3.x = 60;
+    obj_player3.y = 70;             //you have safely descended the ladder!
+    obj_player3.state = 'idle'
+    ladderclimbed = false;
+}
+//#############################################################################################################################
+
+//PLAYER 4 ENTERING WHISKEY BARREL INTERACTION ZONES
+if (player4=true) &amp;&amp; (obj_player4.x &gt;= obj_whiskeybarrel.x -20 &amp;&amp; obj_player4.x &lt;= obj_whiskeybarrel.x-10) //contact with ladder
+|| (player4=true) &amp;&amp; (obj_player4.x &gt;= obj_whiskeybarrel.x +22 &amp;&amp; obj_player4.x &lt;= obj_whiskeybarrel.x +27) //contact with spout
+{
+    if !instance_exists(obj_P4exclaim)
+    {
+        instance_create(obj_player4.x+5,obj_player4.y-6,obj_P4exclaim);
+    }    
+}
+else
+{
+        if instance_exists(obj_P4exclaim)
+        {
+            instance_destroy(obj_P4exclaim);
+        }
+}
+
+//CLIMBING THE LADDER #######################################################################################################
+    
+if player4=true &amp;&amp; (obj_player4.x &gt;= obj_whiskeybarrel.x -20 &amp;&amp; obj_player4.x &lt;= obj_whiskeybarrel.x-10)//&lt;-ladder parameter
+    &amp;&amp; obj_player4.state = 'idle'//&lt;------------------------------------------------------------------------state parameter
+    &amp;&amp; obj_player4.key_action_press//&lt;----------------------------------------------------------------------press action button
+{
+    obj_player4.x = 70;
+    obj_player4.y = 35;             //yay! you're up the ladder now!
+    obj_player4.state = 'aim'
+    ladderclimbed = true;
+}
+
+if player4=true &amp;&amp; (obj_player4.x &gt;= obj_whiskeybarrel.x -20 &amp;&amp; obj_player4.x &lt;= obj_whiskeybarrel.x-10)//&lt;-position parameter
+    &amp;&amp; obj_player4.state = 'aim' //&lt;------------------------------------------------------------------------state parameter
+    &amp;&amp; obj_player4.key_action_release //&lt;-------------------------------------------------------------------release action key
+{
+    obj_player4.x = 60;
+    obj_player4.y = 70;             //you have safely descended the ladder!
+    obj_player4.state = 'idle'
+    ladderclimbed = false;
+}
+//#############################################################################################################################
+
+
+
+
+//KEY TIMER STUFF
+
+if begin_alarm = true
+{
+    alarm[0] -= 1;
+}
+
+else if begin_alarm = false
+{
+    alarm[0] = 200;
+}
+
+if alarm[0] &lt;= -1
+{
+    if !instance_exists(obj_key) &amp;&amp; key_dropped = false
+    {
+        instance_create(70,70,obj_key)
+        key_dropped = true;
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+  </events>
   <PhysicsObject>0</PhysicsObject>
   <PhysicsObjectSensor>0</PhysicsObjectSensor>
   <PhysicsObjectShape>0</PhysicsObjectShape>

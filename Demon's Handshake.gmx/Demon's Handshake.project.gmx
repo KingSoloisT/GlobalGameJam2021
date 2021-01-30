@@ -43,6 +43,7 @@
       <sprite>sprites\spr_piani</sprite>
       <sprite>sprites\spr_lever</sprite>
       <sprite>sprites\spr_whiskeybarrel</sprite>
+      <sprite>sprites\spr_bucket</sprite>
     </sprites>
     <sprites name="backgrounds">
       <sprite>sprites\spr_saloon</sprite>
@@ -129,13 +130,15 @@
       <object>objects\obj_P2exclaim</object>
       <object>objects\obj_P3exclaim</object>
       <object>objects\obj_P4exclaim</object>
+      <object>objects\obj_whiskeybarrel</object>
+      <object>objects\obj_puzzletestspawner</object>
       <objects name="Actual Puzzles">
         <object>objects\obj_puzz1</object>
         <object>objects\obj_puzz2</object>
         <object>objects\obj_puzz3</object>
         <object>objects\obj_puzz4</object>
       </objects>
-      <object>objects\obj_puzzletestspawner</object>
+      <object>objects\obj_bucket</object>
     </objects>
     <object>objects\obj_goal</object>
   </objects>
