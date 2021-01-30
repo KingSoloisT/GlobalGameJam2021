@@ -44,6 +44,8 @@
       <sprite>sprites\spr_lever</sprite>
       <sprite>sprites\spr_whiskeybarrel</sprite>
       <sprite>sprites\spr_bucket</sprite>
+      <sprite>sprites\spr_plunger</sprite>
+      <sprite>sprites\spr_explosion</sprite>
     </sprites>
     <sprites name="backgrounds">
       <sprite>sprites\spr_saloon</sprite>
@@ -126,6 +128,8 @@
       <object>objects\obj_piani</object>
       <object>objects\obj_shelf</object>
       <object>objects\obj_lever</object>
+      <object>objects\obj_plunger</object>
+      <object>objects\obj_explosion</object>
       <object>objects\obj_P1exclaim</object>
       <object>objects\obj_P2exclaim</object>
       <object>objects\obj_P3exclaim</object>
@@ -137,6 +141,7 @@
         <object>objects\obj_puzz2</object>
         <object>objects\obj_puzz3</object>
         <object>objects\obj_puzz4</object>
+        <object>objects\obj_puzz5</object>
       </objects>
       <object>objects\obj_bucket</object>
     </objects>
