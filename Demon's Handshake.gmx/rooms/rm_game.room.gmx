@@ -18,12 +18,13 @@ instance_create(0,0,obj_GameControls);
 
 global.key = 0;
 global.key_total = 0;
+global.key_needed = 15;
 global.player1_key = 0;
 global.player2_key = 0;
 global.player3_key = 0;
 global.player4_key = 0;
 global.player_villan = choose('player1','player2','player3','player4');
-global.player_villan = choose('player1','player2','player4','player4');
+
 
 instance_create(0,0,obj_PuzzleRandomizer);</code>
   <enableViews>-1</enableViews>
@@ -73,6 +74,10 @@ instance_create(0,0,obj_PuzzleRandomizer);</code>
     <instance objName="obj_control" x="9" y="5" name="inst_FF22FA65" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_key" x="618" y="158" name="inst_FE1FDD3B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_puzztestobj" x="40" y="5" name="inst_04AD7B57" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_stairs_up" x="632" y="160" name="inst_41D91B9A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_stairs_down" x="505" y="160" name="inst_790297E7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_open_door" x="640" y="105" name="inst_0811B061" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_door" x="479" y="105" name="inst_83278E0C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

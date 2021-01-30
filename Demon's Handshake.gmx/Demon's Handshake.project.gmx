@@ -32,6 +32,7 @@
     <sprite>sprites\spr_bullet_hud</sprite>
     <sprite>sprites\spr_bullet_spent</sprite>
     <sprite>sprites\obj_door_locked</sprite>
+    <sprite>sprites\spr_hall</sprite>
     <sprite>sprites\spr_stairs_up</sprite>
     <sprite>sprites\spr_stairs_down</sprite>
     <sprite>sprites\spr_PuzzleTemplateRED</sprite>
@@ -64,6 +65,7 @@
   </scripts>
   <fonts name="fonts">
     <font>fonts\font_hud</font>
+    <font>fonts\font_game</font>
   </fonts>
   <objects name="objects">
     <object>objects\obj_bulletR</object>
@@ -75,6 +77,9 @@
     <object>objects\obj_control</object>
     <object>objects\obj_key</object>
     <object>objects\obj_door</object>
+    <object>objects\obj_open_door</object>
+    <object>objects\obj_stairs_up</object>
+    <object>objects\obj_stairs_down</object>
     <object>objects\obj_PuzzleTemplateRED</object>
     <object>objects\obj_PuzzleTemplateGREEN</object>
     <object>objects\obj_PuzzleTemplateBLUE</object>

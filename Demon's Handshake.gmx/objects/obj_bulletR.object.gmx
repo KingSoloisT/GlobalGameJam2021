@@ -27,21 +27,26 @@
             <kind>1</kind>
             <string>x+=10;
 
-if place_meeting(x,y,obj_player1) &amp;&amp; obj_player1.state = 'dead'
+if place_meeting(x-10,y,obj_player1) 
 {
     instance_destroy();
 }
 
-if place_meeting(x,y,obj_player2) &amp;&amp; obj_player2.state = 'dead'
+if place_meeting(x-10,y,obj_player2) 
 {
     instance_destroy();
 }
 
-if place_meeting(x,y,obj_player3) &amp;&amp; obj_player3.state = 'dead'
+if place_meeting(x-10,y,obj_player3) 
 {
     instance_destroy();
 }
-if place_meeting(x,y,obj_player4) &amp;&amp; obj_player4.state = 'dead'
+if place_meeting(x-10,y,obj_player4)
+{
+    instance_destroy();
+}
+
+if place_meeting(x,y,obj_open_door) 
 {
     instance_destroy();
 }

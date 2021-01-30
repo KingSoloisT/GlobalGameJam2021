@@ -160,6 +160,17 @@ if place_meeting(x,y,obj_bulletR) || place_meeting(x,y,obj_bulletL)
     state = 'dead'
 }
 
+if place_meeting(x,y,obj_stairs_up) &amp;&amp; (key_up) //add press up
+{
+    x = obj_stairs_down.x
+    y = obj_stairs_down.y
+}
+
+if place_meeting(x,y,obj_stairs_down) &amp;&amp; (key_down) //add press up
+{
+    x = obj_stairs_up.x
+    y = obj_stairs_up.y
+}
 
 
 </string>
