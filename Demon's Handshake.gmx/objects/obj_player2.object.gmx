@@ -149,12 +149,12 @@ if state = 'draw'
             bullet -= 1;
             if facing = 'right'
             {
-            if !instance_exists(obj_bulletR){instance_create(x,y-8,obj_bulletR)}
+            if !instance_exists(obj_bulletR){instance_create(x+10,y-8,obj_bulletR)}
             }
                         
             if facing = 'left'
             {
-            if !instance_exists(obj_bulletR){instance_create(x,y-8,obj_bulletL)}
+            if !instance_exists(obj_bulletL){instance_create(x-10,y-8,obj_bulletL)}
             }
         }
     }
