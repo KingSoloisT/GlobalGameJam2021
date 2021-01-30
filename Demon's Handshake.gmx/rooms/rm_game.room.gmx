@@ -79,6 +79,8 @@ instance_create(0,0,obj_PuzzleRandomizer);</code>
     <instance objName="obj_open_door" x="640" y="105" name="inst_0811B061" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_door" x="479" y="105" name="inst_83278E0C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_goal" x="479" y="89" name="inst_36AE2F76" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_stairs_up2" x="651" y="160" name="inst_972DDF12" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_stairs_down2" x="679" y="160" name="inst_59E3CF19" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

@@ -118,6 +118,18 @@ if state = 'idle'
         x = obj_stairs_up.x
         y = obj_stairs_up.y
     }
+        //stair2
+        if place_meeting(x,y,obj_stairs_up2) &amp;&amp; (key_up) 
+    {
+        x = obj_stairs_down2.x
+        y = obj_stairs_down2.y
+    }
+    
+    if place_meeting(x,y,obj_stairs_down2) &amp;&amp; (key_down) 
+    {
+        x = obj_stairs_up2.x
+        y = obj_stairs_up2.y
+    }
     
     if place_meeting(x,y,obj_door) &amp;&amp; (key_action_press) &amp;&amp; global.key_total = global.key_needed &amp;&amp; obj_goal.goal = true
     {

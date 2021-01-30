@@ -50,6 +50,7 @@
   </sprites>
   <backgrounds name="background">
     <background>background\bkg_saloon</background>
+    <background>background\bkg_basement_test</background>
     <background>background\background1</background>
     <background>background\bkg_background</background>
     <background>background\bkg_grid</background>
@@ -90,6 +91,8 @@
     <object>objects\obj_end_wall</object>
     <object>objects\obj_stairs_up</object>
     <object>objects\obj_stairs_down</object>
+    <object>objects\obj_stairs_up2</object>
+    <object>objects\obj_stairs_down2</object>
     <object>objects\obj_PuzzleTemplateRED</object>
     <object>objects\obj_PuzzleTemplateGREEN</object>
     <object>objects\obj_PuzzleTemplateBLUE</object>
