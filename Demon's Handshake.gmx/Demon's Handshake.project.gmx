@@ -71,6 +71,23 @@
       <sprite>sprites\spr_hall_tan</sprite>
       <sprite>sprites\spr_end_wall_tan</sprite>
     </sprites>
+    <sprites name="safepuzzle">
+      <sprite>sprites\spr_safe</sprite>
+      <sprite>sprites\spr_safe_open</sprite>
+    </sprites>
+    <sprites name="gratepuzzle">
+      <sprite>sprites\spr_grate</sprite>
+      <sprite>sprites\spr_chain</sprite>
+      <sprite>sprites\spr_chain_up</sprite>
+      <sprite>sprites\spr_chain_right</sprite>
+      <sprite>sprites\spr_chain_left</sprite>
+    </sprites>
+    <sprites name="crate puzzle">
+      <sprite>sprites\spr_crate</sprite>
+    </sprites>
+    <sprites name="beltpuzzle">
+      <sprite>sprites\spr_belt</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bkg_saloon</background>
