@@ -161,6 +161,7 @@
         <object>objects\obj_puzz3</object>
         <object>objects\obj_puzz4</object>
         <object>objects\obj_puzz5</object>
+        <object>objects\obj_puzzX</object>
       </objects>
       <objects name="Puzzle Key Decoys">
         <object>objects\obj_puzz1key</object>

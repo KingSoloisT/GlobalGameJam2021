@@ -69,13 +69,8 @@ player4 = false;
             <kind>1</kind>
             <string>GameControls(obj_puzz3);
 ObjectControls(obj_puzz3);
-/*
-if (plunger = 1)
-{
-    obj_plunger.image_index = 1
-}
-*/
-// CHECK WHICH PLAYERS ARE IN THE ROOM
+
+//CHECK WHICH PLAYERS ARE IN THE ROOM
 if instance_exists(obj_player1)
 {
     player1 = true
@@ -93,7 +88,8 @@ if instance_exists(obj_player4)
     player4 = true;
 }
 
-obj_plunger.image_index = 0;
+//obj_plunger.image_index = 0;
+
 //PLAYER 1 ENTERING PLUNGER ACTION
 if (player1 = true) and obj_player1.x &gt;= obj_plunger.x-10 and obj_player1.x &lt;= obj_plunger.x+10
     {
@@ -112,7 +108,8 @@ if (player1 = true) and obj_player1.x &gt;= obj_plunger.x-10 and obj_player1.x &
     obj_plunger.image_index = 0;
     plunger = 0;
     }
-/*
+
+
 //PLAYER 2 ENTERING PLUNGER ACTION
 if (player2 = true) and obj_player2.x &gt;= obj_plunger.x-10 and obj_player2.x &lt;= obj_plunger.x+10
     {
@@ -122,7 +119,7 @@ if (player2 = true) and obj_player2.x &gt;= obj_plunger.x-10 and obj_player2.x &
     instance_destroy(obj_P2exclaim);
     }
     
-if (player2 = true) and obj_player2.x &gt;= obj_plunger.x-10 and obj_player2.x &lt;= obj_plunger.x+10 and (key_action)
+if (player2 = true) and obj_player2.x &gt;= obj_plunger.x-10 and obj_player2.x &lt;= obj_plunger.x+10 and obj_player2.key_action
     {
     obj_plunger.image_index = 1;
     plunger += 1;
@@ -141,7 +138,7 @@ if (player3 = true) and obj_player3.x &gt;= obj_plunger.x-10 and obj_player3.x &
     instance_destroy(obj_P3exclaim);
     }
     
-if obj_player3.x &gt;= obj_plunger.x-10 and obj_player3.x &lt;= obj_plunger.x+10 and (key_action)
+if obj_player3.x &gt;= obj_plunger.x-10 and obj_player3.x &lt;= obj_plunger.x+10 and obj_player3.key_action
     {
     obj_plunger.image_index = 1;
     plunger += 1;
@@ -160,7 +157,7 @@ if (player4 = true) and obj_player4.x &gt;= obj_plunger.x-10 and obj_player4.x &
     instance_destroy(obj_P4exclaim);
     }
     
-if obj_player4.x &gt;= obj_plunger.x-10 and obj_player4.x &lt;= obj_plunger.x+10 and (key_action)
+if obj_player4.x &gt;= obj_plunger.x-10 and obj_player4.x &lt;= obj_plunger.x+10 and obj_player4.key_action
     {
     obj_plunger.image_index = 1;
     plunger += 1;
@@ -170,7 +167,7 @@ if obj_player4.x &gt;= obj_plunger.x-10 and obj_player4.x &lt;= obj_plunger.x+10
     plunger += 0;
     }
 */    
-//ACTUAL LEVER ACTIONING
+//ACTUAL PLUNGER PLUNGING
 if plunger = 1
     {
     //instance_create(obj_key.x,obj_key.y,obj_explosion)
@@ -193,7 +190,7 @@ if instance_exists(obj_key)
         }
     }
 
-//KEY IS GONE, NO MORE LEVER ACTIONING
+//KEY IS GONE, NO MORE PLUNGER PLUNGING
 if !instance_exists(obj_key)
 {
     if instance_exists(obj_P1exclaim)

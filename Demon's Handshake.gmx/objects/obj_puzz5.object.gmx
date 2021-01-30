@@ -95,7 +95,7 @@ if player1 = true &amp;&amp; obj_player1.x &gt;= obj_lever.x-10 &amp;&amp; obj_p
         instance_create(obj_player1.x+5,obj_player1.y-6,obj_P1exclaim);   
     }
     
-    if obj_player1.x &gt;= obj_lever.x-10 &amp;&amp; obj_player1.x &lt;= obj_lever.x-10 //&lt;--pushing up the LEFT side of the lever
+    if obj_player1.x &gt;= obj_lever.x-10 &amp;&amp; obj_player1.x &lt;= obj_lever.x //&lt;--pushing up the LEFT side of the lever
     {   
         if (obj_player1.key_action_press) &amp;&amp; (obj_lever.image_index != 1) &amp;&amp; global.playercount &gt;= 2 //x button
         {
@@ -104,7 +104,7 @@ if player1 = true &amp;&amp; obj_player1.x &gt;= obj_lever.x-10 &amp;&amp; obj_p
         }
     }
     
-    if obj_player1.x &gt;= obj_lever.x+10 &amp;&amp; obj_player1.x &lt;= obj_lever.x+10 //&lt;--pushing up the RIGHT side of the lever
+    if obj_player1.x &gt;= obj_lever.x &amp;&amp; obj_player1.x &lt;= obj_lever.x+10 //&lt;--pushing up the RIGHT side of the lever
     {   
         if (obj_player1.key_action_press) &amp;&amp; (obj_lever.image_index != 2) &amp;&amp; global.playercount &gt;= 2//x button
         {
@@ -122,7 +122,7 @@ else
         }
 }
 
-//PLAYER 2 ENTERING SHELF SHAKE AREA
+//PLAYER 2 ENTERING LEVER AREA
 if player2 = true &amp;&amp; obj_player2.x &gt;= obj_lever.x-10 &amp;&amp; obj_player2.x &lt;= obj_lever.x+10
 {
     if !instance_exists(obj_P2exclaim)
@@ -131,7 +131,7 @@ if player2 = true &amp;&amp; obj_player2.x &gt;= obj_lever.x-10 &amp;&amp; obj_p
     }
     
 
-    if obj_player2.x &gt;= obj_lever.x -10 &amp;&amp; obj_player2.x &lt;= obj_lever.x-10 //&lt;--pushing up the LEFT side of the lever
+    if obj_player2.x &gt;= obj_lever.x-10 &amp;&amp; obj_player2.x &lt;= obj_lever.x //&lt;--pushing up the LEFT side of the lever
     {   
         if (obj_player2.key_action_press) &amp;&amp; (obj_lever.image_index != 1) &amp;&amp; global.playercount &gt;= 2//x button
         {
@@ -140,7 +140,7 @@ if player2 = true &amp;&amp; obj_player2.x &gt;= obj_lever.x-10 &amp;&amp; obj_p
         }
     }
     
-    if obj_player2.x &gt;= obj_lever.x +10 &amp;&amp; obj_player2.x &lt;= obj_lever.x+10 //&lt;--pushing up the RIGHT side of the lever
+    if obj_player2.x &gt;= obj_lever.x &amp;&amp; obj_player2.x &lt;= obj_lever.x+10 //&lt;--pushing up the RIGHT side of the lever
     {   
         if (obj_player2.key_action_press) &amp;&amp; (obj_lever.image_index != 2) &amp;&amp; global.playercount &gt;= 2//x button
         {
@@ -158,14 +158,14 @@ else
     }
 }
 
-//PLAYER 3 ENTERING SHELF SHAKE AREA
+//PLAYER 3 ENTERING LEVER AREA
 if player3 = true &amp;&amp; obj_player3.x &gt;= obj_lever.x -10 &amp;&amp; obj_player3.x &lt;= obj_lever.x+10
 {
     if !instance_exists(obj_P3exclaim)
     {
         instance_create(obj_player3.x+5,obj_player3.y-6,obj_P3exclaim);
     }
-    if obj_player3.x &gt;= obj_lever.x -10 &amp;&amp; obj_player3.x &lt;= obj_lever.x-10 //&lt;--pushing up the LEFT side of the lever
+    if obj_player3.x &gt;= obj_lever.x-10 &amp;&amp; obj_player3.x &lt;= obj_lever.x //&lt;--pushing up the LEFT side of the lever
     {   
         if (obj_player3.key_action_press) &amp;&amp; (obj_lever.image_index != 1) &amp;&amp; global.playercount &gt;= 2//x button
         {
@@ -174,7 +174,7 @@ if player3 = true &amp;&amp; obj_player3.x &gt;= obj_lever.x -10 &amp;&amp; obj_
         }
     }
     
-    if obj_player3.x &gt;= obj_lever.x +10 &amp;&amp; obj_player3.x &lt;= obj_lever.x+10 //&lt;--pushing up the RIGHT side of the lever
+    if obj_player3.x &gt;= obj_lever.x &amp;&amp; obj_player3.x &lt;= obj_lever.x+10 //&lt;--pushing up the RIGHT side of the lever
     {   
         if (obj_player3.key_action_press) &amp;&amp; (obj_lever.image_index != 2) &amp;&amp; global.playercount &gt;= 2//x button
         {
@@ -192,14 +192,14 @@ else
         }
 }
 
-//PLAYER 4 ENTERING SHELF SHAKE AREA
+//PLAYER 4 ENTERING LEVER AREA
 if player4 = true &amp;&amp; obj_player4.x &gt;= obj_lever.x -10 &amp;&amp; obj_player4.x &lt;= obj_lever.x+10
 {
     if !instance_exists(obj_P4exclaim)
     {
         instance_create(obj_player4.x+5,obj_player4.y-6,obj_P4exclaim);
     }
-    if obj_player4.x &gt;= obj_lever.x -20 &amp;&amp; obj_player4.x &lt;= obj_lever.x-10 //&lt;--pushing up the LEFT side of the lever
+    if obj_player4.x &gt;= obj_lever.x-10 &amp;&amp; obj_player4.x &lt;= obj_lever.x //&lt;--pushing up the LEFT side of the lever
     {   
         if (obj_player4.key_action_press) &amp;&amp; (obj_lever.image_index != 1) &amp;&amp; global.playercount &gt;= 2//x button
         {
@@ -208,7 +208,7 @@ if player4 = true &amp;&amp; obj_player4.x &gt;= obj_lever.x -10 &amp;&amp; obj_
         }
     }
     
-    if obj_player4.x &gt;= obj_lever.x +10 &amp;&amp; obj_player4.x &lt;= obj_lever.x+10 //&lt;--pushing up the RIGHT side of the lever
+    if obj_player4.x &gt;= obj_lever.x &amp;&amp; obj_player4.x &lt;= obj_lever.x+10 //&lt;--pushing up the RIGHT side of the lever
     {   
         if (obj_player4.key_action_press) &amp;&amp; (obj_lever.image_index != 2) &amp;&amp; global.playercount &gt;= 2//x button
         {
@@ -226,7 +226,7 @@ else
         }
 }
 
-//ACTUAL SHELF SHOOKETHING
+//ACTUAL LEVER LEVERAGING
 if lever &gt;= 10
 {
     if instance_exists(obj_key)
@@ -244,7 +244,7 @@ if instance_exists(obj_key)
     }
 }
 
-//KEY IS GONE, NO MORE SHAKE CUES
+//KEY IS GONE, NO MORE LEVER LEVERAGE CUES
 if !instance_exists(obj_key)
 {
     if instance_exists(obj_P1exclaim)
