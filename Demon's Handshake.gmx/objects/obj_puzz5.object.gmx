@@ -87,9 +87,7 @@ if instance_exists(obj_player4)
     player4=true;
 }
 
-obj_lever.image_index = 0;
-
-//PLAYER 1 ENTERING SHELF SHAKE AREA
+//PLAYER 1 ENTERING LEVER AREA
 if player1 = true &amp;&amp; obj_player1.x &gt;= obj_lever.x-10 &amp;&amp; obj_player1.x &lt;= obj_lever.x+10
 {
     if !instance_exists(obj_P1exclaim) //makes action cue appear
