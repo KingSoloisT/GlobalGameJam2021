@@ -181,7 +181,9 @@ else
     gp12 = 0;
 }
 
-global.ControllerCount = gp0 + gp1 + gp3 + gp4 + gp5 + gp6 + gp7 + gp8 + gp9 + gp10 + gp11 + gp12;
+//removed PS4 Slots BUG not allowing to have the controller vibrate so use DS4Windows to allow it to work properly and connect as a "Xinput gamepad"
+//global.ControllerCount = gp0 + gp1 + gp3 + gp4 + gp5 + gp6 + gp7 + gp8 + gp9 + gp10 + gp11 + gp12;
+global.ControllerCount = gp0 + gp1 + gp2 + gp3 + gp8 + gp9 + gp10 + gp11 + gp12;
 
 show_debug_message(string(global.ControllerCount));
 </string>

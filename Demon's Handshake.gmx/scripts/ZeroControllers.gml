@@ -15,11 +15,11 @@ if (ObjectControls("P1"))
     key_action_press = keyboard_check_pressed(ord('F'));
     key_action_release = keyboard_check_released(ord('F'));
     
-    key_aim = keyboard_check_released(ord('C'));
+    key_aim = keyboard_check(ord('C'));
     key_aim_press = keyboard_check_pressed(ord('C'));
     key_aim_release = keyboard_check_released(ord('C'));
     
-    key_shoot = keyboard_check_released(ord('V'));
+    key_shoot = keyboard_check(ord('V'));
     key_shoot_press = keyboard_check_pressed(ord('V'));
     key_shoot_release = keyboard_check_released(ord('V'));
 }
@@ -36,11 +36,11 @@ else if (ObjectControls("P2"))
     key_action_press = keyboard_check_pressed(ord('O')); 
     key_action_release = keyboard_check_released(ord('O'));
     
-    key_aim = keyboard_check_released(ord('K'));
+    key_aim = keyboard_check(ord('K'));
     key_aim_press = keyboard_check_pressed(ord('K'));
     key_aim_release = keyboard_check_released(ord('K'));
     
-    key_shoot = keyboard_check_released(ord('L'));
+    key_shoot = keyboard_check(ord('L'));
     key_shoot_press = keyboard_check_pressed(ord('L'));
     key_shoot_release = keyboard_check_released(ord('L'));
 }
@@ -53,17 +53,17 @@ else if (ObjectControls("P3"))
     key_down = keyboard_check(ord('N'));
     key_right = keyboard_check(ord('M'));
     
-    key_action = keyboard_check(44);
-    key_action_press = keyboard_check_pressed(44);
-    key_action_release =  keyboard_check_released(44);
+    key_action = keyboard_check(188);
+    key_action_press = keyboard_check_pressed(188);
+    key_action_release =  keyboard_check_released(188);
     
-    key_aim = keyboard_check_released(ord('46'));
-    key_aim_press = keyboard_check_pressed(ord('46'));
-    key_aim_release = keyboard_check_released(ord('46'));
+    key_aim = keyboard_check(190);
+    key_aim_press = keyboard_check_pressed(190);
+    key_aim_release = keyboard_check_released(190);
     
-    key_shoot = keyboard_check_released(ord('47'));
-    key_shoot_press = keyboard_check_pressed(ord('47'));
-    key_shoot_release = keyboard_check_released(ord('47'));
+    key_shoot = keyboard_check(191);
+    key_shoot_press = keyboard_check_pressed(191);
+    key_shoot_release = keyboard_check_released(191);
     
     //44? Action ,
     //46 aim . 
@@ -82,11 +82,11 @@ else if (ObjectControls("P4"))
     key_action_press = keyboard_check_pressed(vk_add); 
     key_action_release = keyboard_check_released(vk_add);
     
-    key_aim = keyboard_check_released(ord('vk_multiply'));
-    key_aim_press = keyboard_check_pressed(ord('vk_multiply'));
-    key_aim_release = keyboard_check_released(ord('vk_multiply'));
+    key_aim = keyboard_check(vk_multiply);
+    key_aim_press = keyboard_check_pressed(vk_multiply);
+    key_aim_release = keyboard_check_released(vk_multiply);
     
-    key_shoot = keyboard_check_released(ord('vk_subtract'));
-    key_shoot_press = keyboard_check_pressed(ord('vk_subtract'));
-    key_shoot_release = keyboard_check_released(ord('vk_subtract'));
+    key_shoot = keyboard_check(vk_subtract);
+    key_shoot_press = keyboard_check_pressed(vk_subtract);
+    key_shoot_release = keyboard_check_released(vk_subtract);
 }

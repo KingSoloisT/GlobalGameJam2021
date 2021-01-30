@@ -78,11 +78,11 @@ else if (ObjectControls("P4"))
     key_action_press = keyboard_check_pressed(ord('F'));
     key_action_release = keyboard_check_released(ord('F'));
     
-    key_aim = keyboard_check_released(ord('C'));
+    key_aim = keyboard_check(ord('C'));
     key_aim_press = keyboard_check_pressed(ord('C'));
     key_aim_release = keyboard_check_released(ord('C'));
     
-    key_shoot = keyboard_check_released(ord('V'));
+    key_shoot = keyboard_check(ord('V'));
     key_shoot_press = keyboard_check_pressed(ord('V'));
     key_shoot_release = keyboard_check_released(ord('V'));
 }
