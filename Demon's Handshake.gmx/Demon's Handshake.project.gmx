@@ -169,7 +169,11 @@
       </objects>
       <objects name="puzzlelocker">
         <object>objects\obj_safe</object>
-        <object>objects\obj_safe_keyin</object>
+        <object>objects\obj_safe1</object>
+        <object>objects\obj_safe2</object>
+        <object>objects\obj_safe3</object>
+        <object>objects\obj_safe4</object>
+        <object>objects\obj_safe5</object>
       </objects>
     </objects>
     <object>objects\obj_goal</object>
