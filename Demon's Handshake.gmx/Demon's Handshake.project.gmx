@@ -59,6 +59,7 @@
     <script>scripts\TwoControllers.gml</script>
     <script>scripts\ThreeControllers.gml</script>
     <script>scripts\FourControllers.gml</script>
+    <script>scripts\ObjectControls.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font_hud</font>

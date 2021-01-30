@@ -1,7 +1,9 @@
 CurrentObject = argument0;
 
-if ((CurrentObject == obj_player1) 
- || (CurrentObject == obj_puzz1))
+//var Player
+
+//if (CurrentObject == obj_player1) 
+if (ObjectControls("P1"))
 {
     //KEYBOARD 1
     key_up = keyboard_check(ord('W'));
@@ -21,8 +23,8 @@ if ((CurrentObject == obj_player1)
     key_shoot_press = keyboard_check_pressed(ord('V'));
     key_shoot_release = keyboard_check_released(ord('V'));
 }
-else if (CurrentObject == obj_player2) 
-//|| (CurrentObject == obj_versuspointer2))
+//else if (CurrentObject == obj_player2) 
+else if (ObjectControls("P2"))
 {
     //Keyboard 2
     key_up = keyboard_check(vk_up);
@@ -42,8 +44,8 @@ else if (CurrentObject == obj_player2)
     key_shoot_press = keyboard_check_pressed(ord('L'));
     key_shoot_release = keyboard_check_released(ord('L'));
 }
-else if (CurrentObject == obj_player3) 
-//|| (CurrentObject == obj_versuspointer3))
+//else if (CurrentObject == obj_player3)
+else if (ObjectControls("P3"))
 {
     //KEYBOARD 3
     key_up = keyboard_check(ord('J'));
@@ -67,8 +69,8 @@ else if (CurrentObject == obj_player3)
     //46 aim . 
     //47 shoot / 
 }
-else if (CurrentObject == obj_player4) 
-//|| (CurrentObject == obj_versuspointer4))
+//else if (CurrentObject == obj_player4)
+else if (ObjectControls("P4"))
 {
     //KEYBOARD 4
     key_up = keyboard_check(vk_numpad8);

@@ -3,10 +3,10 @@ CurrentObject = argument0;
 if ((CurrentObject == obj_player1) 
 || (CurrentObject == obj_puzz1))
 {
-    //gp_shoulderl Left shoulder button 
-    //gp_shoulderlb Left shoulder trigger 
-    //gp_shoulderr Right shoulder button 
-    //gp_shoulderrb Right shoulder trigger 
+    //gp_shoulderlb Left shoulder button 
+    //gp_shoulderlbb Left shoulder trigger 
+    //gp_shoulderrb Right shoulder button 
+    //gp_shoulderrbb Right shoulder trigger 
     //gamepad_set_vibration(device, left_motor, right_motor);
     //Ex. gamepad_set_vibration(0, 1, 1);
     
@@ -16,17 +16,17 @@ if ((CurrentObject == obj_player1)
     key_down = gamepad_button_check(4, gp_padd);
     key_right = gamepad_button_check(4, gp_padr);
     
-    key_action = gamepad_button_check(4, gp_face3);
-    key_action_press = gamepad_button_check_pressed(4, gp_face3); 
-    key_action_release =  gamepad_button_check_released(4, gp_face3);
+    key_action = gamepad_button_check(4, gp_face1);
+    key_action_press = gamepad_button_check_pressed(4, gp_face1); 
+    key_action_release =  gamepad_button_check_released(4, gp_face1);
     
-    key_aim = gamepad_button_check(4, gp_shoulderl);
-    key_aim_press = gamepad_button_check_pressed(4, gp_shoulderl); 
-    key_aim_release =  gamepad_button_check_released(4, gp_shoulderl);
+    key_aim = gamepad_button_check(4, gp_shoulderlb);
+    key_aim_press = gamepad_button_check_pressed(4, gp_shoulderlb); 
+    key_aim_release =  gamepad_button_check_released(4, gp_shoulderlb);
     
-    key_shoot = gamepad_button_check(4, gp_shoulderr);
-    key_shoot_press = gamepad_button_check_pressed(4, gp_shoulderr); 
-    key_shoot_release =  gamepad_button_check_released(4, gp_shoulderr);
+    key_shoot = gamepad_button_check(4, gp_shoulderrb);
+    key_shoot_press = gamepad_button_check_pressed(4, gp_shoulderrb); 
+    key_shoot_release =  gamepad_button_check_released(4, gp_shoulderrb);
 }
 else if (CurrentObject == obj_player2) 
 //|| (CurrentObject == obj_versuspointer2))

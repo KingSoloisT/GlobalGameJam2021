@@ -1,7 +1,7 @@
 CurrentObject = argument0;
 
-if (CurrentObject == obj_player1)
-//|| (CurrentObject == obj_versuspointer)
+//if (CurrentObject == obj_player1)
+if (ObjectControls("P1"))
 {
     //CONTROLLER 1
     key_up = gamepad_button_check(4, gp_padu);
@@ -9,20 +9,20 @@ if (CurrentObject == obj_player1)
     key_down = gamepad_button_check(4, gp_padd);
     key_right = gamepad_button_check(4, gp_padr);
     
-    key_action = gamepad_button_check(4, gp_face3);
-    key_action_press = gamepad_button_check_pressed(4, gp_face3); 
-    key_action_release =  gamepad_button_check_released(4, gp_face3);
+    key_action = gamepad_button_check(4, gp_face1);
+    key_action_press = gamepad_button_check_pressed(4, gp_face1); 
+    key_action_release =  gamepad_button_check_released(4, gp_face1);
     
-    key_aim = gamepad_button_check(4, gp_shoulderl);
-    key_aim_press = gamepad_button_check_pressed(4, gp_shoulderl); 
-    key_aim_release =  gamepad_button_check_released(4, gp_shoulderl);
+    key_aim = gamepad_button_check(4, gp_shoulderlb);
+    key_aim_press = gamepad_button_check_pressed(4, gp_shoulderlb); 
+    key_aim_release =  gamepad_button_check_released(4, gp_shoulderlb);
     
-    key_shoot = gamepad_button_check(4, gp_shoulderr);
-    key_shoot_press = gamepad_button_check_pressed(4, gp_shoulderr); 
-    key_shoot_release =  gamepad_button_check_released(4, gp_shoulderr);
+    key_shoot = gamepad_button_check(4, gp_shoulderrb);
+    key_shoot_press = gamepad_button_check_pressed(4, gp_shoulderrb); 
+    key_shoot_release =  gamepad_button_check_released(4, gp_shoulderrb);
 }
-else if (CurrentObject == obj_player2)
-//|| (CurrentObject == obj_versuspointer2))
+//else if (CurrentObject == obj_player2)
+else if (ObjectControls("P2"))
 {
     //CONTROLLER 2
     key_up = gamepad_button_check(5, gp_padu);
@@ -30,21 +30,21 @@ else if (CurrentObject == obj_player2)
     key_down = gamepad_button_check(5, gp_padd);
     key_right = gamepad_button_check(5, gp_padr);
     
-    key_action = gamepad_button_check(5, gp_face3);
-    key_action_press = gamepad_button_check_pressed(5, gp_face3); 
-    key_action_release =  gamepad_button_check_released(5, gp_face3);
+    key_action = gamepad_button_check(5, gp_face1);
+    key_action_press = gamepad_button_check_pressed(5, gp_face1); 
+    key_action_release =  gamepad_button_check_released(5, gp_face1);
     
-    key_aim = gamepad_button_check(5, gp_shoulderl);
-    key_aim_press = gamepad_button_check_pressed(5, gp_shoulderl); 
-    key_aim_release =  gamepad_button_check_released(5, gp_shoulderl);
+    key_aim = gamepad_button_check(5, gp_shoulderlb);
+    key_aim_press = gamepad_button_check_pressed(5, gp_shoulderlb); 
+    key_aim_release =  gamepad_button_check_released(5, gp_shoulderlb);
     
-    key_shoot = gamepad_button_check(5, gp_shoulderr);
-    key_shoot_press = gamepad_button_check_pressed(5, gp_shoulderr); 
-    key_shoot_release =  gamepad_button_check_released(5, gp_shoulderr);
+    key_shoot = gamepad_button_check(5, gp_shoulderrb);
+    key_shoot_press = gamepad_button_check_pressed(5, gp_shoulderrb); 
+    key_shoot_release =  gamepad_button_check_released(5, gp_shoulderrb);
     
 }
-else if (CurrentObject == obj_player3)
-// || (CurrentObject == obj_versuspointer3))
+//else if (CurrentObject == obj_player3)
+else if (ObjectControls("P3"))
 {
     //KEYBOARD 1
     key_up = keyboard_check(ord('W'));
@@ -64,8 +64,8 @@ else if (CurrentObject == obj_player3)
     key_shoot_press = keyboard_check_pressed(ord('V'));
     key_shoot_release = keyboard_check_released(ord('V'));
 }
-else if (CurrentObject == obj_player4)
-//|| (CurrentObject == obj_versuspointer4))
+//else if (CurrentObject == obj_player4)
+else if (ObjectControls("P4"))
 {
     //Keyboard 2
     key_up = keyboard_check(vk_up);
