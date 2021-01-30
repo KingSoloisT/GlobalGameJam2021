@@ -60,6 +60,17 @@ if (obj_player1.x &gt;= obj_piani.x -25 &amp;&amp; obj_player1.x &lt;= obj_piani
     {
         instance_create(obj_player1.x+5,obj_player1.y-6,obj_P1exclaim);
     }
+    if obj_player1.key_action_press &amp;&amp; global.playercount &gt;= 2 //LIFT THE PIANI
+    {
+        piani_lift = true
+        obj_player1.hspeed =0;
+    }
+    
+    if obj_player1.key_action_release || global.playercount &lt;= 1 //DROP THE PIANI
+    {
+        piani_lift = false
+    }
+    
 }
 
 else
@@ -77,6 +88,17 @@ if (obj_player2.x &gt;= obj_piani.x -25 &amp;&amp; obj_player2.x &lt;= obj_piani
     {
         instance_create(obj_player2.x+5,obj_player2.y-6,obj_P2exclaim);
     }
+    
+    if obj_player2.key_action_press &amp;&amp; global.playercount &gt;= 2 //LIFT THE PIANI
+    {
+        piani_lift = true
+        obj_player2.hspeed =0;
+    }
+    
+    if obj_player2.key_action_release || global.playercount &lt;= 1 //DROP THE PIANI
+    {
+        piani_lift = false
+    }
 }
 
 else
@@ -84,6 +106,62 @@ else
         if instance_exists(obj_P2exclaim)
         {
             instance_destroy(obj_P2exclaim);
+        }
+}
+
+//PLAYER 3 ENTERING PIANI LIFT AREA
+if (obj_player3.x &gt;= obj_piani.x -25 &amp;&amp; obj_player3.x &lt;= obj_piani.x-20) || (obj_player3.x &gt;= obj_piani.x +22 &amp;&amp; obj_player3.x &lt;= obj_piani.x +27)
+{
+    if !instance_exists(obj_P3exclaim)
+    {
+        instance_create(obj_player3.x+5,obj_player2.y-6,obj_P3exclaim);
+    }
+    
+    if obj_player3.key_action_press &amp;&amp; global.playercount &gt;= 2 //LIFT THE PIANI
+    {
+        piani_lift = true
+        obj_player3.hspeed =0;
+    }
+    
+    if obj_player3.key_action_release || global.playercount &lt;= 1 //DROP THE PIANI
+    {
+        piani_lift = false
+    }
+}
+
+else
+{
+        if instance_exists(obj_P3exclaim)
+        {
+            instance_destroy(obj_P3exclaim);
+        }
+}
+
+//PLAYER 4 ENTERING PIANI LIFT AREA
+if (obj_player4.x &gt;= obj_piani.x -25 &amp;&amp; obj_player4.x &lt;= obj_piani.x-20) || (obj_player4.x &gt;= obj_piani.x +22 &amp;&amp; obj_player4.x &lt;= obj_piani.x +27)
+{
+    if !instance_exists(obj_P4exclaim)
+    {
+        instance_create(obj_player4.x+5,obj_player4.y-6,obj_P4exclaim);
+    }
+    
+    if obj_player3.key_action_press &amp;&amp; global.playercount &gt;= 2 //LIFT THE PIANI
+    {
+        piani_lift = true
+        obj_player3.hspeed =0;
+    }
+    
+    if obj_player3.key_action_release || global.playercount &lt;= 1 //DROP THE PIANI
+    {
+        piani_lift = false
+    }
+}
+
+else
+{
+        if instance_exists(obj_P4exclaim)
+        {
+            instance_destroy(obj_P4exclaim);
         }
 }
 
@@ -109,15 +187,6 @@ else
     }
 }
 
-//TESTING CODE TO LIFE THE PIANI
-if keyboard_check(ord('S'))
-{
-    piani_lift = true;
-}
-else
-{
-    piani_lift = false;
-}
 </string>
           </argument>
         </arguments>
