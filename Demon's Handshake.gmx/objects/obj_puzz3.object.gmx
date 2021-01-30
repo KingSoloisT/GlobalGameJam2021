@@ -120,7 +120,7 @@ if (player2 = true and obj_player2.x &gt;= obj_plunger.x-10 and obj_player2.x &l
     instance_destroy(obj_P2exclaim);
     }
     
-if (player2 = true) and obj_player2.x &gt;= obj_plunger.x-10 and obj_player2.x &lt;= obj_plunger.x+10 and obj_player2.key_action
+if (player2 = true and obj_player2.x &gt;= obj_plunger.x-10 and obj_player2.x &lt;= obj_plunger.x+10 and obj_player2.key_action)
     {
     obj_plunger.image_index = 1;
     plunger += 1;
