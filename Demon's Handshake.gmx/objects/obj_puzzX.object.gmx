@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>crank = 0; //When this variable hits 10 the key will fall to the ground
+            <string>/*crank = 0; //When this variable hits 10 the key will fall to the ground
 global.playercount = 0;
 
 //CREATE CRANK
@@ -73,7 +73,7 @@ player4 = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>GameControls(obj_puzz5); //&lt;-----Initiate controller controls
+            <string>/*GameControls(obj_puzz5); //&lt;-----Initiate controller controls
 
 // CHECK WHICH PLAYERS ARE IN THE ROOM
 if instance_exists(obj_player1)
