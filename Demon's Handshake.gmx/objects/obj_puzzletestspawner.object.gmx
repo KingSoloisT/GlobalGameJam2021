@@ -102,12 +102,21 @@ if keyboard_check_pressed(vk_numpad5)
     }
 }
 
-//puzzle 6
+//PUZZLE 6
 if keyboard_check_pressed(vk_numpad6)
 {
     if !instance_exists(obj_puzz6)
     {
         instance_create(0,0,obj_puzz6);
+    }
+}
+
+//PUZZLE 0
+if keyboard_check_pressed(vk_numpad0)
+{
+    if !instance_exists(obj_puzz0)
+    {
+        instance_create(0,0,obj_puzz0);
     }
 }
 </string>

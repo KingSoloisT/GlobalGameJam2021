@@ -148,6 +148,7 @@
       <object>objects\obj_lever</object>
       <object>objects\obj_plunger</object>
       <object>objects\obj_explosion</object>
+      <object>objects\obj_belt1</object>
       <object>objects\obj_P1exclaim</object>
       <object>objects\obj_P2exclaim</object>
       <object>objects\obj_P3exclaim</object>
@@ -162,6 +163,7 @@
         <object>objects\obj_puzz4</object>
         <object>objects\obj_puzz5</object>
         <object>objects\obj_puzz6</object>
+        <object>objects\obj_puzz0</object>
         <object>objects\obj_puzzX</object>
       </objects>
       <objects name="Puzzle Key Decoys">
