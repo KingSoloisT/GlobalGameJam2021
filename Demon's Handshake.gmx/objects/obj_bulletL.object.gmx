@@ -8,6 +8,28 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string></string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
@@ -27,24 +49,35 @@
             <kind>1</kind>
             <string>x-=10;
 
-if place_meeting(x+10,y,obj_player1) 
+
+if place_meeting(x+10,y,obj_player1) &amp;&amp; obj_player1.alive = true
+{
+    instance_destroy();
+    obj_player1.alive = false;
+}
+
+if place_meeting(x+10,y,obj_player2) &amp;&amp; obj_player2.alive = true
+{
+    instance_destroy();
+    obj_player2.alive = false;
+}
+
+if place_meeting(x+10,y,obj_player3) &amp;&amp; obj_player3.alive = true
+{
+    instance_destroy();
+    obj_player3.alive = false;
+}
+if place_meeting(x+10,y,obj_player4) &amp;&amp; obj_player4.alive = true
+{
+    instance_destroy();
+    obj_player4.alive = false;
+}
+
+if place_meeting(x,y,obj_open_door) 
 {
     instance_destroy();
 }
 
-if place_meeting(x+10,y,obj_player2) 
-{
-    instance_destroy();
-}
-
-if place_meeting(x+10,y,obj_player3) 
-{
-    instance_destroy();
-}
-if place_meeting(x+10,y,obj_player4)
-{
-    instance_destroy();
-}
 
 
 

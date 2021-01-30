@@ -34,6 +34,7 @@
     <sprite>sprites\spr_bullet_spent</sprite>
     <sprite>sprites\spr_door_locked</sprite>
     <sprite>sprites\spr_hall</sprite>
+    <sprite>sprites\spr_end_wall</sprite>
     <sprite>sprites\spr_stairs_up</sprite>
     <sprite>sprites\spr_stairs_down</sprite>
     <sprite>sprites\spr_goal</sprite>
@@ -86,6 +87,7 @@
     <object>objects\obj_master_key</object>
     <object>objects\obj_door</object>
     <object>objects\obj_open_door</object>
+    <object>objects\obj_end_wall</object>
     <object>objects\obj_stairs_up</object>
     <object>objects\obj_stairs_down</object>
     <object>objects\obj_PuzzleTemplateRED</object>

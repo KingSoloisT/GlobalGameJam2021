@@ -32,6 +32,7 @@ facing = 'right';
 bullet = 1;
 spd = 1;
 vibe = false;
+alive = true;
 </string>
           </argument>
         </arguments>
@@ -105,6 +106,27 @@ if state = 'idle'
     {
         state = 'draw';
     }
+    
+    
+        if place_meeting(x,y,obj_stairs_up) &amp;&amp; (key_up) //add press up
+    {
+        x = obj_stairs_down.x
+        y = obj_stairs_down.y
+    }
+    
+    if place_meeting(x,y,obj_stairs_down) &amp;&amp; (key_down) //add press up
+    {
+        x = obj_stairs_up.x
+        y = obj_stairs_up.y
+    }
+    
+    if place_meeting(x,y,obj_door) &amp;&amp; (key_action_press) &amp;&amp; global.key_total = global.key_needed &amp;&amp; obj_goal.goal = true
+    {
+        obj_door.sprite_index = spr_hall;
+    }
+    
+    
+    
 }
 
 if state = 'left'
@@ -201,23 +223,12 @@ if place_meeting(x,y,obj_bulletR) || place_meeting(x,y,obj_bulletL)
 {
     state = 'dead'
 }
+//col
 
-if place_meeting(x,y,obj_stairs_up) &amp;&amp; (key_up) //add press up
-{
-    x = obj_stairs_down.x
-    y = obj_stairs_down.y
-}
+x=clamp(x, 0, room_width);
+y=clamp(y, 0, room_height);
 
-if place_meeting(x,y,obj_stairs_down) &amp;&amp; (key_down) //add press up
-{
-    x = obj_stairs_up.x
-    y = obj_stairs_up.y
-}
 
-if place_meeting(x,y,obj_door) &amp;&amp; (key_action_press) &amp;&amp; global.key_total = global.key_needed &amp;&amp; obj_goal.goal = true
-{
-    obj_door.sprite_index = spr_hall;
-}
 
 
 </string>
