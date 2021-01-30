@@ -70,6 +70,7 @@ player4 = false;
             <string>GameControls(obj_puzz3);
 ObjectControls(obj_puzz3);
 
+
 //CHECK WHICH PLAYERS ARE IN THE ROOM
 if instance_exists(obj_player1)
 {
@@ -91,7 +92,7 @@ if instance_exists(obj_player4)
 //obj_plunger.image_index = 0;
 
 //PLAYER 1 ENTERING PLUNGER ACTION
-if (player1 = true) and obj_player1.x &gt;= obj_plunger.x-10 and obj_player1.x &lt;= obj_plunger.x+10
+if (player1 = true and obj_player1.x &gt;= obj_plunger.x-10 and obj_player1.x &lt;= obj_plunger.x+10)
     {
     instance_create(obj_player1.x+5,obj_player1.y-6,obj_P1exclaim);
     } else
@@ -99,7 +100,7 @@ if (player1 = true) and obj_player1.x &gt;= obj_plunger.x-10 and obj_player1.x &
     instance_destroy(obj_P1exclaim);
     }
     
-if (player1 = true) and obj_player1.x &gt;= obj_plunger.x-10 and obj_player1.x &lt;= obj_plunger.x+10 and obj_player1.key_action
+if (player1 = true and obj_player1.x &gt;= obj_plunger.x-10 and obj_player1.x &lt;= obj_plunger.x+10 and obj_player1.key_action)
     {
     obj_plunger.image_index = 1;
     plunger += 1;
@@ -111,7 +112,7 @@ if (player1 = true) and obj_player1.x &gt;= obj_plunger.x-10 and obj_player1.x &
 
 
 //PLAYER 2 ENTERING PLUNGER ACTION
-if (player2 = true) and obj_player2.x &gt;= obj_plunger.x-10 and obj_player2.x &lt;= obj_plunger.x+10
+if (player2 = true and obj_player2.x &gt;= obj_plunger.x-10 and obj_player2.x &lt;= obj_plunger.x+10)
     {
     instance_create(obj_player2.x+5,obj_player2.y-6,obj_P2exclaim);
     } else

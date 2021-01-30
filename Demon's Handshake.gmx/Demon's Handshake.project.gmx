@@ -139,7 +139,6 @@
     <object>objects\obj_PuzzleTemplateGREEN</object>
     <object>objects\obj_PuzzleTemplateBLUE</object>
     <object>objects\obj_PuzzleRandomizer</object>
-    <object>objects\object13</object>
     <object>objects\obj_GameControls</object>
     <objects name="PUZZLE OBJECTS">
       <object>objects\obj_puzztestobj</object>
@@ -168,6 +167,11 @@
       </objects>
     </objects>
     <object>objects\obj_goal</object>
+    <objects name="Background Objects">
+      <object>objects\obj_RoomLeftWallRedWood</object>
+      <object>objects\obj_RoomRightWallRedWood</object>
+      <object>objects\obj_RoomLeftWallRed</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_game</room>

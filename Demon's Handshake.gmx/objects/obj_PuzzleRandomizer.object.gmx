@@ -67,6 +67,8 @@ for (j=0; j&lt;8; j+=1)
         //obj_puzz4
         );
         */
+        
+        //GameLayout[ j , i ] = choose(
     }
 }
 
@@ -99,7 +101,7 @@ for (j=0; j&lt;8; j+=1) //8 is the width or amount of puzzles in the room horizo
         {
             //Room Puzzle Width and Height - OLD WAY***
             //instance_create(j * 160,i * 90, GameLayout[j, i]);
-            if (ds_list_size(ListofPuzzles) &gt; 1)
+            if (ds_list_size(ListofPuzzles) &gt;= 1)
             {
                 instance_create(j * 160,i * 90, ds_list_find_value(ListofPuzzles, 0));
                 //removes the value from the slot
