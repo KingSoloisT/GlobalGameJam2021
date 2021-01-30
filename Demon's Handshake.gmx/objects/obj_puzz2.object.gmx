@@ -28,6 +28,7 @@
             <string>instance_create(room_width/2,63,obj_piani);
 piani_lift = false;
 keymade = false;
+global.playercount = 0;
 </string>
           </argument>
         </arguments>
@@ -50,7 +51,9 @@ keymade = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//PLAYER 1 ENTERING PIANI LIFT AREA
+            <string>GameControls(obj_puzz2); //&lt;-----Initiate controller controls
+
+//PLAYER 1 ENTERING PIANI LIFT AREA
 if (obj_player1.x &gt;= obj_piani.x -25 &amp;&amp; obj_player1.x &lt;= obj_piani.x-20) || (obj_player1.x &gt;= obj_piani.x +22 &amp;&amp; obj_player1.x &lt;= obj_piani.x +27)
 {
     if !instance_exists(obj_P1exclaim)
