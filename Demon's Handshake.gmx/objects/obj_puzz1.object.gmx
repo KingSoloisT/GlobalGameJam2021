@@ -29,10 +29,8 @@
 shelfkeycollected = false;
 global.playercount = 0;
 //CREATE SHELF
-if !instance_exists(obj_shelf)
-{
-    instance_create(room_width/2,room_height/2,obj_shelf);
-}
+instance_create(obj_puzz1.x + 80,obj_puzz1.y + 45, obj_shelf);
+
 
 //CREATE PUZZLE 1 SPECIFIC KEY
 if !instance_exists(obj_puzz1key)
