@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>shelfshake = 0; //When this variable hits 10 the key will fall from the shelf.
+            <string>shelfshake = 0; //When this variable hits 15 the key will fall from the shelf.
+shelflifted_left = false;
+shelflifted_right = false;
 
 //CREATE SHELF
 if !instance_exists(obj_shelf)
@@ -39,14 +41,7 @@ if !instance_exists(obj_key)
     instance_create(obj_shelf.x,obj_shelf.y-3,obj_key);
 }
 
-//CREATE PLAYER INSTANCE(FIGURE OUT HOW TO REGISTER WHICH PLAYERS ARE IN THE ROOM)
-if !instance_exists(obj_player1)
-{
-    instance_create(x,70,obj_player1)    
-}
 
-//CREATE SECOND PLAYER
-instance_create(50,70,obj_player2)
 
 </string>
           </argument>
@@ -70,34 +65,40 @@ instance_create(50,70,obj_player2)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>GameControls(obj_puzz1);
+            <string>GameControls(obj_puzz1); //&lt;-----Initiate controller controls
 
 //PLAYER 1 ENTERING SHELF SHAKE AREA
 if obj_player1.x &gt;= obj_shelf.x -20 &amp;&amp; obj_player1.x &lt;= obj_shelf.x+20
 {
-    if !instance_exists(obj_P1exclaim)
+    if !instance_exists(obj_P1exclaim) //makes action cue appear
     {
         instance_create(obj_player1.x+5,obj_player1.y-6,obj_P1exclaim);
     }
-    if obj_player1.x &gt;= obj_shelf.x -20 &amp;&amp; obj_player1.x &lt;= obj_shelf.x+20 &amp;&amp; obj_player2.x &gt;= obj_shelf.x -20 &amp;&amp; obj_player2.x &lt;= obj_shelf.x+20
+    
+    if obj_player1.x &gt;= obj_shelf.x -20 &amp;&amp; obj_player1.x &lt;= obj_shelf.x-10 //&lt;--pushing up the LEFT side of the shelf
     {   
-        //Players 1 and 2
-        if ((key_action_press ) || key_action_press)
+        if ((key_action_press)) //x button
         {
-            obj_shelf.image_speed = 1;
+            obj_shelf.image_index = 0;
+            shelflifted_left = true;
             shelfshake += 1;
         }
     }
-
-    else
-    {
-        obj_shelf.image_speed = 0;
+    
+    if obj_player1.x &gt;= obj_shelf.x -20 &amp;&amp; obj_player1.x &lt;= obj_shelf.x-10 //&lt;--pushing up the RIGHT side of the shelf
+    {   
+        if ((key_action_press)) //x button
+        {
+            obj_shelf.image_index = 0;
+            shelflifted_left = true;
+            //shelfshake += 1;
+        }
     }
 }
 
 else
 {
-        if instance_exists(obj_P1exclaim)
+        if instance_exists(obj_P1exclaim) //gets rid of action cue
         {
             instance_destroy(obj_P1exclaim);
         }
@@ -111,11 +112,12 @@ if obj_player2.x &gt;= obj_shelf.x -20 &amp;&amp; obj_player2.x &lt;= obj_shelf.
         instance_create(obj_player2.x+5,obj_player2.y-6,obj_P2exclaim);
     }
     
+
         //Players 1 and 2
-    if ((key_action_press) || key_action_press)
+    if ((key_action_press))
     {
-        obj_shelf.image_speed = 1;
-        shelfshake += 1;
+        //obj_shelf.image_speed = 1;
+        //shelfshake += 1;
     }
 
 
@@ -133,6 +135,64 @@ else
     }
 }
 
+//PLAYER 3 ENTERING SHELF SHAKE AREA
+if obj_player3.x &gt;= obj_shelf.x -20 &amp;&amp; obj_player3.x &lt;= obj_shelf.x+20
+{
+    if !instance_exists(obj_P3exclaim)
+    {
+        instance_create(obj_player3.x+5,obj_player3.y-6,obj_P3exclaim);
+    }
+    if obj_player3.x &gt;= obj_shelf.x -20 &amp;&amp; obj_player3.x &lt;= obj_shelf.x+20
+    {   if keyboard_check_pressed(ord('B'))
+        {
+            obj_shelf.image_speed = 1;
+            shelfshake += 1;
+        }
+    }
+
+    else
+    {
+        obj_shelf.image_speed = 0;
+    }
+}
+
+else
+{
+        if instance_exists(obj_P3exclaim)
+        {
+            instance_destroy(obj_P3exclaim);
+        }
+}
+
+//PLAYER 4 ENTERING SHELF SHAKE AREA
+if obj_player4.x &gt;= obj_shelf.x -20 &amp;&amp; obj_player4.x &lt;= obj_shelf.x+20
+{
+    if !instance_exists(obj_P4exclaim)
+    {
+        instance_create(obj_player4.x+5,obj_player4.y-6,obj_P4exclaim);
+    }
+    if obj_player4.x &gt;= obj_shelf.x -20 &amp;&amp; obj_player4.x &lt;= obj_shelf.x+20
+    {   if keyboard_check_pressed(ord('B')) || keyboard_check_pressed(ord('N'))
+        {
+            obj_shelf.image_speed = 1;
+            shelfshake += 1;
+        }
+    }
+
+    else
+    {
+        obj_shelf.image_speed = 0;
+    }
+}
+
+else
+{
+        if instance_exists(obj_P4exclaim)
+        {
+            instance_destroy(obj_P4exclaim);
+        }
+}
+
 //ACTUAL SHELF SHOOKETHING
 if shelfshake &gt;= 15
 {
@@ -145,7 +205,7 @@ if shelfshake &gt;= 15
 
 if instance_exists(obj_key)
 {
-    if obj_key.y &gt;= 70
+    if obj_key.y &gt;= 69
     {
         obj_key.vspeed = 0;
     }

@@ -1,7 +1,7 @@
 CurrentObject = argument0;
 
-if (CurrentObject == obj_player1) 
-//|| (CurrentObject == obj_versuspointer)
+if ((CurrentObject == obj_player1) 
+|| (CurrentObject == obj_puzz1))
 {
     //gp_shoulderl Left shoulder button 
     //gp_shoulderlb Left shoulder trigger 

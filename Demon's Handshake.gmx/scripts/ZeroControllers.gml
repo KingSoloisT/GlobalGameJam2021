@@ -1,7 +1,7 @@
 CurrentObject = argument0;
 
-if (CurrentObject == obj_player1) 
-//|| (CurrentObject == obj_versuspointer))
+if ((CurrentObject == obj_player1) 
+ || (CurrentObject == obj_puzz1))
 {
     //KEYBOARD 1
     key_up = keyboard_check(ord('W'));

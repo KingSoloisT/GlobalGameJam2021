@@ -10,20 +10,7 @@
   <persistent>0</persistent>
   <colour>12632256</colour>
   <showcolour>-1</showcolour>
-  <code>//MORE JARRET'S BULLSHIT DELETE LATER
-if instance_exists(obj_player1)
-{
-        if instance_exists(obj_player3)
-    {
-        instance_destroy(obj_player3);
-    }
-    
-        if instance_exists(obj_player4)
-    {
-        instance_destroy(obj_player4);
-    }
-}
-//^^^^THAT'S THE STUFF TO DELETE^^^^^^^^</code>
+  <code></code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
@@ -64,7 +51,11 @@ if instance_exists(obj_player1)
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
   </views>
   <instances>
-    <instance objName="obj_puzz1" x="13" y="18" name="inst_D9857378" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_player1" x="44" y="70" name="inst_6E2EF4AB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_player2" x="99" y="70" name="inst_F9E1F706" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_player3" x="136" y="70" name="inst_00EA96E0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_player4" x="8" y="70" name="inst_0464C0CD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_puzz1" x="82" y="37" name="inst_F2525E3F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
