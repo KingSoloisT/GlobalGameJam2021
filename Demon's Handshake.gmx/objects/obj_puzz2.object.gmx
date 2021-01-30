@@ -39,6 +39,13 @@ b_lift = false;
 
 full_piani_lift = false;
 keycollected = false;
+
+//set player check variables
+player1 = false;
+player2 = false;
+player3 = false;
+player4 = false;
+
 </string>
           </argument>
         </arguments>
@@ -63,11 +70,29 @@ keycollected = false;
             <kind>1</kind>
             <string>//much of this code is greasy, but don't worry, it works. next puzzle. NEXT. PUZZLE.
 
+// CHECK WHICH PLAYERS ARE IN THE ROOM
+if instance_exists(obj_player1)
+{
+    player1=true
+}
+if instance_exists(obj_player2)
+{
+    player2=true;
+}
+if instance_exists(obj_player3)
+{
+    player3=true;
+}
+if instance_exists(obj_player4)
+{
+    player4=true;
+}
+
 
 GameControls(obj_puzz2); //&lt;-----Initiate controller controls
 
 //PLAYER 1 ENTERING PIANI LIFT AREA
-if (obj_player1.x &gt;= obj_piani.x -25 &amp;&amp; obj_player1.x &lt;= obj_piani.x-20) || (obj_player1.x &gt;= obj_piani.x +22 &amp;&amp; obj_player1.x &lt;= obj_piani.x +27)
+if (player1=true) &amp;&amp; (obj_player1.x &gt;= obj_piani.x -25 &amp;&amp; obj_player1.x &lt;= obj_piani.x-20) || (player1=true) &amp;&amp; (obj_player1.x &gt;= obj_piani.x +22 &amp;&amp; obj_player1.x &lt;= obj_piani.x +27)
 {
     if !instance_exists(obj_P1exclaim)
     {
@@ -84,32 +109,32 @@ else
 }
 
     
-if (obj_player1.x &gt;= obj_piani.x -25 &amp;&amp; obj_player1.x &lt;= obj_piani.x-20) &amp;&amp; obj_player1.key_action_press &amp;&amp; global.playercount &gt;= 2//LIFT THE PIANI SIDE A (LEFT)
+if player1=true &amp;&amp; (obj_player1.x &gt;= obj_piani.x -25 &amp;&amp; obj_player1.x &lt;= obj_piani.x-20) &amp;&amp; obj_player1.key_action_press &amp;&amp; global.playercount &gt;= 2//LIFT THE PIANI SIDE A (LEFT)
 {
     a_lift = true;
     obj_player1.state = 'aim'
 }
 
-if (obj_player1.x &gt;= obj_piani.x -25 &amp;&amp; obj_player1.x &lt;= obj_piani.x-20) &amp;&amp; obj_player1.key_action_release //DROP THE PIANI
+if player1=true &amp;&amp; (obj_player1.x &gt;= obj_piani.x -25 &amp;&amp; obj_player1.x &lt;= obj_piani.x-20) &amp;&amp; obj_player1.key_action_release //DROP THE PIANI
 {
     a_lift = false;
     obj_player1.state = 'idle'
 }
 
-if (obj_player1.x &gt;= obj_piani.x +22 &amp;&amp; obj_player1.x &lt;= obj_piani.x +27) &amp;&amp; obj_player1.key_action_press &amp;&amp; global.playercount &gt;= 2//LIFT THE PIANI SIDE B (RIGHT
+if player1=true &amp;&amp; (obj_player1.x &gt;= obj_piani.x +22 &amp;&amp; obj_player1.x &lt;= obj_piani.x +27) &amp;&amp; obj_player1.key_action_press &amp;&amp; global.playercount &gt;= 2//LIFT THE PIANI SIDE B (RIGHT
 {
     b_lift = true
     obj_player1.state = 'aim'
 }
 
-if (obj_player1.x &gt;= obj_piani.x +22 &amp;&amp; obj_player1.x &lt;= obj_piani.x +27) &amp;&amp; obj_player1.key_action_release //DROP THE PIANI
+if player1=true &amp;&amp; (obj_player1.x &gt;= obj_piani.x +22 &amp;&amp; obj_player1.x &lt;= obj_piani.x +27) &amp;&amp; obj_player1.key_action_release //DROP THE PIANI
 {
     b_lift = false;
     obj_player1.state = 'idle'
 }
 
 //PLAYER 2 ENTERING PIANI LIFT AREA
-if (obj_player2.x &gt;= obj_piani.x -25 &amp;&amp; obj_player2.x &lt;= obj_piani.x-20) || (obj_player2.x &gt;= obj_piani.x +22 &amp;&amp; obj_player2.x &lt;= obj_piani.x +27)
+if player2=true &amp;&amp; (obj_player2.x &gt;= obj_piani.x -25 &amp;&amp; obj_player2.x &lt;= obj_piani.x-20) || player2=true &amp;&amp; (obj_player2.x &gt;= obj_piani.x +22 &amp;&amp; obj_player2.x &lt;= obj_piani.x +27)
 {
     if !instance_exists(obj_P2exclaim)
     {
@@ -126,32 +151,32 @@ else
 }
 
     
-if (obj_player2.x &gt;= obj_piani.x -25 &amp;&amp; obj_player2.x &lt;= obj_piani.x-20) &amp;&amp; obj_player2.key_action_press &amp;&amp; global.playercount &gt;= 2//LIFT THE PIANI SIDE A (LEFT)
+if player2=true &amp;&amp; (obj_player2.x &gt;= obj_piani.x -25 &amp;&amp; obj_player2.x &lt;= obj_piani.x-20) &amp;&amp; obj_player2.key_action_press &amp;&amp; global.playercount &gt;= 2//LIFT THE PIANI SIDE A (LEFT)
 {
     a_lift = true;
     obj_player2.state = 'aim'
 }
 
-if (obj_player2.x &gt;= obj_piani.x -25 &amp;&amp; obj_player2.x &lt;= obj_piani.x-20) &amp;&amp; obj_player2.key_action_release //DROP THE PIANI
+if player2=true &amp;&amp; (obj_player2.x &gt;= obj_piani.x -25 &amp;&amp; obj_player2.x &lt;= obj_piani.x-20) &amp;&amp; obj_player2.key_action_release //DROP THE PIANI
 {
     a_lift = false;
     obj_player2.state = 'idle'
 }
 
-if (obj_player2.x &gt;= obj_piani.x +22 &amp;&amp; obj_player2.x &lt;= obj_piani.x +27) &amp;&amp; obj_player2.key_action_press &amp;&amp; global.playercount &gt;= 2//LIFT THE PIANI SIDE B (RIGHT
+if player2=true &amp;&amp; (obj_player2.x &gt;= obj_piani.x +22 &amp;&amp; obj_player2.x &lt;= obj_piani.x +27) &amp;&amp; obj_player2.key_action_press &amp;&amp; global.playercount &gt;= 2//LIFT THE PIANI SIDE B (RIGHT
 {
     b_lift = true
     obj_player2.state = 'aim'
 }
 
-if (obj_player2.x &gt;= obj_piani.x +22 &amp;&amp; obj_player2.x &lt;= obj_piani.x +27) &amp;&amp; obj_player2.key_action_release //DROP THE PIANI
+if player2=true &amp;&amp; (obj_player2.x &gt;= obj_piani.x +22 &amp;&amp; obj_player2.x &lt;= obj_piani.x +27) &amp;&amp; obj_player2.key_action_release //DROP THE PIANI
 {
     b_lift = false;
     obj_player2.state = 'idle'
 }
 
 //PLAYER 3 ENTERING PIANI LIFT AREA
-if (obj_player3.x &gt;= obj_piani.x -25 &amp;&amp; obj_player3.x &lt;= obj_piani.x-20) || (obj_player3.x &gt;= obj_piani.x +22 &amp;&amp; obj_player3.x &lt;= obj_piani.x +27)
+if player3=true &amp;&amp; (obj_player3.x &gt;= obj_piani.x -25 &amp;&amp; obj_player3.x &lt;= obj_piani.x-20) || player3=true &amp;&amp; (obj_player3.x &gt;= obj_piani.x +22 &amp;&amp; obj_player3.x &lt;= obj_piani.x +27)
 {
     if !instance_exists(obj_P3exclaim)
     {
@@ -168,32 +193,32 @@ else
 }
 
     
-if (obj_player3.x &gt;= obj_piani.x -25 &amp;&amp; obj_player3.x &lt;= obj_piani.x-20) &amp;&amp; obj_player3.key_action_press &amp;&amp; global.playercount &gt;= 2//LIFT THE PIANI SIDE A (LEFT)
+if player3=true &amp;&amp; (obj_player3.x &gt;= obj_piani.x -25 &amp;&amp; obj_player3.x &lt;= obj_piani.x-20) &amp;&amp; obj_player3.key_action_press &amp;&amp; global.playercount &gt;= 2//LIFT THE PIANI SIDE A (LEFT)
 {
     a_lift = true;
     obj_player3.state = 'aim'
 }
 
-if (obj_player3.x &gt;= obj_piani.x -25 &amp;&amp; obj_player3.x &lt;= obj_piani.x-20) &amp;&amp; obj_player3.key_action_release //DROP THE PIANI
+if player3=true &amp;&amp; (obj_player3.x &gt;= obj_piani.x -25 &amp;&amp; obj_player3.x &lt;= obj_piani.x-20) &amp;&amp; obj_player3.key_action_release //DROP THE PIANI
 {
     a_lift = false;
     obj_player3.state = 'idle'
 }
 
-if (obj_player3.x &gt;= obj_piani.x +22 &amp;&amp; obj_player3.x &lt;= obj_piani.x +27) &amp;&amp; obj_player3.key_action_press &amp;&amp; global.playercount &gt;= 2//LIFT THE PIANI SIDE B (RIGHT
+if player3=true &amp;&amp; (obj_player3.x &gt;= obj_piani.x +22 &amp;&amp; obj_player3.x &lt;= obj_piani.x +27) &amp;&amp; obj_player3.key_action_press &amp;&amp; global.playercount &gt;= 2//LIFT THE PIANI SIDE B (RIGHT
 {
     b_lift = true
     obj_player3.state = 'aim'
 }
 
-if (obj_player3.x &gt;= obj_piani.x +22 &amp;&amp; obj_player3.x &lt;= obj_piani.x +27) &amp;&amp; obj_player3.key_action_release //DROP THE PIANI
+if player3=true &amp;&amp; (obj_player3.x &gt;= obj_piani.x +22 &amp;&amp; obj_player3.x &lt;= obj_piani.x +27) &amp;&amp; obj_player3.key_action_release //DROP THE PIANI
 {
     b_lift = false;
     obj_player3.state = 'idle'
 }
 
 //PLAYER 4 ENTERING PIANI LIFT AREA
-if (obj_player4.x &gt;= obj_piani.x -25 &amp;&amp; obj_player4.x &lt;= obj_piani.x-20) || (obj_player4.x &gt;= obj_piani.x +22 &amp;&amp; obj_player4.x &lt;= obj_piani.x +27)
+if player4=true &amp;&amp; (obj_player4.x &gt;= obj_piani.x -25 &amp;&amp; obj_player4.x &lt;= obj_piani.x-20) || player4=true &amp;&amp; (obj_player4.x &gt;= obj_piani.x +22 &amp;&amp; obj_player4.x &lt;= obj_piani.x +27)
 {
     if !instance_exists(obj_P4exclaim)
     {
@@ -210,25 +235,25 @@ else
 }
 
     
-if (obj_player4.x &gt;= obj_piani.x -25 &amp;&amp; obj_player4.x &lt;= obj_piani.x-20) &amp;&amp; obj_player4.key_action_press &amp;&amp; global.playercount &gt;= 2//LIFT THE PIANI SIDE A (LEFT)
+if player4=true &amp;&amp; (obj_player4.x &gt;= obj_piani.x -25 &amp;&amp; obj_player4.x &lt;= obj_piani.x-20) &amp;&amp; obj_player4.key_action_press &amp;&amp; global.playercount &gt;= 2//LIFT THE PIANI SIDE A (LEFT)
 {
     a_lift = true;
     obj_player4.state = 'aim'
 }
 
-if (obj_player4.x &gt;= obj_piani.x -25 &amp;&amp; obj_player4.x &lt;= obj_piani.x-20) &amp;&amp; obj_player4.key_action_release //DROP THE PIANI
+if player4=true &amp;&amp; (obj_player4.x &gt;= obj_piani.x -25 &amp;&amp; obj_player4.x &lt;= obj_piani.x-20) &amp;&amp; obj_player4.key_action_release //DROP THE PIANI
 {
     a_lift = false;
     obj_player4.state = 'idle'
 }
 
-if (obj_player4.x &gt;= obj_piani.x +22 &amp;&amp; obj_player4.x &lt;= obj_piani.x +27) &amp;&amp; obj_player4.key_action_press &amp;&amp; global.playercount &gt;= 2//LIFT THE PIANI SIDE B (RIGHT
+if player4=true &amp;&amp; (obj_player4.x &gt;= obj_piani.x +22 &amp;&amp; obj_player4.x &lt;= obj_piani.x +27) &amp;&amp; obj_player4.key_action_press &amp;&amp; global.playercount &gt;= 2//LIFT THE PIANI SIDE B (RIGHT
 {
     b_lift = true
     obj_player4.state = 'aim'
 }
 
-if (obj_player4.x &gt;= obj_piani.x +22 &amp;&amp; obj_player4.x &lt;= obj_piani.x +27) &amp;&amp; obj_player4.key_action_release //DROP THE PIANI
+if player4=true &amp;&amp; (obj_player4.x &gt;= obj_piani.x +22 &amp;&amp; obj_player4.x &lt;= obj_piani.x +27) &amp;&amp; obj_player4.key_action_release //DROP THE PIANI
 {
     b_lift = false;
     obj_player4.state = 'idle'

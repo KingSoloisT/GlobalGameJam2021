@@ -44,6 +44,7 @@
       <sprite>sprites\spr_shelf</sprite>
       <sprite>sprites\spr_piani</sprite>
       <sprite>sprites\spr_lever</sprite>
+      <sprite>sprites\spr_whiskeybarrel</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -106,7 +107,9 @@
         <object>objects\obj_puzz1</object>
         <object>objects\obj_puzz2</object>
         <object>objects\obj_puzz3</object>
+        <object>objects\obj_puzz4</object>
       </objects>
+      <object>objects\obj_puzzletestspawner</object>
     </objects>
     <object>objects\obj_goal</object>
   </objects>

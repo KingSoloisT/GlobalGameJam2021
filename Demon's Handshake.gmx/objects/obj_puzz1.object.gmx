@@ -39,6 +39,12 @@ if !instance_exists(obj_key)
     instance_create(obj_shelf.x,obj_shelf.y-3,obj_key);
 }
 
+//set player check variables
+player1 = false;
+player2 = false;
+player3 = false;
+player4 = false;
+
 
 
 </string>
@@ -65,8 +71,26 @@ if !instance_exists(obj_key)
             <kind>1</kind>
             <string>GameControls(obj_puzz1); //&lt;-----Initiate controller controls
 
+// CHECK WHICH PLAYERS ARE IN THE ROOM
+if instance_exists(obj_player1)
+{
+    player1=true;
+}
+if instance_exists(obj_player2)
+{
+    player2=true;
+}
+if instance_exists(obj_player3)
+{
+    player3=true;
+}
+if instance_exists(obj_player4)
+{
+    player4=true;
+}
+
 //PLAYER 1 ENTERING SHELF SHAKE AREA
-if obj_player1.x &gt;= obj_shelf.x -20 &amp;&amp; obj_player1.x &lt;= obj_shelf.x+20
+if player1 = true &amp;&amp; obj_player1.x &gt;= obj_shelf.x -20 &amp;&amp; obj_player1.x &lt;= obj_shelf.x+20
 {
     if !instance_exists(obj_P1exclaim) //makes action cue appear
     {
@@ -101,7 +125,7 @@ else
 }
 
 //PLAYER 2 ENTERING SHELF SHAKE AREA
-if obj_player2.x &gt;= obj_shelf.x -20 &amp;&amp; obj_player2.x &lt;= obj_shelf.x+20
+if player2 = true &amp;&amp; obj_player2.x &gt;= obj_shelf.x -20 &amp;&amp; obj_player2.x &lt;= obj_shelf.x+20
 {
     if !instance_exists(obj_P2exclaim)
     {
@@ -137,7 +161,7 @@ else
 }
 
 //PLAYER 3 ENTERING SHELF SHAKE AREA
-if obj_player3.x &gt;= obj_shelf.x -20 &amp;&amp; obj_player3.x &lt;= obj_shelf.x+20
+if player3 = true &amp;&amp; obj_player3.x &gt;= obj_shelf.x -20 &amp;&amp; obj_player3.x &lt;= obj_shelf.x+20
 {
     if !instance_exists(obj_P3exclaim)
     {
@@ -171,7 +195,7 @@ else
 }
 
 //PLAYER 4 ENTERING SHELF SHAKE AREA
-if obj_player4.x &gt;= obj_shelf.x -20 &amp;&amp; obj_player4.x &lt;= obj_shelf.x+20
+if player4 = true &amp;&amp; obj_player4.x &gt;= obj_shelf.x -20 &amp;&amp; obj_player4.x &lt;= obj_shelf.x+20
 {
     if !instance_exists(obj_P4exclaim)
     {
