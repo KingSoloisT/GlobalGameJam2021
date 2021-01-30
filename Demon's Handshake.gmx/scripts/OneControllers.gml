@@ -1,7 +1,7 @@
 CurrentObject = argument0;
 
-if ((CurrentObject == obj_player1) 
-|| (CurrentObject == obj_puzz1))
+//if ((CurrentObject == obj_player1)
+if (ObjectControls("P1"))
 {
     //gp_shoulderlb Left shoulder button 
     //gp_shoulderlbb Left shoulder trigger 
@@ -28,8 +28,8 @@ if ((CurrentObject == obj_player1)
     key_shoot_press = gamepad_button_check_pressed(4, gp_shoulderrb); 
     key_shoot_release =  gamepad_button_check_released(4, gp_shoulderrb);
 }
-else if (CurrentObject == obj_player2) 
-//|| (CurrentObject == obj_versuspointer2))
+//else if (CurrentObject == obj_player2)
+else if (ObjectControls("P2"))
 {
     //KEYBOARD 1
     key_up = keyboard_check(ord('W'));
@@ -49,8 +49,8 @@ else if (CurrentObject == obj_player2)
     key_shoot_press = keyboard_check_pressed(ord('V'));
     key_shoot_release = keyboard_check_released(ord('V'));
 }
-else if (CurrentObject == obj_player3) 
-//|| (CurrentObject == obj_versuspointer3))
+//else if (CurrentObject == obj_player3)
+else if (ObjectControls("P3"))
 {
     //Keyboard 2
     key_up = keyboard_check(vk_up);
@@ -70,8 +70,8 @@ else if (CurrentObject == obj_player3)
     key_shoot_press = keyboard_check_pressed(ord('L'));
     key_shoot_release = keyboard_check_released(ord('L'));
 }
-else if (CurrentObject == obj_player4) 
-//|| (CurrentObject == obj_versuspointer4))
+//else if (CurrentObject == obj_player4) 
+else if (ObjectControls("P4"))
 {
     //KEYBOARD 3
     key_up = keyboard_check(ord('J'));
