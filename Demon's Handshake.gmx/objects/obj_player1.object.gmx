@@ -78,8 +78,8 @@ gamepad_set_vibration(0,0,0);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//GameControls(obj_player1);
-test_controller1();
+            <string>GameControls(obj_player1);
+//test_controller1();
 //vibe
 if global.player_villan = 'player1' &amp;&amp; vibe = false
 {

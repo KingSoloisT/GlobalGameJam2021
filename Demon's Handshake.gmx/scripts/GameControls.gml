@@ -35,3 +35,5 @@ CurrentObject = argument0
         break;
         
     }
+    
+    //FourControllers(argument0);
