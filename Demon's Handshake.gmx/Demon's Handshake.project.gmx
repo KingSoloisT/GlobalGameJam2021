@@ -29,12 +29,14 @@
     <sprite>sprites\spr_player4_head</sprite>
     <sprite>sprites\spr_bullet</sprite>
     <sprite>sprites\spr_key</sprite>
+    <sprite>sprites\spr_master_key</sprite>
     <sprite>sprites\spr_bullet_hud</sprite>
     <sprite>sprites\spr_bullet_spent</sprite>
-    <sprite>sprites\obj_door_locked</sprite>
+    <sprite>sprites\spr_door_locked</sprite>
     <sprite>sprites\spr_hall</sprite>
     <sprite>sprites\spr_stairs_up</sprite>
     <sprite>sprites\spr_stairs_down</sprite>
+    <sprite>sprites\spr_goal</sprite>
     <sprite>sprites\spr_PuzzleTemplateRED</sprite>
     <sprite>sprites\spr_PuzzleTemplateGREEN</sprite>
     <sprite>sprites\spr_PuzzleTemplateBLUE</sprite>
@@ -62,6 +64,10 @@
     <script>scripts\ThreeControllers.gml</script>
     <script>scripts\FourControllers.gml</script>
     <script>scripts\ObjectControls.gml</script>
+    <script>scripts\test_controller1.gml</script>
+    <script>scripts\test_controller2.gml</script>
+    <script>scripts\test_controller3.gml</script>
+    <script>scripts\test_controller4.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font_hud</font>
@@ -76,6 +82,7 @@
     <object>objects\obj_player4</object>
     <object>objects\obj_control</object>
     <object>objects\obj_key</object>
+    <object>objects\obj_master_key</object>
     <object>objects\obj_door</object>
     <object>objects\obj_open_door</object>
     <object>objects\obj_stairs_up</object>
@@ -101,6 +108,7 @@
         <object>objects\obj_puzz3</object>
       </objects>
     </objects>
+    <object>objects\obj_goal</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_game</room>

@@ -95,6 +95,12 @@ if obj_player4.bullet = 1
 {draw_sprite_ext(spr_bullet_hud,0,3100,970,10,10,0,c_white,1);}
 else
 {draw_sprite_ext(spr_bullet_spent,0,3100,970,10,10,0,c_white,1);}
+
+/* //maybe i think the original idea is beauty but sure maybe this
+if !instance_exists(obj_key) &amp;&amp; obj_door.sprite_index = spr_door_locked
+{
+    if !instance_exists(obj_master_key){instance_create(518,158,obj_master_key)}
+}
 </string>
           </argument>
         </arguments>

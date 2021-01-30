@@ -18,7 +18,7 @@ instance_create(0,0,obj_GameControls);
 
 global.key = 0;
 global.key_total = 0;
-global.key_needed = 15;
+global.key_needed = 1;
 global.player1_key = 0;
 global.player2_key = 0;
 global.player3_key = 0;
@@ -78,6 +78,7 @@ instance_create(0,0,obj_PuzzleRandomizer);</code>
     <instance objName="obj_stairs_down" x="505" y="160" name="inst_790297E7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_open_door" x="640" y="105" name="inst_0811B061" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_door" x="479" y="105" name="inst_83278E0C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_goal" x="479" y="89" name="inst_36AE2F76" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

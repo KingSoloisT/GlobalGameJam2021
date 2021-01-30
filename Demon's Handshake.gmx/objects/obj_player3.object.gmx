@@ -78,7 +78,8 @@ gamepad_set_vibration(2,0,0);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>GameControls(obj_player3);
+            <string>//GameControls(obj_player3);
+test_controller3();
 
 if global.player_villan = 'player3' &amp;&amp; vibe = false
 {
@@ -143,18 +144,27 @@ if state = 'draw'
     if (key_aim)
     {
         sprite_index = spr_player3_draw;
-        if ((key_shoot_press) &amp;&amp; bullet = 1)
+        if ((key_shoot_press)  &amp;&amp; bullet = 1) 
         {
-            flash = true;
-            bullet -= 1;
-            if facing = 'right'
+            if global.player_villan = 'player3'
             {
-            if !instance_exists(obj_bulletR){instance_create(x+10,y-8,obj_bulletR)}
+                flash = true;
+                bullet -= 1;
             }
-                        
-            if facing = 'left'
+            else
             {
-            if !instance_exists(obj_bulletL){instance_create(x-10,y-8,obj_bulletL)}
+                    flash = true;
+                    bullet -= 1;
+                
+                if facing = 'right'
+                {
+                if !instance_exists(obj_bulletR){instance_create(x+10,y-8,obj_bulletR)}
+                }
+                            
+                if facing = 'left'
+                {
+                if !instance_exists(obj_bulletL){instance_create(x-10,y-8,obj_bulletL)}
+                }
             }
         }
     }
@@ -204,6 +214,10 @@ if place_meeting(x,y,obj_stairs_down) &amp;&amp; (key_down) //add press up
     y = obj_stairs_up.y
 }
 
+if place_meeting(x,y,obj_door) &amp;&amp; (key_action_press) &amp;&amp; global.key_total = global.key_needed &amp;&amp; obj_goal.goal = true
+{
+    obj_door.sprite_index = spr_hall;
+}
 
 
 </string>
