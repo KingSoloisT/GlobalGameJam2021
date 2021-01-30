@@ -32,10 +32,17 @@
 ListofPuzzles = ds_list_create();
 
 //ADD ALL THE PUZZLES HERE
+
 //ds_list_add(ListofPuzzles, obj_PuzzleTemplateRED);
 //ds_list_add(ListofPuzzles, obj_PuzzleTemplateBLUE);
 //ds_list_add(ListofPuzzles, obj_PuzzleTemplateGREEN);
+
 ds_list_add(ListofPuzzles, obj_puzz1);
+ds_list_add(ListofPuzzles, obj_puzz2);
+ds_list_add(ListofPuzzles, obj_puzz3);
+ds_list_add(ListofPuzzles, obj_puzz4);
+ds_list_add(ListofPuzzles, obj_puzz5);
+ds_list_add(ListofPuzzles, obj_puzz6);
 
 
 ds_list_shuffle(ListofPuzzles);
@@ -68,7 +75,17 @@ for (j=0; j&lt;8; j+=1)
         );
         */
         
-        //GameLayout[ j , i ] = choose(
+        WallHallLayout[ j , i ] = choose(
+        obj_RoomLeftHallRed,
+        obj_RoomLeftHallRedWood,
+        obj_RoomLeftWallRed,
+        obj_RoomLeftWallRedWood,
+        obj_RoomRightHallRed,
+        obj_RoomRightHallRedWood,
+        obj_RoomRightWallRed,
+        obj_RoomRightWallRedWood
+        )
+        
     }
 }
 
@@ -99,6 +116,9 @@ for (j=0; j&lt;8; j+=1) //8 is the width or amount of puzzles in the room horizo
         }
         else
         {
+        
+            instance_create(j * 160,i * 90, WallHallLayout[j, i]);
+            
             //Room Puzzle Width and Height - OLD WAY***
             //instance_create(j * 160,i * 90, GameLayout[j, i]);
             if (ds_list_size(ListofPuzzles) &gt;= 1)

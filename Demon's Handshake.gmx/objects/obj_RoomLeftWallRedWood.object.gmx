@@ -3,7 +3,7 @@
   <spriteName>spr_redwood_room</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>10</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>instance_create(x,y, spr_end_wall_brown);
+            <string>instance_create(x,y, spr_end_wall);
 </string>
           </argument>
         </arguments>

@@ -174,9 +174,14 @@
     </objects>
     <object>objects\obj_goal</object>
     <objects name="Background Objects">
-      <object>objects\obj_RoomLeftWallRedWood</object>
-      <object>objects\obj_RoomRightWallRedWood</object>
+      <object>objects\obj_RoomLeftHallRed</object>
+      <object>objects\obj_RoomLeftHallRedWood</object>
       <object>objects\obj_RoomLeftWallRed</object>
+      <object>objects\obj_RoomLeftWallRedWood</object>
+      <object>objects\obj_RoomRightHallRed</object>
+      <object>objects\obj_RoomRightHallRedWood</object>
+      <object>objects\obj_RoomRightWallRed</object>
+      <object>objects\obj_RoomRightWallRedWood</object>
     </objects>
   </objects>
   <rooms name="rooms">

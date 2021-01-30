@@ -25,8 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>instance_create(x + 160 - 12,y, spr_end_wall);
-//Maybe need to tweek 12 a bit.
+            <string>instance_create(x,y, spr_hall);
 </string>
           </argument>
         </arguments>
