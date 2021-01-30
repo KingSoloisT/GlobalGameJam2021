@@ -81,17 +81,23 @@ if obj_player1.x &gt;= obj_shelf.x -20 &amp;&amp; obj_player1.x &lt;= obj_shelf.
         {
             obj_shelf.image_index = 0;
             shelflifted_left = true;
-            shelfshake += 1;
+            if shelflifted_left = true &amp;&amp; shelflifted_right = false
+            {
+                shelfshake += 1;
+            }
+        }
+        else
+        {
+            shelflifted_left = false;
         }
     }
     
-    if obj_player1.x &gt;= obj_shelf.x -20 &amp;&amp; obj_player1.x &lt;= obj_shelf.x-10 //&lt;--pushing up the RIGHT side of the shelf
+    if obj_player1.x &gt;= obj_shelf.x +10 &amp;&amp; obj_player1.x &lt;= obj_shelf.x+20 //&lt;--pushing up the RIGHT side of the shelf
     {   
         if ((key_action_press)) //x button
         {
-            obj_shelf.image_index = 0;
-            shelflifted_left = true;
-            //shelfshake += 1;
+            obj_shelf.image_index = 2;
+            shelflifted_right = true;
         }
     }
 }
