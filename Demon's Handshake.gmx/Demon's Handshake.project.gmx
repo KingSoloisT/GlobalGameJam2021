@@ -32,9 +32,6 @@
     <sprite>sprites\spr_master_key</sprite>
     <sprite>sprites\spr_bullet_hud</sprite>
     <sprite>sprites\spr_bullet_spent</sprite>
-    <sprite>sprites\spr_door_locked</sprite>
-    <sprite>sprites\spr_hall</sprite>
-    <sprite>sprites\spr_end_wall</sprite>
     <sprite>sprites\spr_stairs_up</sprite>
     <sprite>sprites\spr_stairs_down</sprite>
     <sprite>sprites\spr_goal</sprite>
@@ -46,6 +43,30 @@
       <sprite>sprites\spr_piani</sprite>
       <sprite>sprites\spr_lever</sprite>
       <sprite>sprites\spr_whiskeybarrel</sprite>
+    </sprites>
+    <sprites name="backgrounds">
+      <sprite>sprites\spr_saloon</sprite>
+      <sprite>sprites\spr_red_room</sprite>
+      <sprite>sprites\spr_redwood_room</sprite>
+      <sprite>sprites\spr_end_wall</sprite>
+      <sprite>sprites\spr_hall</sprite>
+      <sprite>sprites\spr_door_locked</sprite>
+      <sprite>sprites\spr_green_room</sprite>
+      <sprite>sprites\spr_greenwood_room</sprite>
+      <sprite>sprites\spr_end_wall_green</sprite>
+      <sprite>sprites\spr_hall_green</sprite>
+      <sprite>sprites\spr_brown_room</sprite>
+      <sprite>sprites\spr_brownwood_room</sprite>
+      <sprite>sprites\spr_hall_brown</sprite>
+      <sprite>sprites\spr_end_wall_brown</sprite>
+      <sprite>sprites\spr_grey_room</sprite>
+      <sprite>sprites\spr_greywood_room</sprite>
+      <sprite>sprites\spr_end_wall_grey</sprite>
+      <sprite>sprites\spr_hall_grey</sprite>
+      <sprite>sprites\spr_tan_room</sprite>
+      <sprite>sprites\spr_tanwood_room</sprite>
+      <sprite>sprites\spr_hall_tan</sprite>
+      <sprite>sprites\spr_end_wall_tan</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
