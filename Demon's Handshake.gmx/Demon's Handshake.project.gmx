@@ -145,6 +145,9 @@
         <object>objects\obj_puzz5</object>
       </objects>
       <object>objects\obj_bucket</object>
+      <objects name="Puzzle Key Decoys">
+        <object>objects\obj_puzz1key</object>
+      </objects>
     </objects>
     <object>objects\obj_goal</object>
   </objects>

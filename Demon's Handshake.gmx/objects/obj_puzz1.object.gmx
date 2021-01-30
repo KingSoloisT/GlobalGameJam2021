@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>shelfshake = 0; //When this variable hits 15 the key will fall from the shelf.
+shelfkeycollected = false;
 global.playercount = 0;
 //CREATE SHELF
 if !instance_exists(obj_shelf)
@@ -33,11 +34,12 @@ if !instance_exists(obj_shelf)
     instance_create(room_width/2,room_height/2,obj_shelf);
 }
 
-//CREATE KEY
-if !instance_exists(obj_key)
+//CREATE PUZZLE 1 SPECIFIC KEY
+if !instance_exists(obj_puzz1key)
 {
-    instance_create(obj_shelf.x,obj_shelf.y-3,obj_key);
+    instance_create(obj_shelf.x,obj_shelf.y-3,obj_puzz1key);
 }
+
 
 //set player check variables
 player1 = false;
@@ -92,7 +94,7 @@ if instance_exists(obj_player4)
 //PLAYER 1 ENTERING SHELF SHAKE AREA
 if player1 = true &amp;&amp; obj_player1.x &gt;= obj_shelf.x -20 &amp;&amp; obj_player1.x &lt;= obj_shelf.x+20
 {
-    if !instance_exists(obj_P1exclaim) //makes action cue appear
+    if !instance_exists(obj_P1exclaim) &amp;&amp; shelfkeycollected = false //makes action cue appear
     {
         instance_create(obj_player1.x+5,obj_player1.y-6,obj_P1exclaim);   
     }
@@ -127,7 +129,7 @@ else
 //PLAYER 2 ENTERING SHELF SHAKE AREA
 if player2 = true &amp;&amp; obj_player2.x &gt;= obj_shelf.x -20 &amp;&amp; obj_player2.x &lt;= obj_shelf.x+20
 {
-    if !instance_exists(obj_P2exclaim)
+    if !instance_exists(obj_P2exclaim) &amp;&amp; shelfkeycollected = false
     {
         instance_create(obj_player2.x+5,obj_player2.y-6,obj_P2exclaim);
     }
@@ -163,7 +165,7 @@ else
 //PLAYER 3 ENTERING SHELF SHAKE AREA
 if player3 = true &amp;&amp; obj_player3.x &gt;= obj_shelf.x -20 &amp;&amp; obj_player3.x &lt;= obj_shelf.x+20
 {
-    if !instance_exists(obj_P3exclaim)
+    if !instance_exists(obj_P3exclaim) &amp;&amp; shelfkeycollected = false
     {
         instance_create(obj_player3.x+5,obj_player3.y-6,obj_P3exclaim);
     }
@@ -197,7 +199,7 @@ else
 //PLAYER 4 ENTERING SHELF SHAKE AREA
 if player4 = true &amp;&amp; obj_player4.x &gt;= obj_shelf.x -20 &amp;&amp; obj_player4.x &lt;= obj_shelf.x+20
 {
-    if !instance_exists(obj_P4exclaim)
+    if !instance_exists(obj_P4exclaim) &amp;&amp; shelfkeycollected = false
     {
         instance_create(obj_player4.x+5,obj_player4.y-6,obj_P4exclaim);
     }
@@ -231,21 +233,29 @@ else
 //ACTUAL SHELF SHOOKETHING
 if shelfshake &gt;= 15
 {
-    if instance_exists(obj_key)
+    if instance_exists(obj_puzz1key)
     {
-        obj_key.vspeed = 2;
+        obj_puzz1key.vspeed = 2;
     }
     obj_shelf.image_index = 1;
 }
 
-if instance_exists(obj_key)
+if instance_exists(obj_puzz1key)
 {
-    if obj_key.y &gt;= 69
+    if obj_puzz1key.y &gt;= obj_puzz1.y+67
     {
-        obj_key.vspeed = 0;
+        obj_puzz1key.vspeed = 0;
     }
 }
 
+if instance_exists(obj_puzz1key) &amp;&amp; obj_puzz1key.y &gt;= +67
+{
+    instance_destroy(obj_puzz1key)
+    instance_create(obj_puzz1.x+80,obj_puzz1.y+69,obj_key)
+    shelfkeycollected = true;
+}
+
+/*
 //KEY IS GONE, NO MORE SHAKE CUES
 if !instance_exists(obj_key)
 {

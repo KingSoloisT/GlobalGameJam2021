@@ -159,7 +159,7 @@ if player1=true &amp;&amp; (obj_player1.x &gt;= obj_whiskeybarrel.x -20 &amp;&am
 
 
 
-//MANNING THE SPOUT % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+//PLACING THE BUCKET % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 
 if (player1=true) &amp;&amp; (obj_player1.x &gt;= obj_whiskeybarrel.x +22 &amp;&amp; obj_player1.x &lt;= obj_whiskeybarrel.x +27)//&lt;-----------------Position Parameter
     &amp;&amp; obj_player1.key_action_press //&lt;----------------------------------------------------------------------------------------press action key
