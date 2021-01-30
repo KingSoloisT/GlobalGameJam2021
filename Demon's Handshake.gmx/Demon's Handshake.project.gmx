@@ -40,6 +40,7 @@
     <sprites name="PUZZLE SPRITES">
       <sprite>sprites\spr_shelf</sprite>
       <sprite>sprites\spr_piani</sprite>
+      <sprite>sprites\spr_lever</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -84,6 +85,7 @@
       <object>objects\obj_puzztestobj</object>
       <object>objects\obj_piani</object>
       <object>objects\obj_shelf</object>
+      <object>objects\obj_lever</object>
       <object>objects\obj_P1exclaim</object>
       <object>objects\obj_P2exclaim</object>
       <object>objects\obj_P3exclaim</object>
@@ -91,6 +93,7 @@
       <objects name="Actual Puzzles">
         <object>objects\obj_puzz1</object>
         <object>objects\obj_puzz2</object>
+        <object>objects\obj_puzz3</object>
       </objects>
     </objects>
   </objects>
