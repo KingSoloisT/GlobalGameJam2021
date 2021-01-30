@@ -34,6 +34,7 @@ for (j=0; j&lt;8; j+=1)
 {
     for (i=0; i&lt;3; i+=1)
     {
+        //ADD OBJECT PUZZLES HERE
         GameLayout[ j , i ] = choose(
         obj_PuzzleTemplateRED, 
         obj_PuzzleTemplateGREEN,
@@ -44,7 +45,7 @@ for (j=0; j&lt;8; j+=1)
 
 //ADD ANY FORCED PUZZLE OR DOOR FEATURES HERE
 
-//FORCE THE END PUZZLE HERE!
+//ADD THE END PUZZLE HERE! to force the correct placement
 GameLayout[0,1] = obj_PuzzleTemplateRED; //ADDD END PUZZLE HERE!!!
 
 for (j=0; j&lt;8; j+=1) //8 is the width or amount of puzzles in the room horizontally
@@ -70,6 +71,14 @@ for (j=0; j&lt;8; j+=1) //8 is the width or amount of puzzles in the room horizo
         
     }
 }
+
+//Add RANDOM STAIR OBJECT PLACEMENT
+instance_create(irandom(7) * 160 + (16 * 3), 2 * 90 - 20, obj_stairs_up);
+instance_create(obj_stairs_up.x, obj_stairs_up.y - 90, obj_stairs_down)
+
+instance_create(irandom(7) * 160 + (16 * 6), 2 * 90 - 20, obj_stairs_down2);
+instance_create(obj_stairs_down2.x, obj_stairs_down2.y + 90, obj_stairs_up2)
+
 </string>
           </argument>
         </arguments>

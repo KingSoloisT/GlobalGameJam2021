@@ -80,6 +80,10 @@ gamepad_set_vibration(1,0,0);
           <argument>
             <kind>1</kind>
             <string>GameControls(obj_player2);
+
+//Center Camera in the view properly while going up and down stairs.
+view_yview[1] = obj_player2.y + 20 - 90;
+
 //test_controller2();
 
 if global.player_villan = 'player2' &amp;&amp; vibe = false

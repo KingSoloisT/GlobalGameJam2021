@@ -57,10 +57,10 @@ instance_create(0,0,obj_PuzzleRandomizer);</code>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
   </backgrounds>
   <views>
-    <view visible="-1" objName="obj_player1" xview="0" yview="0" wview="1600" hview="900" xport="0" yport="0" wport="1600" hport="900" hborder="32" vborder="0" hspeed="-1" vspeed="0"/>
-    <view visible="-1" objName="obj_player2" xview="480" yview="90" wview="160" hview="90" xport="1601" yport="0" wport="1600" hport="900" hborder="32" vborder="0" hspeed="-1" vspeed="-1"/>
-    <view visible="-1" objName="obj_player3" xview="480" yview="90" wview="160" hview="90" xport="0" yport="901" wport="1600" hport="900" hborder="32" vborder="0" hspeed="-1" vspeed="-1"/>
-    <view visible="-1" objName="obj_player4" xview="480" yview="90" wview="160" hview="90" xport="1601" yport="901" wport="1600" hport="900" hborder="32" vborder="0" hspeed="-1" vspeed="-1"/>
+    <view visible="-1" objName="obj_player1" xview="480" yview="90" wview="160" hview="90" xport="0" yport="0" wport="1600" hport="900" hborder="32" vborder="0" hspeed="-1" vspeed="0"/>
+    <view visible="-1" objName="obj_player2" xview="480" yview="90" wview="160" hview="90" xport="1601" yport="0" wport="1600" hport="900" hborder="32" vborder="0" hspeed="-1" vspeed="0"/>
+    <view visible="-1" objName="obj_player3" xview="480" yview="90" wview="160" hview="90" xport="0" yport="901" wport="1600" hport="900" hborder="32" vborder="0" hspeed="-1" vspeed="0"/>
+    <view visible="-1" objName="obj_player4" xview="480" yview="90" wview="160" hview="90" xport="1601" yport="901" wport="1600" hport="900" hborder="32" vborder="0" hspeed="-1" vspeed="0"/>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
@@ -74,13 +74,9 @@ instance_create(0,0,obj_PuzzleRandomizer);</code>
     <instance objName="obj_control" x="9" y="5" name="inst_FF22FA65" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_key" x="618" y="158" name="inst_FE1FDD3B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_puzztestobj" x="40" y="5" name="inst_04AD7B57" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_stairs_up" x="632" y="160" name="inst_41D91B9A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_stairs_down" x="505" y="160" name="inst_790297E7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_open_door" x="640" y="105" name="inst_0811B061" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_door" x="479" y="105" name="inst_83278E0C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_goal" x="479" y="89" name="inst_36AE2F76" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_stairs_up2" x="651" y="160" name="inst_972DDF12" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_stairs_down2" x="679" y="160" name="inst_59E3CF19" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_goal" x="479" y="90" name="inst_36AE2F76" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
