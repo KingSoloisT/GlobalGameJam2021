@@ -73,6 +73,8 @@ GameLayout[4, 2] = obj_PuzzleTemplateBLUE;
 GameLayout[5, 2] = obj_PuzzleTemplateBLUE;
 GameLayout[6, 2] = obj_PuzzleTemplateBLUE;
 GameLayout[7, 2] = obj_PuzzleTemplateBLUE;
+
+instance_create(0,0, obj_PuzzleTemplateRED);
 </string>
           </argument>
         </arguments>
