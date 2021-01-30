@@ -39,15 +39,6 @@ if !instance_exists(obj_key)
     instance_create(obj_lever.x,obj_lever.y-10,obj_key);
 }
 
-//CREATE PLAYER INSTANCE(FIGURE OUT HOW TO REGISTER WHICH PLAYERS ARE IN THE ROOM)
-if !instance_exists(obj_player1)
-{
-    instance_create(x,70,obj_player1)    
-}
-
-//CREATE SECOND PLAYER
-instance_create(50,70,obj_player2)
-
 </string>
           </argument>
         </arguments>
@@ -70,16 +61,17 @@ instance_create(50,70,obj_player2)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//PLAYER 1 ENTERING LEVER ACTION
-//if obj_player1.x &gt;= obj_lever.x-5 and obj_player1.x &lt;= obj_lever.x+5
-if obj_player1.x = obj_lever.x
+            <string>GameControls(obj_puzz3);
+
+//PLAYER 1 ENTERING LEVER ACTION
+if obj_player1.x &gt;= obj_lever.x-10 and obj_player1.x &lt;= obj_lever.x+10
 {
     if !instance_exists(obj_P1exclaim)
     {
-        instance_create(obj_player1.x+5,obj_player1.y-6,obj_P2exclaim);
+        instance_create(obj_player1.x+5,obj_player1.y-6,obj_P1exclaim);
     }
     
-    if keyboard_check_pressed(ord('N')) || keyboard_check_pressed(ord('B'))
+    if (key_action)
     {
         obj_lever.image_index = 1;
         pump += 1;
@@ -100,14 +92,14 @@ else
 }
 
 //PLAYER 2 ENTERING LEVER ACTION
-if obj_player2.x = obj_lever.x
+if obj_player2.x &gt;= obj_lever.x-10 and obj_player2.x &lt;= obj_lever.x+10
 {
     if !instance_exists(obj_P2exclaim)
     {
         instance_create(obj_player2.x+5,obj_player2.y-6,obj_P2exclaim);
     }
     
-    if keyboard_check_pressed(ord('N')) || keyboard_check_pressed(ord('B'))
+    if (key_action)
     {
         obj_lever.image_index = 2;
         pump += 1;
@@ -128,14 +120,14 @@ else
 }
 
 //IF PLAYERS LEVER AT THE SAME TIME
-if obj_player1.x &gt;= obj_lever.x-20 and obj_player1.x &lt;= obj_lever.x+20
+/*if obj_player1.x &gt;= obj_lever.x-20 and obj_player1.x &lt;= obj_lever.x+20
 {
     if !instance_exists(obj_P1exclaim)
     {
         instance_create(obj_player1.x+5,obj_player1.y-6,obj_P1exclaim);
     }
     if obj_player1.x &gt;= obj_lever.x-20 and obj_player1.x &lt;= obj_lever.x+20 and obj_player2.x &gt;= obj_lever.x-20 and obj_player2.x &lt;= obj_lever.x+20
-    {   if keyboard_check_pressed(ord('B')) || keyboard_check_pressed(ord('N'))
+    {   if (key_action)
         {
             obj_lever.image_index = 0;
             pump -= 1;
@@ -155,8 +147,7 @@ else
             instance_destroy(obj_P1exclaim);
         }
 }
-
-
+*/
 //ACTUAL LEVER ACTIONING
 if pump &gt;= 10
 {
