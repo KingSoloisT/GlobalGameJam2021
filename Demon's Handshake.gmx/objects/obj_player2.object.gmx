@@ -53,20 +53,22 @@ spd = 1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if state = 'idle'
+            <string>GameControls(obj_player2);
+
+if state = 'idle'
 {
-    sprite_index = spr_player2;
-     if keyboard_check(ord('J'))//variable
+    sprite_index = spr_player2; 
+     if (key_left)
     {
         state = 'left';
     }
     
-    if keyboard_check(ord('L'))
+    if (key_right)
     {
         state = 'right';
     }
     
-    if keyboard_check(ord('N'))
+    if (key_aim)
     {
         state = 'draw';
     }
@@ -78,7 +80,7 @@ if state = 'left'
     sprite_index = spr_player2_walk;
     image_xscale = -1;
     facing = 'left';
-    if keyboard_check(ord('J'))
+    if (key_left)
     {
         x -= spd; //variable spd
     } 
@@ -94,7 +96,7 @@ if state = 'right'
     sprite_index = spr_player2_walk;
     image_xscale = 1;
     facing = 'right';
-    if keyboard_check(ord('L'))
+    if (key_right)
     {
         x += spd;
     } 
@@ -106,21 +108,21 @@ if state = 'right'
 
 if state = 'draw'
 {
-    if keyboard_check(ord('N'))
+    if (key_aim)
     {
         sprite_index = spr_player2_draw;
-        if keyboard_check_pressed(ord('M')) &amp;&amp; bullet = 1
+        if ((key_shoot_press) &amp;&amp; bullet = 1)
         {
             flash = true;
             bullet -= 1;
             if facing = 'right'
             {
-            if !instance_exists(obj_bulletR){instance_create(x+8,y-8,obj_bulletR)}
+            if !instance_exists(obj_bulletR){instance_create(x,y-8,obj_bulletR)}
             }
                         
             if facing = 'left'
             {
-            if !instance_exists(obj_bulletL){instance_create(x-10,y-8,obj_bulletL)}
+            if !instance_exists(obj_bulletR){instance_create(x,y-8,obj_bulletL)}
             }
         }
     }

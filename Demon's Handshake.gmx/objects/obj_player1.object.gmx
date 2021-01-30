@@ -53,20 +53,22 @@ spd = 1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if state = 'idle'
+            <string>GameControls(obj_player1);
+
+if state = 'idle'
 {
     sprite_index = spr_player1;
-     if keyboard_check(ord('A'))//variable
+     if (key_left)//variable
     {
         state = 'left';
     }
     
-    if keyboard_check(ord('D'))
+    if (key_right)
     {
         state = 'right';
     }
     
-    if keyboard_check(ord('C'))
+    if (key_aim)
     {
         state = 'draw';
     }
@@ -78,7 +80,7 @@ if state = 'left'
     sprite_index = spr_player1_walk;
     image_xscale = -1;
     facing = 'left';
-    if keyboard_check(ord('A'))
+    if (key_left)
     {
         x -= spd; //variable spd
     } 
@@ -94,7 +96,7 @@ if state = 'right'
     sprite_index = spr_player1_walk;
     image_xscale = 1;
     facing = 'right';
-    if keyboard_check(ord('D'))
+    if key_right
     {
         x += spd;
     } 
@@ -106,10 +108,10 @@ if state = 'right'
 
 if state = 'draw'
 {
-    if keyboard_check(ord('C'))
+    if (key_aim)
     {
         sprite_index = spr_player1_draw;
-        if keyboard_check_pressed(ord('V')) &amp;&amp; bullet = 1
+        if ((key_shoot_press)  &amp;&amp; bullet = 1)
         {
             flash = true;
             bullet -= 1;
