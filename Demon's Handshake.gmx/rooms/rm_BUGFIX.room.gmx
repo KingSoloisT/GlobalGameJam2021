@@ -12,8 +12,8 @@
   <showcolour>-1</showcolour>
   <code>//ADD TO THE FIRST MENU ROOM START!!!
 randomize();
-GlobalVariableInitialization();
-instance_create(0,0,obj_GameControls);
+//GlobalVariableInitialization();
+//instance_create(0,0,obj_GameControls);
 //ADD TO THE FIRST MENU ROOM END!!!
 
 global.key = 0;

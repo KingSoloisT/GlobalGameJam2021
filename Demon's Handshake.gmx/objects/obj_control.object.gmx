@@ -90,10 +90,11 @@ draw_sprite_ext(spr_key,1,2950,825,20,20,0,c_white,1);
 draw_sprite_ext(spr_key,1,1350,1725,20,20,0,c_white,1);
 draw_sprite_ext(spr_key,1,2950,1725,20,20,0,c_white,1);
 
-draw_text(1475,792,global.player1_key);
-draw_text(3075,792,global.player2_key);
-draw_text(1475,1692,global.player3_key);
-draw_text(3075,1692,global.player4_key);
+draw_text(1475,800,global.player1_key);
+draw_text(3075,800,global.player2_key);
+draw_text(1475,1700,global.player3_key);
+draw_text(3075,1700,global.player4_key);
+
 draw_sprite_ext(spr_player1_head,0,100,70,10,10,0,c_white,1);
 draw_sprite_ext(spr_player2_head,0,1700,70,10,10,0,c_white,1);
 draw_sprite_ext(spr_player3_head,0,100,970,10,10,0,c_white,1);
