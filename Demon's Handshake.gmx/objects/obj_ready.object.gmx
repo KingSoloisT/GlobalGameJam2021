@@ -100,7 +100,7 @@ if gamepad_button_check_pressed(3, gp_face1) || keyboard_check_pressed(vk_add)
             <string>
 draw_set_alpha(0.8);
 draw_set_colour(c_black);
-draw_rectangle(0,0,1600,900,false);
+draw_rectangle(0,0,1600*4,900*4,false);
 draw_set_alpha(1);
 draw_set_font(font_hud);
 draw_set_colour(c_white);

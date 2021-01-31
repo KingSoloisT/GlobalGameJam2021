@@ -120,6 +120,16 @@ if obj_player4.bullet = 1
 else
 {draw_sprite_ext(spr_bullet_spent,0,3100,970,10,10,0,c_white,1);}
 
+if (global.player_villan = 'player1' &amp;&amp;  obj_player1.state = 'dead')
+||
+(global.player_villan = 'player2' &amp;&amp;  obj_player2.state = 'dead')
+||
+(global.player_villan = 'player3' &amp;&amp;  obj_player3.state = 'dead')
+||
+(global.player_villan = 'player4' &amp;&amp;  obj_player4.state = 'dead')
+{
+ global.winner = 'villian' ;   
+}
 /* //maybe i think the original idea is beauty but sure maybe this
 if !instance_exists(obj_key) &amp;&amp; obj_door.sprite_index = spr_door_locked
 {

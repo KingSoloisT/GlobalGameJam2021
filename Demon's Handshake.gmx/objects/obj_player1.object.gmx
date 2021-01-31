@@ -148,6 +148,7 @@ if state = "idle"
     if place_meeting(x,y,obj_door) &amp;&amp; (key_action_press) &amp;&amp; global.key_total = global.key_needed &amp;&amp; obj_goal.goal = true
     {
         obj_door.sprite_index = spr_hall;
+        room_goto(rm_result);  
     }
 }
 

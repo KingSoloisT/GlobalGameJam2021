@@ -54,18 +54,17 @@
             <kind>1</kind>
             <string>draw_set_alpha(0.8);
 draw_set_colour(c_black);
-draw_rectangle(450,500,1600,900,false);
+draw_rectangle(750*2,600*2,1600*2,900*2,false);
 draw_set_alpha(1);
-draw_set_font(font_hud);
+draw_set_font(font_logo);
 draw_set_colour(c_white);
 draw_set_halign(fa_center);
-draw_text(400,150,'LOCKED IN#AND LOADED');
-draw_set_font(font_hud);
+draw_text(400*2,150*2,'LOCKED IN#AND LOADED');
 draw_set_halign(fa_left);
-draw_text(750,540,'START GAME##HOW TO PLAY##QUIT GAME');
-if menu = 1 {draw_sprite_ext(spr_bullet_hud,0,630,580,10,10,270,c_white,1);}
-if menu = 2 {draw_sprite_ext(spr_bullet_hud,0,630,715,10,10,270,c_white,1);}
-if menu = 3 {draw_sprite_ext(spr_bullet_hud,0,630,850,10,10,270,c_white,1);}
+draw_text(1050*2,640*2,'START GAME##HOW TO PLAY##QUIT GAME');
+if menu = 1 {draw_sprite_ext(spr_bullet_hud,0,900*2,660*2,10,10,270,c_white,1);}
+if menu = 2 {draw_sprite_ext(spr_bullet_hud,0,900*2,740*2,10,10,270,c_white,1);}
+if menu = 3 {draw_sprite_ext(spr_bullet_hud,0,900*2,820*2,10,10,270,c_white,1);}
 
 
 //draw_set_valign(fa_center);

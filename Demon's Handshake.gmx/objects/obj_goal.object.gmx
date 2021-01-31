@@ -58,7 +58,14 @@ goal = false;
 }
 else
 {
-    player1 = false;
+    if obj_player1.state = 'dead' 
+    { 
+        player1 = true;
+    }
+    else
+    {
+        player1 = false;
+    }
 }
 
 if place_meeting(x,y,obj_player2)
@@ -67,7 +74,14 @@ if place_meeting(x,y,obj_player2)
 }
 else
 {
-    player2 = false;
+    if obj_player2.state = 'dead' 
+    { 
+        player2 = true;
+    }
+    else
+    {
+        player2 = false;
+    }
 }
 
 if place_meeting(x,y,obj_player3)
@@ -76,7 +90,14 @@ if place_meeting(x,y,obj_player3)
 }
 else
 {
-    player3 = false;
+    if obj_player3.state = 'dead' 
+    { 
+        player3 = true;
+    }
+    else
+    {
+        player3 = false;
+    }
 }
 
 if place_meeting(x,y,obj_player4)
@@ -85,7 +106,14 @@ if place_meeting(x,y,obj_player4)
 }
 else
 {
-    player4 = false;
+    if obj_player4.state = 'dead'
+    { 
+        player4 = true;
+    }
+    else
+    {
+        player4 = false;
+    }
 }
 
 if player1 = true &amp;&amp; player2 = true &amp;&amp; player3 = true &amp;&amp; player4 = true 

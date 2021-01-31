@@ -11,7 +11,7 @@
   <colour>0</colour>
   <showcolour>-1</showcolour>
   <code>instance_create(x,y,obj_results);
-instance_create(x,y,obj_MenuControl);</code>
+//instance_create(x,y,obj_MenuControl);</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
