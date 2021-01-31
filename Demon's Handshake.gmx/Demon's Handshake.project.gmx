@@ -107,6 +107,7 @@
     <background>background\background1</background>
     <background>background\bkg_background</background>
     <background>background\bkg_grid</background>
+    <background>background\foreground_doors</background>
     <backgrounds name="PUZZLE TESTING">
       <background>background\PUZZLETEST</background>
     </backgrounds>
