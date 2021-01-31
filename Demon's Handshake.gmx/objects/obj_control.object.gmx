@@ -56,7 +56,7 @@ draw_rectangle(1600,0,3200,900,true);
 draw_rectangle(0,900,1600,1798,true);
 draw_rectangle(1600,900,3200,1798,true);
 //remove later testing stuff
-/*
+
 if global.player_villan = 'player1'
 {
     draw_set_colour(c_red);
@@ -82,8 +82,8 @@ if global.player_villan = 'player4'
 }
 draw_set_colour(c_white);
 draw_text(100,790,global.key_total);
-//
-*/
+
+
 
 draw_sprite_ext(spr_key,1,1350,825,20,20,0,c_white,1);
 draw_sprite_ext(spr_key,1,2950,825,20,20,0,c_white,1);

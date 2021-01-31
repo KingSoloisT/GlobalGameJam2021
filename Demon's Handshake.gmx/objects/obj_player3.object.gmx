@@ -228,7 +228,7 @@ if state = 'dead'
 }
 
 //col
-if place_meeting(x,y,(obj_key)
+if (place_meeting(x,y,(obj_key)
 || place_meeting(x,y,(obj_puzz0key)) 
 || place_meeting(x,y,(obj_puzz1key)) 
 || place_meeting(x,y,(obj_puzz2key)) 
@@ -250,6 +250,7 @@ if place_meeting(x,y,(obj_key)
 //|| place_meeting(x,y,(obj_puzz18key))
 //|| place_meeting(x,y,(obj_puzz19key))
 
+)
 )
 {
     global.player3_key +=1;

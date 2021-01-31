@@ -18,7 +18,8 @@ instance_create(0,0,obj_GameControls);
 
 global.key = 0;
 global.key_total = 0;
-global.key_needed = choose(15,14,13,12);
+//global.key_needed = choose(15,14,13,12);
+global.key_needed = choose(1);
 global.player1_key = 0;
 global.player2_key = 0;
 global.player3_key = 0;
