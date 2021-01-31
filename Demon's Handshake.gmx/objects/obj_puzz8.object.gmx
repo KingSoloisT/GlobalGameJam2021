@@ -34,45 +34,11 @@ player2 = false;
 player3 = false;
 player4 = false;
 
-//safe
-//player 1
-safe = false;
-safe1 = false;
-safe2 = false;
-safe3 = false;
-safe4 = false;
+instance_create(92,67,obj_floorhole);
+instance_create(92,68,obj_crate);
 
-//player2
-safe5 = false;
-safe6 = false;
-safe7 = false;
-safe8 = false;
-safe9 = false;
-
-//player3
-safe10 = false;
-safe11 = false;
-safe12 = false;
-safe13 = false;
-safe14 = false;
-
-//player4
-safe15 = false;
-safe16 = false;
-safe17 = false;
-safe18 = false;
-safe19 = false;
-
-key_place = choose(1,2,3,4,5);//5
-
-
-instance_create(40,66,obj_safe);
-instance_create(66,66,obj_safe1);
-instance_create(92,66,obj_safe2);
-instance_create(118,66,obj_safe3);
-instance_create(144,66,obj_safe4);
-
-
+cratex = 0;
+crate = false;
 
 
 
@@ -118,6 +84,20 @@ if instance_exists(obj_player4)
     player4=true;
 }
 
+if crate = true &amp;&amp; obj_player1.key_action_press &amp;&amp; obj_player1.facing = 'right'
+{
+    crate += 1;
+    obj_crate.x+=1;
+}
+
+if crate = true &amp;&amp; obj_player1.key_action_press &amp;&amp; obj_player1.facing = 'left'
+{
+    crate -= 1;
+    obj_crate.x-=1;
+}
+
+
+/*
 
 //player 1
 if safe = true &amp;&amp; obj_player1.key_action_press &amp;&amp; obj_safe.sprite_index = spr_safe

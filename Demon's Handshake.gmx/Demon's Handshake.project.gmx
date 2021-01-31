@@ -88,6 +88,7 @@
     </sprites>
     <sprites name="crate puzzle">
       <sprite>sprites\spr_crate</sprite>
+      <sprite>sprites\spr_floorhole</sprite>
     </sprites>
     <sprites name="beltpuzzle">
       <sprite>sprites\spr_belt</sprite>
@@ -167,6 +168,7 @@
         <object>objects\obj_puzz4</object>
         <object>objects\obj_puzz5</object>
         <object>objects\obj_puzz6</object>
+        <object>objects\obj_puzz8</object>
         <object>objects\obj_puzz0</object>
         <object>objects\obj_puzzX</object>
       </objects>
@@ -181,7 +183,11 @@
         <object>objects\obj_safe2</object>
         <object>objects\obj_safe3</object>
         <object>objects\obj_safe4</object>
-        <object>objects\obj_safe5</object>
+        <object>objects\obj_puzz6key</object>
+      </objects>
+      <objects name="puzzlecrate">
+        <object>objects\obj_crate</object>
+        <object>objects\obj_floorhole</object>
       </objects>
     </objects>
     <object>objects\obj_goal</object>
