@@ -107,6 +107,12 @@
       <sprite>sprites\spr_belt</sprite>
       <sprite>sprites\spr_belt_lever</sprite>
     </sprites>
+    <sprites name="buttonspuzzle">
+      <sprite>sprites\spr_button_door</sprite>
+      <sprite>sprites\spr_button_dooropen</sprite>
+      <sprite>sprites\spr_button</sprite>
+      <sprite>sprites\spr_button_on</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bkg_saloon</background>
@@ -118,6 +124,8 @@
     <backgrounds name="PUZZLE TESTING">
       <background>background\PUZZLETEST</background>
     </backgrounds>
+    <background>background\bkg_ready</background>
+    <background>background\bkg_start</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -181,19 +189,23 @@
       <object>objects\obj_bucket</object>
       <object>objects\obj_puzzletestspawner</object>
       <objects name="Actual Puzzles">
+        <object>objects\obj_puzz0</object>
         <object>objects\obj_puzz1</object>
         <object>objects\obj_puzz2</object>
         <object>objects\obj_puzz3</object>
         <object>objects\obj_puzz4</object>
         <object>objects\obj_puzz5</object>
         <object>objects\obj_puzz6</object>
+        <object>objects\obj_puzz7</object>
         <object>objects\obj_puzz8</object>
         <object>objects\obj_puzz9</object>
         <object>objects\obj_puzz10</object>
-        <object>objects\obj_puzz12</object>
-        <object>objects\obj_puzz0</object>
-        <object>objects\obj_puzz7</object>
         <object>objects\obj_puzz11</object>
+        <object>objects\obj_puzz12</object>
+        <object>objects\obj_puzz13</object>
+        <object>objects\obj_puzz14</object>
+        <object>objects\obj_puzz15</object>
+        <object>objects\obj_puzz16</object>
         <object>objects\obj_puzzX</object>
       </objects>
       <objects name="Puzzle Key Decoys">
@@ -234,6 +246,22 @@
         <object>objects\obj_skeet_target</object>
         <object>objects\obj_skeet_bullet</object>
         <object>objects\obj_skeet_key</object>
+      </objects>
+      <objects name="BUTTTONNNSSS!!!!">
+        <object>objects\obj_button_door</object>
+        <object>objects\obj_button_1</object>
+        <object>objects\obj_button_2</object>
+        <object>objects\obj_button_3</object>
+        <object>objects\obj_button_door2</object>
+        <object>objects\obj_button2_1</object>
+        <object>objects\obj_button2_2</object>
+        <object>objects\obj_button_door3</object>
+        <object>objects\obj_button3_1</object>
+        <object>objects\obj_button_door4</object>
+        <object>objects\obj_button4_1</object>
+        <object>objects\obj_button4_2</object>
+        <object>objects\obj_button4_3</object>
+        <object>objects\obj_button4_4</object>
       </objects>
     </objects>
     <object>objects\obj_goal</object>
@@ -301,9 +329,13 @@
         <object>objects\obj_RoomRightWallTanWood</object>
       </objects>
     </objects>
+    <object>objects\obj_ready</object>
+    <object>objects\obj_results</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_ready</room>
     <room>rooms\rm_game</room>
+    <room>rooms\rm_result</room>
     <room>rooms\testing</room>
     <room>rooms\rm_puzz</room>
   </rooms>

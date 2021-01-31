@@ -33,6 +33,33 @@ else
 {
     obj_puzz12.gun = false;
 }
+
+if place_meeting(x,y,obj_player2)
+{
+    obj_puzz12.gun2 = true;
+}
+else 
+{
+    obj_puzz12.gun2 = false;
+}
+
+if place_meeting(x,y,obj_player3)
+{
+    obj_puzz12.gun3 = true;
+}
+else 
+{
+    obj_puzz12.gun3 = false;
+}
+
+if place_meeting(x,y,obj_player4)
+{
+    obj_puzz12.gun4 = true;
+}
+else 
+{
+    obj_puzz12.gun4 = false;
+}
 </string>
           </argument>
         </arguments>
@@ -59,6 +86,53 @@ else
 {
     obj_skeet_gun.sprite_index = spr_skeet_gun
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_self();
+
+image_speed = 0.5;
+if obj_puzz12.solved = false{
+    if place_meeting(x,y,obj_player1) 
+    {
+        draw_sprite_ext(spr_exclaim,image_index++,obj_player1.x+5,obj_player1.y-6,1,1,0,c_white,1);
+    }
+    
+    if place_meeting(x,y,obj_player2) 
+    {
+        draw_sprite_ext(spr_exclaim,image_index++,obj_player2.x+5,obj_player2.y-6,1,1,0,c_white,1);
+    }
+    
+    if place_meeting(x,y,obj_player3) 
+    {
+        draw_sprite_ext(spr_exclaim,image_index++,obj_player3.x+5,obj_player3.y-6,1,1,0,c_white,1);
+    }
+    
+    if place_meeting(x,y,obj_player4) 
+    {
+        draw_sprite_ext(spr_exclaim,image_index++,obj_player4.x+5,obj_player4.y-6,1,1,0,c_white,1);
+    }
+}
+
 </string>
           </argument>
         </arguments>

@@ -34,18 +34,19 @@ player2 = false;
 player3 = false;
 player4 = false;
 
-gun = false;
-gun2 = false;
-gun3 = false;
-gun4 = false;
-plate = false;
-plate2 = false;
-plate3 = false;
-plate4 = false;
-solved = false;
 
-instance_create(obj_puzz12.x+102,obj_puzz12.y+68,obj_skeet_gun);
-instance_create(obj_puzz12.x+62,obj_puzz12.y+68,obj_skeet_plates);
+instance_create(obj_puzz13.x+40,obj_puzz13.y+66,obj_button_door);
+instance_create(obj_puzz13.x+66,obj_puzz13.y+72,obj_button_1);
+instance_create(obj_puzz13.x+97,obj_puzz13.y+72,obj_button_2);
+instance_create(obj_puzz13.x+128,obj_puzz13.y+72,obj_button_3);
+
+solved = false;
+key = false
+
+button = false;
+button2 = false;
+button3 = false;
+
 
 
 
@@ -95,6 +96,12 @@ if instance_exists(obj_player4)
     player4=true;
 }
 
+if button = true &amp;&amp; button2 = true &amp;&amp; button3 = true
+{
+    solved = true;
+}
+
+/*
 //player 1
 if gun = true &amp;&amp; obj_player1.key_action_press &amp;&amp; solved = false
 {

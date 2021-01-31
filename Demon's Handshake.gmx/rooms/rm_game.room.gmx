@@ -18,13 +18,13 @@ instance_create(0,0,obj_GameControls);
 
 global.key = 0;
 global.key_total = 0;
-global.key_needed = 1;
+global.key_needed = choose(15,14,13,12);
 global.player1_key = 0;
 global.player2_key = 0;
 global.player3_key = 0;
 global.player4_key = 0;
 global.player_villan = choose('player1','player2','player3','player4');
-
+global.winner = ' ' ;
 
 instance_create(0,0,obj_PuzzleRandomizer);</code>
   <enableViews>-1</enableViews>
