@@ -192,14 +192,68 @@
     </objects>
     <object>objects\obj_goal</object>
     <objects name="Background Objects">
-      <object>objects\obj_RoomLeftHallRed</object>
-      <object>objects\obj_RoomLeftHallRedWood</object>
-      <object>objects\obj_RoomLeftWallRed</object>
-      <object>objects\obj_RoomLeftWallRedWood</object>
-      <object>objects\obj_RoomRightHallRed</object>
-      <object>objects\obj_RoomRightHallRedWood</object>
-      <object>objects\obj_RoomRightWallRed</object>
-      <object>objects\obj_RoomRightWallRedWood</object>
+      <objects name="Brown Backgrounds">
+        <object>objects\obj_RoomLeftandRightHallBrown</object>
+        <object>objects\obj_RoomLeftandRightHallBrownWood</object>
+        <object>objects\obj_RoomLeftHallBrown</object>
+        <object>objects\obj_RoomLeftHallBrownWood</object>
+        <object>objects\obj_RoomLeftWallBrown</object>
+        <object>objects\obj_RoomLeftWallBrownWood</object>
+        <object>objects\obj_RoomRightHallBrown</object>
+        <object>objects\obj_RoomRightHallBrownWood</object>
+        <object>objects\obj_RoomRightWallBrown</object>
+        <object>objects\obj_RoomRightWallBrownWood</object>
+      </objects>
+      <objects name="Green Backgrounds">
+        <object>objects\obj_RoomLeftandRightHallGreen</object>
+        <object>objects\obj_RoomLeftandRightHallGreenWood</object>
+        <object>objects\obj_RoomLeftHallGreen</object>
+        <object>objects\obj_RoomLeftHallGreenWood</object>
+        <object>objects\obj_RoomLeftWallGreen</object>
+        <object>objects\obj_RoomLeftWallGreenWood</object>
+        <object>objects\obj_RoomRightHallGreen</object>
+        <object>objects\obj_RoomRightHallGreenWood</object>
+        <object>objects\obj_RoomRightWallGreen</object>
+        <object>objects\obj_RoomRightWallGreenWood</object>
+      </objects>
+      <objects name="Grey Backgrounds">
+        <object>objects\obj_RoomLeftandRightHallGrey</object>
+        <object>objects\obj_RoomLeftandRightHallGreyWood</object>
+        <object>objects\obj_RoomLeftHallGrey</object>
+        <object>objects\obj_RoomLeftHallGreyWood</object>
+        <object>objects\obj_RoomLeftWallGrey</object>
+        <object>objects\obj_RoomLeftWallGreyWood</object>
+        <object>objects\obj_RoomRightHallGrey</object>
+        <object>objects\obj_RoomRightHallGreyWood</object>
+        <object>objects\obj_RoomRightWallGrey</object>
+        <object>objects\obj_RoomRightWallGreyWood</object>
+      </objects>
+      <object>objects\obj_RoomLeftWallLocked</object>
+      <object>objects\obj_RoomSaloon</object>
+      <objects name="Red Backgrounds">
+        <object>objects\obj_RoomLeftandRightHallRed</object>
+        <object>objects\obj_RoomLeftandRightHallRedWood</object>
+        <object>objects\obj_RoomLeftHallRed</object>
+        <object>objects\obj_RoomLeftHallRedWood</object>
+        <object>objects\obj_RoomLeftWallRed</object>
+        <object>objects\obj_RoomLeftWallRedWood</object>
+        <object>objects\obj_RoomRightHallRed</object>
+        <object>objects\obj_RoomRightHallRedWood</object>
+        <object>objects\obj_RoomRightWallRed</object>
+        <object>objects\obj_RoomRightWallRedWood</object>
+      </objects>
+      <objects name="Tan Backgrounds">
+        <object>objects\obj_RoomLeftandRightHallTan</object>
+        <object>objects\obj_RoomLeftandRightHallTanWood</object>
+        <object>objects\obj_RoomLeftHallTan</object>
+        <object>objects\obj_RoomLeftHallTanWood</object>
+        <object>objects\obj_RoomLeftWallTan</object>
+        <object>objects\obj_RoomLeftWallTanWood</object>
+        <object>objects\obj_RoomRightHallTan</object>
+        <object>objects\obj_RoomRightHallTanWood</object>
+        <object>objects\obj_RoomRightWallTan</object>
+        <object>objects\obj_RoomRightWallTanWood</object>
+      </objects>
     </objects>
   </objects>
   <rooms name="rooms">

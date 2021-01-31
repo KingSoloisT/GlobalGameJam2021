@@ -30,97 +30,176 @@
 //j = x
 
 ListofPuzzles = ds_list_create();
-
-//ADD ALL THE PUZZLES HERE
+ListofLeftWalls = ds_list_create();
+ListofRightWalls = ds_list_create();
+ListofLeftHalls = ds_list_create();
+ListofRightHalls = ds_list_create();
+ListofLeftandRightHalls = ds_list_create();
 
 //ds_list_add(ListofPuzzles, obj_PuzzleTemplateRED);
 //ds_list_add(ListofPuzzles, obj_PuzzleTemplateBLUE);
 //ds_list_add(ListofPuzzles, obj_PuzzleTemplateGREEN);
 
-ds_list_add(ListofPuzzles, obj_puzz1);
-ds_list_add(ListofPuzzles, obj_puzz2);
-ds_list_add(ListofPuzzles, obj_puzz3);
-ds_list_add(ListofPuzzles, obj_puzz4);
-ds_list_add(ListofPuzzles, obj_puzz5);
-ds_list_add(ListofPuzzles, obj_puzz6);
+//ADD ALL THE PUZZLES HERE
+ds_list_add(ListofPuzzles, obj_puzz1,
+obj_puzz2,
+obj_puzz3,
+obj_puzz4,
+obj_puzz5,
+obj_puzz6
+//obj_puzz7,
+);
+
+//ADD LEFT WALLS
+ds_list_add(ListofLeftWalls, 
+obj_RoomLeftWallRed,
+obj_RoomLeftWallRedWood,
+obj_RoomLeftWallGreen,
+obj_RoomLeftWallGreenWood,
+obj_RoomLeftWallBrown,
+obj_RoomLeftWallBrownWood,
+obj_RoomLeftWallGrey,
+obj_RoomLeftWallGreyWood,
+obj_RoomLeftWallTan,
+obj_RoomLeftWallTanWood
+);
+
+//ADD RIGHT WALLS
+ds_list_add(ListofRightWalls, 
+obj_RoomRightWallRed,
+obj_RoomRightWallRedWood,
+obj_RoomRightWallGreen,
+obj_RoomRightWallGreenWood,
+obj_RoomRightWallBrown,
+obj_RoomRightWallBrownWood,
+obj_RoomRightWallGrey,
+obj_RoomRightWallGreyWood,
+obj_RoomRightWallTan,
+obj_RoomRightWallTanWood
+);
+
+//ADD LEFT HALLS
+ds_list_add(ListofLeftHalls, 
+obj_RoomLeftHallRed,
+obj_RoomLeftHallRedWood,
+obj_RoomLeftHallGreen,
+obj_RoomLeftHallGreenWood,
+obj_RoomLeftHallBrown,
+obj_RoomLeftHallBrownWood,
+obj_RoomLeftHallGrey,
+obj_RoomLeftHallGreyWood,
+obj_RoomLeftHallTan,
+obj_RoomLeftHallTanWood
+);
 
 
+//ADD RIGHT HALLS
+ds_list_add(ListofRightHalls, 
+obj_RoomRightHallRed,
+obj_RoomRightHallRedWood,
+obj_RoomRightHallGreen,
+obj_RoomRightHallGreenWood,
+obj_RoomRightHallBrown,
+obj_RoomRightHallBrownWood,
+obj_RoomRightHallGrey,
+obj_RoomRightHallGreyWood,
+obj_RoomRightHallTan,
+obj_RoomRightHallTanWood
+);
+
+//ADD LEFT AND RIGHT HALLS
+ds_list_add(ListofLeftandRightHalls,
+obj_RoomLeftandRightHallRed,
+obj_RoomLeftandRightHallRedWood,
+obj_RoomLeftandRightHallGreen,
+obj_RoomLeftandRightHallGreenWood,
+obj_RoomLeftandRightHallBrown,
+obj_RoomLeftandRightHallBrownWood,
+obj_RoomLeftandRightHallGrey,
+obj_RoomLeftandRightHallGreyWood,
+obj_RoomLeftandRightHallTan,
+obj_RoomLeftandRightHallTanWood
+);
+
+//RANDOMIZE THE LISTS
 ds_list_shuffle(ListofPuzzles);
+ds_list_shuffle(ListofLeftWalls);
+ds_list_shuffle(ListofRightWalls);
+ds_list_shuffle(ListofLeftHalls);
+ds_list_shuffle(ListofRightHalls);
+ds_list_shuffle(ListofLeftandRightHalls);
 
-//Initialize Game Puzzle Template array.
-for (j=0; j&lt;8; j+=1)
-{
-    for (i=0; i&lt;3; i+=1)
-    {
-        
-        /*
-        ds_list_add(ListofPuzzles,
-        choose(
-        obj_PuzzleTemplateRED,
-        obj_PuzzleTemplateGREEN,
-        obj_PuzzleTemplateBLUE));
-        */
-        
-        
-        /* - OLD WAY***
-        //ADD OBJECT PUZZLES HERE
-        GameLayout[ j , i ] = choose(
-        obj_PuzzleTemplateRED,
-        obj_PuzzleTemplateGREEN,
-        obj_PuzzleTemplateBLUE
-        //obj_puzz1,
-        //obj_puzz2,
-        //obj_puzz3,
-        //obj_puzz4
-        );
-        */
-        
-        WallHallLayout[ j , i ] = choose(
-        obj_RoomLeftHallRed,
-        obj_RoomLeftHallRedWood,
-        obj_RoomLeftWallRed,
-        obj_RoomLeftWallRedWood,
-        obj_RoomRightHallRed,
-        obj_RoomRightHallRedWood,
-        obj_RoomRightWallRed,
-        obj_RoomRightWallRedWood
-        )
-        
-    }
-}
-
-//ADD ANY FORCED PUZZLE OR DOOR FEATURES HERE
-
-//ADD THE END PUZZLE HERE! to force the correct placement
-//GameLayout[0,1] = obj_PuzzleTemplateRED; //ADDD END PUZZLE HERE!!! - OLD WAY
-
+//Cycle threw the "Room Grid" Width = 7 and Height = 3
 for (j=0; j&lt;8; j+=1) //8 is the width or amount of puzzles in the room horizontally
 {
     for (i=0; i&lt;3; i+=1) //3 is the hight of the puzzles and room
     {
-        //Walls on the left side.
-        if ((j == 0) &amp;&amp; (i == 0 || i == 1 || i == 2))
-        {
-            instance_create(j * 160, i * 90 + 15, obj_end_wall);
-        }   //Walls on the right side.
-        else if ((j == 7) &amp;&amp; (i == 0 || i == 1 || i == 2))
-        {
-            //12 is the width of the spr_end_wall to move it left to be visable.
-            instance_create(j * 160 - 12, i * 90 + 15, obj_end_wall);
-        }
-        
         //FORCES END 
         if (j == 0 &amp;&amp; i == 1)
         {
-            instance_create(j * 160, i * 90, obj_PuzzleTemplateRED); //ADDD END PUZZLE HERE!!! - NEW WAY
+            //CREATE LOCKED ROOM
+            instance_create(j * 160, i * 90, obj_RoomLeftWallLocked);
+            instance_create(j * 160, i * 90 + 15, obj_door);
+        }
+        else if (j == 3 &amp;&amp; i == 1)
+        {
+            instance_create(j * 160, i * 90, obj_RoomSaloon);
+        }
+        //Walls on the left side.
+        else if ((j == 0) &amp;&amp; (i == 0 || i == 1 || i == 2))
+        {
+            //instance_create(j * 160, i * 90 + 15, obj_end_wall);
+            instance_create(j * 160, i * 90, ds_list_find_value(ListofLeftWalls, 0));
+            ds_list_delete(ListofLeftWalls, 0);
+        }   //Walls on the right side.
+        else if ((j == 6) &amp;&amp; (i == 0 || i == 1 || i == 2))
+        {
+            //12 is the width of the spr_end_wall to move it left to be visable.
+            //instance_create(j * 160 - 12, i * 90 + 15, obj_end_wall);
+            instance_create(j * 160, i * 90, ds_list_find_value(ListofRightWalls, 0));
+            ds_list_delete(ListofRightWalls, 0);
+        }//Halls on the left side.
+        else if ((j == 1 || j == 2) &amp;&amp; ((i == 0) || (i == 1) || (i == 2)))
+        {
+            if (ds_list_size(ListofLeftHalls) &gt;= 1)
+            {
+                instance_create(j * 160,i * 90, ds_list_find_value(ListofLeftHalls, 0));
+                //removes the value from the slot
+                ds_list_delete(ListofLeftHalls, 0);
+            }
+        }
+        else if ((j == 4 || j == 5) &amp;&amp; ((i == 0) || (i == 1) || (i == 2)))
+        {
+            if (ds_list_size(ListofRightHalls) &gt;= 1)
+            {
+                instance_create(j * 160,i * 90, ds_list_find_value(ListofRightHalls, 0));
+                //removes the value from the slot
+                ds_list_delete(ListofRightHalls, 0);
+            }
+        }//Top and bottom middle rooms
+        else if ((j == 3) &amp;&amp; ((i == 0) || (i == 2)))
+        {
+            if (ds_list_size(ListofLeftandRightHalls) &gt;= 1)
+            {
+                instance_create(j * 160,i * 90, ds_list_find_value(ListofLeftandRightHalls, 0));
+                //removes the value from the slot
+                ds_list_delete(ListofLeftandRightHalls, 0);
+            }
+        }
+        
+        if (j == 0 &amp;&amp; i == 1)
+        {
+            //SPAWN END UNLOCK ROOM HERE
+        }
+        else if (j == 2 &amp;&amp; i == 1)
+        {
+            //instance_create(j * 160, i * 90, obj_RoomSaloon);
+            //SPAWN CENTER ROOM HERE
+            //spr_saloon
         }
         else
         {
-        
-            instance_create(j * 160,i * 90, WallHallLayout[j, i]);
-            
-            //Room Puzzle Width and Height - OLD WAY***
-            //instance_create(j * 160,i * 90, GameLayout[j, i]);
+            //SPAWN ALL OTHER RANDOM PUZZLES HERE
             if (ds_list_size(ListofPuzzles) &gt;= 1)
             {
                 instance_create(j * 160,i * 90, ds_list_find_value(ListofPuzzles, 0));
@@ -129,21 +208,27 @@ for (j=0; j&lt;8; j+=1) //8 is the width or amount of puzzles in the room horizo
             }
             else
             {
-                //FILL THE REST OF THE PUZZLES - for coding perposes
-                //instance_create(j * 160,i * 90, obj_PuzzleTemplateBLUE);
+                //CATCH ERROR UNTIL ENOUGH ROOMS ARE CREATED
             }
         }
-        
     }
 }
 
+var iRanX = irandom(6);
+var iRanX2 = irandom(6);
+
 //Add RANDOM STAIR OBJECT PLACEMENT
-instance_create(irandom(7) * 160 + (16 * 3), 2 * 90 - 20, obj_stairs_up);
+
+instance_create(iRanX * 160 + (16 * 2) - 8, 2 * 90 - 20, obj_stairs_up);
 instance_create(obj_stairs_up.x, obj_stairs_up.y - 90, obj_stairs_down)
 
-instance_create(irandom(7) * 160 + (16 * 6), 2 * 90 - 20, obj_stairs_down2);
-instance_create(obj_stairs_down2.x, obj_stairs_down2.y + 90, obj_stairs_up2)
+while (iRanX == iRanX2)
+{
+    var iRanX2 = irandom(7);
+}
 
+instance_create(iRanX2 * 160 + (16 * 2) - 8, 2 * 90 - 20, obj_stairs_down2);
+instance_create(obj_stairs_down2.x, obj_stairs_down2.y + 90, obj_stairs_up2)
 </string>
           </argument>
         </arguments>

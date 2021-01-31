@@ -26,7 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>draw_self();
-draw_sprite_ext(spr_end_wall, 0, x, y + 15, 1, 1, 0, c_white, 1);
+draw_sprite_ext(spr_hall, 0, x, y + 15, 1, 1, 0, c_white, 1);
+draw_sprite_ext(spr_hall, 0, x + 160, y + 15, -1, 1, 0, c_white, 1);
 </string>
           </argument>
         </arguments>
