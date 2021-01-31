@@ -173,6 +173,7 @@
       <objects name="Puzzle Key Decoys">
         <object>objects\obj_puzz1key</object>
         <object>objects\obj_puzz2key</object>
+        <object>objects\obj_puzz4key</object>
       </objects>
       <objects name="puzzlelocker">
         <object>objects\obj_safe</object>
