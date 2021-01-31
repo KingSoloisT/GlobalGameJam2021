@@ -40,6 +40,7 @@
     <sprite>sprites\spr_stairs_down</sprite>
     <sprite>sprites\spr_goal</sprite>
     <sprite>sprites\spr_PuzzleTemplateRED</sprite>
+    <sprite>sprites\spr_BlackView</sprite>
     <sprite>sprites\spr_PuzzleTemplateGREEN</sprite>
     <sprite>sprites\spr_PuzzleTemplateBLUE</sprite>
     <sprites name="skeetpuzzle">
@@ -169,6 +170,7 @@
     <object>objects\obj_stairs_up2</object>
     <object>objects\obj_stairs_down2</object>
     <object>objects\obj_PuzzleTemplateRED</object>
+    <object>objects\obj_GameMenu</object>
     <object>objects\obj_PuzzleTemplateGREEN</object>
     <object>objects\obj_PuzzleTemplateBLUE</object>
     <object>objects\obj_PuzzleRandomizer</object>
@@ -341,6 +343,7 @@
     <object>objects\obj_MenuControl</object>
     <object>objects\obj_ready</object>
     <object>objects\obj_results</object>
+    <object>objects\obj_GameMenuControl</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_howtoplay</room>

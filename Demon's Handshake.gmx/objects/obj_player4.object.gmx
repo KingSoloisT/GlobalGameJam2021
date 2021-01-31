@@ -81,6 +81,12 @@ gamepad_set_vibration(3,0,0);
             <kind>1</kind>
             <string>GameControls(obj_player4);
 
+if (key_menu)
+{
+    //room_goto(rm_StartMenu);
+    //instance_create(view_xview[1], view_yview[1], obj_GameMenu);
+}
+
 //Center Camera in the view properly while going up and down stairs.
 view_yview[3] = obj_player4.y + 20 - 90;
 

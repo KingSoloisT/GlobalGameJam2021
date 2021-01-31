@@ -23,6 +23,7 @@ if (ObjectControls("P1"))
     key_shoot_press = keyboard_check_pressed(ord('V'));
     key_shoot_release = keyboard_check_released(ord('V'));
     
+    key_menu = keyboard_check(vk_escape);
     
 }
 //else if (CurrentObject == obj_player2) 
@@ -45,6 +46,8 @@ else if (ObjectControls("P2"))
     key_shoot = keyboard_check(ord('L'));
     key_shoot_press = keyboard_check_pressed(ord('L'));
     key_shoot_release = keyboard_check_released(ord('L'));
+    
+    key_menu = keyboard_check(vk_escape);
 }
 //else if (CurrentObject == obj_player3)
 else if (ObjectControls("P3"))
@@ -66,6 +69,8 @@ else if (ObjectControls("P3"))
     key_shoot = keyboard_check(191);
     key_shoot_press = keyboard_check_pressed(191);
     key_shoot_release = keyboard_check_released(191);
+    
+    key_menu = keyboard_check(vk_escape);
     
     //44? Action ,
     //46 aim . 
@@ -91,4 +96,6 @@ else if (ObjectControls("P4"))
     key_shoot = keyboard_check(vk_subtract);
     key_shoot_press = keyboard_check_pressed(vk_subtract);
     key_shoot_release = keyboard_check_released(vk_subtract);
+    
+    key_menu = keyboard_check(vk_escape);
 }

@@ -54,6 +54,7 @@ instance_create(0, 0, obj_MenuControl);</code>
   </views>
   <instances>
     <instance objName="obj_StartButton" x="82" y="43" name="inst_1A507B74" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_bulletR" x="745" y="240" name="inst_7CB22BDB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
