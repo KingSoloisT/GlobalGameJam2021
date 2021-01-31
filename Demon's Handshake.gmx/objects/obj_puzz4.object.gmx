@@ -28,6 +28,8 @@
             <string>//increases when a 'obj_P_exclaim' is created
 global.playercount = 0;
 
+puzzle_active = true
+
 //set player check variables
 player1 = false;
 player2 = false;
@@ -53,6 +55,16 @@ begin_alarm = false; //timer for when the key drops
 key_dropped = false; //you only get one key chump
 bucket_placed = false; //obvious i think // puzzle complete condition 2/3
 conditions_met = false // turn this true to win!
+
+p1exclaim = false;
+p2exclaim = false;
+p3exclaim = false;
+p4exclaim = false;
+
+p1climb = false;
+p2climb = false;
+p3climb = false;
+p4climb = false;
 </string>
           </argument>
         </arguments>
@@ -117,24 +129,96 @@ if instance_exists(obj_player4)
 {
     player4=true;
 }
-// puzzle code starts here
+
+if puzzle_active = true
+{
+
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if puzzle_active = true
+{
 
 //PLAYER 1 ENTERING  WHISKEY BARREL INTERACTION ZONES
-if (player1=true) &amp;&amp; (obj_player1.x &gt;= obj_whiskeybarrel.x -20 &amp;&amp; obj_player1.x &lt;= obj_whiskeybarrel.x-10) //contact with ladder
-|| (player1=true) &amp;&amp; (obj_player1.x &gt;= obj_bucket.x -4 &amp;&amp; obj_player1.x &lt;= obj_bucket.x +4) //contact with bucket
+if (player1=true) 
+    &amp;&amp; (obj_player1.x &gt;= obj_whiskeybarrel.x -20 &amp;&amp; obj_player1.x &lt;= obj_whiskeybarrel.x-10)
+    &amp;&amp; (obj_player1.y = obj_puzz4.y+70)//contact with ladder
+    || (player1=true)
+    &amp;&amp; (obj_player1.x &gt;= obj_bucket.x-10 &amp;&amp; obj_player1.x &lt;= obj_bucket.x +10)
+    &amp;&amp; (obj_player1.y = obj_bucket.y) //contact with bucket
 {
-    if !instance_exists(obj_P1exclaim)
-    {
-        instance_create(obj_player1.x+5,obj_player1.y-6,obj_P1exclaim);
-    }    
+    p1exclaim = true; 
 }
 else
 {
-        if instance_exists(obj_P1exclaim)
-        {
-            instance_destroy(obj_P1exclaim);
-        }
+    p1exclaim = false;
 }
+
+if (player2=true) &amp;&amp; (obj_player2.x &gt;= obj_whiskeybarrel.x -20 &amp;&amp; obj_player2.x &lt;= obj_whiskeybarrel.x-10)
+    &amp;&amp; (obj_player1.y = obj_puzz4.y+70)//contact with ladder
+    || (player2=true)
+    &amp;&amp; (obj_player2.x &gt;= obj_bucket.x-10 &amp;&amp; obj_player2.x &lt;= obj_bucket.x +10)
+    &amp;&amp; (obj_player2.y = obj_bucket.y) //contact with bucket
+{
+    p2exclaim = true; 
+}
+else
+{
+    p2exclaim = false;
+}
+
+if (player3=true) &amp;&amp; (obj_player3.x &gt;= obj_whiskeybarrel.x -20 &amp;&amp; obj_player3.x &lt;= obj_whiskeybarrel.x-10)
+    &amp;&amp; (obj_player1.y = obj_puzz4.y+70)//contact with ladder
+    || (player3=true)
+    &amp;&amp; (obj_player3.x &gt;= obj_bucket.x-10 &amp;&amp; obj_player3.x &lt;= obj_bucket.x +10)
+    &amp;&amp; (obj_player3.y = obj_bucket.y) //contact with bucket
+{
+    p3exclaim = true; 
+}
+else
+{
+    p3exclaim = false;
+}
+
+if (player4=true) &amp;&amp; (obj_player4.x &gt;= obj_whiskeybarrel.x -20 &amp;&amp; obj_player4.x &lt;= obj_whiskeybarrel.x-10)
+    &amp;&amp; (obj_player1.y = obj_puzz4.y+70)//contact with ladder
+    || (player4=true)
+    &amp;&amp; (obj_player4.x &gt;= obj_bucket.x-10 &amp;&amp; obj_player4.x &lt;= obj_bucket.x +10)
+    &amp;&amp; (obj_player4.y = obj_bucket.y) //contact with bucket
+{
+    p4exclaim = true; 
+}
+else
+{
+    p4exclaim = false;
+}
+
+
+
+
+
+
+
 
 //CLIMBING THE LADDER #######################################################################################################
     
@@ -142,9 +226,10 @@ if player1=true &amp;&amp; (obj_player1.x &gt;= obj_whiskeybarrel.x -20 &amp;&am
     &amp;&amp; obj_player1.state = 'idle'//&lt;------------------------------------------------------------------------state parameter
     &amp;&amp; obj_player1.key_action_press//&lt;----------------------------------------------------------------------press action button
 {
-    obj_player1.x = obj_puzz4.x+70;
-    obj_player1.y = obj_puzz4.y+35;             //yay! you're up the ladder now!
-    obj_player1.state = 'aim'
+
+    obj_player1.visible = false;
+    p1climb = true;            //yay! you're up the ladder now!
+    obj_player1.state = 'aim';
     ladderclimbed = true;
 }
 
@@ -152,63 +237,13 @@ if player1=true &amp;&amp; (obj_player1.x &gt;= obj_whiskeybarrel.x -20 &amp;&am
     &amp;&amp; obj_player1.state = 'aim' //&lt;------------------------------------------------------------------------state parameter
     &amp;&amp; obj_player1.key_action_release //&lt;-------------------------------------------------------------------release action key
 {
-    obj_player1.x = obj_puzz4.x+60;
-    obj_player1.y = obj_puzz4.y+70;             //you have safely descended the ladder!
+    obj_player1.visible = true;
+    p1climb = false;             //you have safely descended the ladder!
     obj_player1.state = 'idle'
     ladderclimbed = false;
 }
+
 //#############################################################################################################################
-
-
-
-//PLACING THE BUCKET % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
-
-if (player1=true)
-    &amp;&amp; (obj_player1.x &gt;= obj_bucket.x-2 &amp;&amp; obj_player1.x &lt;= obj_bucket.x +2) //&lt;-----------------Position Parameter
-    &amp;&amp; obj_player1.key_action_press //&lt;----------------------------------------press action key to place the bucket
-{
-    obj_bucket.x = obj_whiskeybarrel.x +22
-    bucket_placed = true;
-}
-
-if bucket_placed = true &amp;&amp; ladderclimbed = true &amp;&amp; (obj_player1.x &gt;= obj_bucket.x -4 &amp;&amp; obj_player1.x &lt;= obj_bucket.x +4)
-{
-    conditions_met = true;
-}
-
-if bucket_placed = true &amp;&amp; ladderclimbed = true &amp;&amp; conditions_met = true
-{
-    obj_whiskeybarrel.image_speed = .5;
-    begin_alarm = true; //starts a timer to drop key from barrel
-}
-
-if key_dropped = true
-    
-{
-    obj_whiskeybarrel.image_speed = 0;
-    obj_whiskeybarrel.image_index = 0;
-    begin_alarm = false;
-}
-//% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
-
-
-
-//PLAYER 2 ENTERING WHISKEY BARREL INTERACTION ZONES
-if (player2=true) &amp;&amp; (obj_player2.x &gt;= obj_whiskeybarrel.x -20 &amp;&amp; obj_player2.x &lt;= obj_whiskeybarrel.x-10) //contact with ladder
-|| (player2=true) &amp;&amp; (obj_player2.x &gt;= obj_bucket.x -4 &amp;&amp; obj_player2.x &lt;= obj_bucket.x +4) //contact with bucket
-{
-    if !instance_exists(obj_P2exclaim)
-    {
-        instance_create(obj_player2.x+5,obj_player2.y-6,obj_P2exclaim);
-    }    
-}
-else
-{
-        if instance_exists(obj_P2exclaim)
-        {
-            instance_destroy(obj_P2exclaim);
-        }
-}
 
 //CLIMBING THE LADDER #######################################################################################################
     
@@ -216,9 +251,10 @@ if player2=true &amp;&amp; (obj_player2.x &gt;= obj_whiskeybarrel.x -20 &amp;&am
     &amp;&amp; obj_player2.state = 'idle'//&lt;------------------------------------------------------------------------state parameter
     &amp;&amp; obj_player2.key_action_press//&lt;----------------------------------------------------------------------press action button
 {
-    obj_player2.x = obj_puzz4.x+70;
-    obj_player2.y = obj_puzz4.y+35;             //yay! you're up the ladder now!
-    obj_player2.state = 'aim'
+
+    obj_player2.visible = false;
+    p2climb = true;            //yay! you're up the ladder now!
+    obj_player2.state = 'aim';
     ladderclimbed = true;
 }
 
@@ -226,59 +262,13 @@ if player2=true &amp;&amp; (obj_player2.x &gt;= obj_whiskeybarrel.x -20 &amp;&am
     &amp;&amp; obj_player2.state = 'aim' //&lt;------------------------------------------------------------------------state parameter
     &amp;&amp; obj_player2.key_action_release //&lt;-------------------------------------------------------------------release action key
 {
-    obj_player2.x = obj_puzz4.x+60;
-    obj_player2.y = obj_puzz4.y+70;             //you have safely descended the ladder!
+    obj_player2.visible = true;
+    p2climb = false;             //you have safely descended the ladder!
     obj_player2.state = 'idle'
     ladderclimbed = false;
 }
+
 //#############################################################################################################################
-
-//PLACING THE BUCKET % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
-
-if (player2=true)
-    &amp;&amp; (obj_player2.x &gt;= obj_bucket.x-2 &amp;&amp; obj_player2.x &lt;= obj_bucket.x +2) //&lt;-----------------Position Parameter
-    &amp;&amp; obj_player2.key_action_press //&lt;----------------------------------------press action key to place the bucket
-{
-    obj_bucket.x = obj_whiskeybarrel.x +22
-    bucket_placed = true;
-}
-
-if bucket_placed = true &amp;&amp; ladderclimbed = true &amp;&amp; (obj_player2.x &gt;= obj_bucket.x -4 &amp;&amp; obj_player2.x &lt;= obj_bucket.x +4)
-{
-    conditions_met = true;
-}
-
-if bucket_placed = true &amp;&amp; ladderclimbed = true &amp;&amp; conditions_met = true
-{
-    obj_whiskeybarrel.image_speed = .5;
-    begin_alarm = true; //starts a timer to drop key from barrel
-}
-
-if key_dropped = true
-    
-{
-    obj_whiskeybarrel.image_speed = 0;
-    obj_whiskeybarrel.image_index = 0;
-    begin_alarm = false;
-}
-//% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
-
-//PLAYER 3 ENTERING WHISKEY BARREL INTERACTION ZONES
-if (player3=true) &amp;&amp; (obj_player3.x &gt;= obj_whiskeybarrel.x -20 &amp;&amp; obj_player3.x &lt;= obj_whiskeybarrel.x-10) //contact with ladder
-|| (player3=true) &amp;&amp; (obj_player3.x &gt;= obj_bucket.x -4 &amp;&amp; obj_player3.x &lt;= obj_bucket.x +4) //contact with bucket
-{
-    if !instance_exists(obj_P3exclaim)
-    {
-        instance_create(obj_player3.x+5,obj_player3.y-6,obj_P3exclaim);
-    }    
-}
-else
-{
-        if instance_exists(obj_P3exclaim)
-        {
-            instance_destroy(obj_P3exclaim);
-        }
-}
 
 //CLIMBING THE LADDER #######################################################################################################
     
@@ -286,9 +276,10 @@ if player3=true &amp;&amp; (obj_player3.x &gt;= obj_whiskeybarrel.x -20 &amp;&am
     &amp;&amp; obj_player3.state = 'idle'//&lt;------------------------------------------------------------------------state parameter
     &amp;&amp; obj_player3.key_action_press//&lt;----------------------------------------------------------------------press action button
 {
-    obj_player3.x = obj_puzz4.x+70;
-    obj_player3.y = obj_puzz4.y+35;             //yay! you're up the ladder now!
-    obj_player3.state = 'aim'
+
+    obj_player3.visible = false;
+    p3climb = true;            //yay! you're up the ladder now!
+    obj_player3.state = 'aim';
     ladderclimbed = true;
 }
 
@@ -296,59 +287,13 @@ if player3=true &amp;&amp; (obj_player3.x &gt;= obj_whiskeybarrel.x -20 &amp;&am
     &amp;&amp; obj_player3.state = 'aim' //&lt;------------------------------------------------------------------------state parameter
     &amp;&amp; obj_player3.key_action_release //&lt;-------------------------------------------------------------------release action key
 {
-    obj_player3.x = obj_puzz4.x+60;
-    obj_player3.y = obj_puzz4.y+70;             //you have safely descended the ladder!
+    obj_player3.visible = true;
+    p3climb = false;             //you have safely descended the ladder!
     obj_player3.state = 'idle'
     ladderclimbed = false;
 }
+
 //#############################################################################################################################
-
-//PLACING THE BUCKET % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
-
-if (player3=true)
-    &amp;&amp; (obj_player3.x &gt;= obj_bucket.x-2 &amp;&amp; obj_player3.x &lt;= obj_bucket.x +2) //&lt;-----------------Position Parameter
-    &amp;&amp; obj_player3.key_action_press //&lt;----------------------------------------press action key to place the bucket
-{
-    obj_bucket.x = obj_whiskeybarrel.x +22
-    bucket_placed = true;
-}
-
-if bucket_placed = true &amp;&amp; ladderclimbed = true &amp;&amp; (obj_player3.x &gt;= obj_bucket.x -4 &amp;&amp; obj_player3.x &lt;= obj_bucket.x +4)
-{
-    conditions_met = true;
-}
-
-if bucket_placed = true &amp;&amp; ladderclimbed = true &amp;&amp; conditions_met = true
-{
-    obj_whiskeybarrel.image_speed = .5;
-    begin_alarm = true; //starts a timer to drop key from barrel
-}
-
-if key_dropped = true
-    
-{
-    obj_whiskeybarrel.image_speed = 0;
-    obj_whiskeybarrel.image_index = 0;
-    begin_alarm = false;
-}
-//% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
-
-//PLAYER 4 ENTERING WHISKEY BARREL INTERACTION ZONES
-if (player4=true) &amp;&amp; (obj_player4.x &gt;= obj_whiskeybarrel.x -20 &amp;&amp; obj_player4.x &lt;= obj_whiskeybarrel.x-10) //contact with ladder
-|| (player4=true) &amp;&amp; (obj_player4.x &gt;= obj_bucket.x -4 &amp;&amp; obj_player4.x &lt;= obj_bucket.x +4) //contact with bucket
-{
-    if !instance_exists(obj_P4exclaim)
-    {
-        instance_create(obj_player4.x+5,obj_player4.y-6,obj_P4exclaim);
-    }    
-}
-else
-{
-        if instance_exists(obj_P4exclaim)
-        {
-            instance_destroy(obj_P4exclaim);
-        }
-}
 
 //CLIMBING THE LADDER #######################################################################################################
     
@@ -356,9 +301,10 @@ if player4=true &amp;&amp; (obj_player4.x &gt;= obj_whiskeybarrel.x -20 &amp;&am
     &amp;&amp; obj_player4.state = 'idle'//&lt;------------------------------------------------------------------------state parameter
     &amp;&amp; obj_player4.key_action_press//&lt;----------------------------------------------------------------------press action button
 {
-    obj_player4.x = obj_puzz4.x+70;
-    obj_player4.y = obj_puzz4.y+35;             //yay! you're up the ladder now!
-    obj_player4.state = 'aim'
+
+    obj_player4.visible = false;
+    p4climb = true;            //yay! you're up the ladder now!
+    obj_player4.state = 'aim';
     ladderclimbed = true;
 }
 
@@ -366,47 +312,102 @@ if player4=true &amp;&amp; (obj_player4.x &gt;= obj_whiskeybarrel.x -20 &amp;&am
     &amp;&amp; obj_player4.state = 'aim' //&lt;------------------------------------------------------------------------state parameter
     &amp;&amp; obj_player4.key_action_release //&lt;-------------------------------------------------------------------release action key
 {
-    obj_player4.x = obj_puzz4.x+60;
-    obj_player4.y = obj_puzz4.y+70;             //you have safely descended the ladder!
+    obj_player4.visible = true;
+    p4climb = false;             //you have safely descended the ladder!
     obj_player4.state = 'idle'
     ladderclimbed = false;
 }
+
 //#############################################################################################################################
+
+
+
+
+
+
+
+
+
+
+//PLACING THE BUCKET % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+if (player1=true)
+    &amp;&amp; (obj_player1.x &gt;= obj_bucket.x-2 &amp;&amp; obj_player1.x &lt;= obj_bucket.x +2)
+    &amp;&amp; (obj_player1.y = obj_puzz4.y+70) //&lt;-----------------Position Parameter
+    &amp;&amp; bucket_placed = false
+    &amp;&amp; obj_player1.key_action_press //&lt;----------------------------------------press action key to place the bucket
+{
+    obj_bucket.waskicked = true
+}
+
+//% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+
+//PLACING THE BUCKET % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+if (player2=true)
+    &amp;&amp; (obj_player2.x &gt;= obj_bucket.x-2 &amp;&amp; obj_player2.x &lt;= obj_bucket.x +2)
+    &amp;&amp; (obj_player1.y = obj_puzz4.y+70) //&lt;-----------------Position Parameter
+    &amp;&amp; bucket_placed = false
+    &amp;&amp; obj_player2.key_action_press //&lt;----------------------------------------press action key to place the bucket
+{
+    obj_bucket.waskicked = true
+}
+
+//% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+//PLACING THE BUCKET % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+if (player3=true)
+    &amp;&amp; (obj_player3.x &gt;= obj_bucket.x-2 &amp;&amp; obj_player3.x &lt;= obj_bucket.x +2)
+    &amp;&amp; (obj_player1.y = obj_puzz4.y+70) //&lt;-----------------Position Parameter
+    &amp;&amp; bucket_placed = false
+    &amp;&amp; obj_player3.key_action_press //&lt;----------------------------------------press action key to place the bucket
+{
+    obj_bucket.waskicked = true
+}
+
+//% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 
 //PLACING THE BUCKET % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 
 if (player4=true)
-    &amp;&amp; (obj_player4.x &gt;= obj_bucket.x-2 &amp;&amp; obj_player4.x &lt;= obj_bucket.x +2) //&lt;-----------------Position Parameter
+    &amp;&amp; (obj_player4.x &gt;= obj_bucket.x-2 &amp;&amp; obj_player4.x &lt;= obj_bucket.x +2)
+    &amp;&amp; (obj_player1.y = obj_puzz4.y+70) //&lt;-----------------Position Parameter
+    &amp;&amp; bucket_placed = false
     &amp;&amp; obj_player4.key_action_press //&lt;----------------------------------------press action key to place the bucket
 {
-    obj_bucket.x = obj_whiskeybarrel.x +22
-    bucket_placed = true;
+    obj_bucket.waskicked = true
 }
 
-if bucket_placed = true &amp;&amp; ladderclimbed = true &amp;&amp; (obj_player4.x &gt;= obj_bucket.x -4 &amp;&amp; obj_player4.x &lt;= obj_bucket.x +4)
-{
-    conditions_met = true;
-}
 
-if bucket_placed = true &amp;&amp; ladderclimbed = true &amp;&amp; conditions_met = true
-{
-    obj_whiskeybarrel.image_speed = .5;
-    begin_alarm = true; //starts a timer to drop key from barrel
-}
-
-if key_dropped = true
-    
-{
-    obj_whiskeybarrel.image_speed = 0;
-    obj_whiskeybarrel.image_index = 0;
-    begin_alarm = false;
-}
 //% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 
 
 
 
 //THE DROP OF THE KEY
+
+if obj_bucket.x &gt;= obj_whiskeybarrel.x+20 &amp;&amp; obj_bucket.x &lt;= obj_whiskeybarrel.x+25
+{
+    bucket_placed = true
+}
+
+if (bucket_placed = true) &amp;&amp; (p1climb = true || p2climb = true || p3climb = true || p4climb = true)
+{
+    conditions_met = true;
+}
+
+if conditions_met = true &amp;&amp; key_dropped = false
+{
+    obj_whiskeybarrel.image_speed = .5;
+    begin_alarm = true;
+}
+
+if key_dropped = true
+{
+    obj_whiskeybarrel.image_speed = 0;
+}
 
 if begin_alarm = true
 {
@@ -425,6 +426,69 @@ if alarm[0] &lt;= -1
         instance_create(obj_bucket.x,obj_puzz4.y+65,obj_puzz4key)
         key_dropped = true;
     }
+}
+
+
+
+
+
+
+
+
+
+
+
+if p1climb = true
+{
+    draw_sprite(spr_player1,0,obj_whiskeybarrel.x-10,obj_whiskeybarrel.y-10)
+    draw_sprite(spr_exclaim,image_index,obj_whiskeybarrel.x-5,obj_whiskeybarrel.y-16)
+}
+
+if p2climb = true
+{
+    draw_sprite(spr_player2,0,obj_whiskeybarrel.x-10,obj_whiskeybarrel.y-10)
+    draw_sprite(spr_exclaim,image_index,obj_whiskeybarrel.x-5,obj_whiskeybarrel.y-16)
+}
+
+if p3climb = true
+{
+    draw_sprite(spr_player3,0,obj_whiskeybarrel.x-10,obj_whiskeybarrel.y-10)
+    draw_sprite(spr_exclaim,image_index,obj_whiskeybarrel.x-5,obj_whiskeybarrel.y-16)
+}
+
+if p4climb = true
+{
+    draw_sprite(spr_player4,0,obj_whiskeybarrel.x-10,obj_whiskeybarrel.y-10)
+    draw_sprite(spr_exclaim,image_index,obj_whiskeybarrel.x-5,obj_whiskeybarrel.y-16)
+}
+
+
+
+
+//player 1 exclamatory stuff
+if p1exclaim = true &amp;&amp; p1climb = false
+{
+    draw_sprite(spr_exclaim,image_index,obj_player1.x+5,obj_player1.y-6);
+}
+
+
+if p2exclaim = true &amp;&amp; p2climb = false
+{
+
+    draw_sprite(spr_exclaim,image_index,obj_player2.x+5,obj_player2.y-6);
+}
+
+if p3exclaim = true &amp;&amp; p3climb = false
+{
+    draw_sprite(spr_exclaim,image_index,obj_player3.x+5,obj_player3.y-6);
+}
+
+
+if p4exclaim = true &amp;&amp; p4climb = false
+{
+    draw_sprite(spr_exclaim,image_index,obj_player4.x+5,obj_player4.y-6);
+}
+
 }
 </string>
           </argument>
