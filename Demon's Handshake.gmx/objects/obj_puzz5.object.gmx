@@ -68,6 +68,7 @@ player4 = false;
           <argument>
             <kind>1</kind>
             <string>GameControls(obj_puzz5); //&lt;-----Initiate controller controls
+ObjectControls(obj_puzz5)
 
 // CHECK WHICH PLAYERS ARE IN THE ROOM
 if instance_exists(obj_player1)
@@ -113,7 +114,7 @@ if player1 = true &amp;&amp; obj_player1.x &gt;= obj_lever.x-10 &amp;&amp; obj_p
         }
     }
 }
-
+/*
 else
 {
         if instance_exists(obj_P1exclaim) //gets rid of action cue
@@ -121,7 +122,7 @@ else
             instance_destroy(obj_P1exclaim);
         }
 }
-
+*/
 //PLAYER 2 ENTERING LEVER AREA
 if player2 = true &amp;&amp; obj_player2.x &gt;= obj_lever.x-10 &amp;&amp; obj_player2.x &lt;= obj_lever.x+10
 {
@@ -149,7 +150,7 @@ if player2 = true &amp;&amp; obj_player2.x &gt;= obj_lever.x-10 &amp;&amp; obj_p
         }
     }
 }
-
+/*
 else
 {
     if instance_exists(obj_P2exclaim)
@@ -157,7 +158,7 @@ else
         instance_destroy(obj_P2exclaim);
     }
 }
-
+*/
 //PLAYER 3 ENTERING LEVER AREA
 if player3 = true &amp;&amp; obj_player3.x &gt;= obj_lever.x -10 &amp;&amp; obj_player3.x &lt;= obj_lever.x+10
 {
@@ -183,7 +184,7 @@ if player3 = true &amp;&amp; obj_player3.x &gt;= obj_lever.x -10 &amp;&amp; obj_
         }
     }
 }
-
+/*
 else
 {
         if instance_exists(obj_P3exclaim)
@@ -191,7 +192,7 @@ else
             instance_destroy(obj_P3exclaim);
         }
 }
-
+*/
 //PLAYER 4 ENTERING LEVER AREA
 if player4 = true &amp;&amp; obj_player4.x &gt;= obj_lever.x -10 &amp;&amp; obj_player4.x &lt;= obj_lever.x+10
 {
@@ -217,7 +218,7 @@ if player4 = true &amp;&amp; obj_player4.x &gt;= obj_lever.x -10 &amp;&amp; obj_
         }
     }
 }
-
+/*
 else
 {
         if instance_exists(obj_P4exclaim)
@@ -225,7 +226,7 @@ else
             instance_destroy(obj_P4exclaim);
         }
 }
-
+*/
 //ACTUAL LEVER LEVERAGING
 if lever &gt;= 10
 {
