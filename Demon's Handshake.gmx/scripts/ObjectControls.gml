@@ -14,6 +14,7 @@ if (argument0 == "P1")
     || CurrentObject == obj_puzz7
     || CurrentObject == obj_puzz8
     || CurrentObject == obj_puzz9
+    || CurrentObject == obj_MenuControl
     //|| CurrentObject == 
     )
 }

@@ -107,6 +107,7 @@
       <sprite>sprites\spr_belt</sprite>
       <sprite>sprites\spr_belt_lever</sprite>
     </sprites>
+    <sprite>sprites\spr_StartButton</sprite>
     <sprites name="buttonspuzzle">
       <sprite>sprites\spr_button_door</sprite>
       <sprite>sprites\spr_button_dooropen</sprite>
@@ -329,10 +330,13 @@
         <object>objects\obj_RoomRightWallTanWood</object>
       </objects>
     </objects>
+    <object>objects\obj_StartButton</object>
+    <object>objects\obj_MenuControl</object>
     <object>objects\obj_ready</object>
     <object>objects\obj_results</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_StartMenu</room>
     <room>rooms\rm_ready</room>
     <room>rooms\rm_game</room>
     <room>rooms\rm_result</room>

@@ -220,7 +220,7 @@ if player3=true
 
 
 
-//Lifting the Piani
+//Lifting the Piani player4
     
 if player4=true &amp;&amp; keycollected = false
    &amp;&amp; (obj_player4.x &gt;= obj_piani.x -25 &amp;&amp; obj_player4.x &lt;= obj_piani.x-20) //&lt;-- x position param

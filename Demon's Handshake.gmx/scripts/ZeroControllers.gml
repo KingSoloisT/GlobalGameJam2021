@@ -22,6 +22,8 @@ if (ObjectControls("P1"))
     key_shoot = keyboard_check(ord('V'));
     key_shoot_press = keyboard_check_pressed(ord('V'));
     key_shoot_release = keyboard_check_released(ord('V'));
+    
+    
 }
 //else if (CurrentObject == obj_player2) 
 else if (ObjectControls("P2"))
