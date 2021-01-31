@@ -276,7 +276,7 @@ if a_lift = false || b_lift = false
 
 if full_piani_lift = true
 {
-    obj_piani.y = 59;
+    obj_piani.y = obj_puzz2.y + 59;
     if !instance_exists(obj_puzz2key) &amp;&amp; keymade = false &amp;&amp; keycollected = false
     {
         instance_create(obj_piani.x,obj_piani.y+8,obj_puzz2key);                //&lt;-----Create decoy key
@@ -287,7 +287,7 @@ if full_piani_lift = true
 else if full_piani_lift = false
 {
     keymade = false;
-    obj_piani.y = 63;
+    obj_piani.y = obj_puzz2.y + 63;
     if instance_exists(obj_puzz2key)
     {
         instance_destroy(obj_puzz2key);
@@ -296,10 +296,10 @@ else if full_piani_lift = false
 
 if keymade = true
 {
-    if position_meeting(obj_piani.x,obj_piani.y+8,obj_player1) || 
+    if (position_meeting(obj_piani.x,obj_piani.y+8,obj_player1) || 
        position_meeting(obj_piani.x,obj_piani.y+8,obj_player2) || 
        position_meeting(obj_piani.x,obj_piani.y+8,obj_player3) || 
-       position_meeting(obj_piani.x,obj_piani.y+8,obj_player4)
+       position_meeting(obj_piani.x,obj_piani.y+8,obj_player4))
     {
         keycollected = true;
     }
