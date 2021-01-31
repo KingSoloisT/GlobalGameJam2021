@@ -175,7 +175,7 @@ else
 }
 
 if (player2=true) &amp;&amp; (obj_player2.x &gt;= obj_whiskeybarrel.x -20 &amp;&amp; obj_player2.x &lt;= obj_whiskeybarrel.x-10)
-    &amp;&amp; (obj_player1.y = obj_puzz4.y+70)//contact with ladder
+    &amp;&amp; (obj_player2.y = obj_puzz4.y+70)//contact with ladder
     || (player2=true)
     &amp;&amp; (obj_player2.x &gt;= obj_bucket.x-10 &amp;&amp; obj_player2.x &lt;= obj_bucket.x +10)
     &amp;&amp; (obj_player2.y = obj_bucket.y) //contact with bucket
@@ -188,7 +188,7 @@ else
 }
 
 if (player3=true) &amp;&amp; (obj_player3.x &gt;= obj_whiskeybarrel.x -20 &amp;&amp; obj_player3.x &lt;= obj_whiskeybarrel.x-10)
-    &amp;&amp; (obj_player1.y = obj_puzz4.y+70)//contact with ladder
+    &amp;&amp; (obj_player3.y = obj_puzz4.y+70)//contact with ladder
     || (player3=true)
     &amp;&amp; (obj_player3.x &gt;= obj_bucket.x-10 &amp;&amp; obj_player3.x &lt;= obj_bucket.x +10)
     &amp;&amp; (obj_player3.y = obj_bucket.y) //contact with bucket
@@ -201,7 +201,7 @@ else
 }
 
 if (player4=true) &amp;&amp; (obj_player4.x &gt;= obj_whiskeybarrel.x -20 &amp;&amp; obj_player4.x &lt;= obj_whiskeybarrel.x-10)
-    &amp;&amp; (obj_player1.y = obj_puzz4.y+70)//contact with ladder
+    &amp;&amp; (obj_player4.y = obj_puzz4.y+70)//contact with ladder
     || (player4=true)
     &amp;&amp; (obj_player4.x &gt;= obj_bucket.x-10 &amp;&amp; obj_player4.x &lt;= obj_bucket.x +10)
     &amp;&amp; (obj_player4.y = obj_bucket.y) //contact with bucket
@@ -222,7 +222,8 @@ else
 
 //CLIMBING THE LADDER #######################################################################################################
     
-if player1=true &amp;&amp; (obj_player1.x &gt;= obj_whiskeybarrel.x -20 &amp;&amp; obj_player1.x &lt;= obj_whiskeybarrel.x-10)//&lt;-ladder parameter
+if player1=true &amp;&amp; (obj_player1.x &gt;= obj_whiskeybarrel.x -20 &amp;&amp; obj_player1.x &lt;= obj_whiskeybarrel.x-10)
+    &amp;&amp; (obj_player1.y = obj_puzz4.y+70)//&lt;-ladder parameter
     &amp;&amp; obj_player1.state = 'idle'//&lt;------------------------------------------------------------------------state parameter
     &amp;&amp; obj_player1.key_action_press//&lt;----------------------------------------------------------------------press action button
 {
@@ -247,7 +248,8 @@ if player1=true &amp;&amp; (obj_player1.x &gt;= obj_whiskeybarrel.x -20 &amp;&am
 
 //CLIMBING THE LADDER #######################################################################################################
     
-if player2=true &amp;&amp; (obj_player2.x &gt;= obj_whiskeybarrel.x -20 &amp;&amp; obj_player2.x &lt;= obj_whiskeybarrel.x-10)//&lt;-ladder parameter
+if player2=true &amp;&amp; (obj_player2.x &gt;= obj_whiskeybarrel.x -20 &amp;&amp; obj_player2.x &lt;= obj_whiskeybarrel.x-10)
+    &amp;&amp; (obj_player2.y = obj_puzz4.y+70)//&lt;-ladder parameter
     &amp;&amp; obj_player2.state = 'idle'//&lt;------------------------------------------------------------------------state parameter
     &amp;&amp; obj_player2.key_action_press//&lt;----------------------------------------------------------------------press action button
 {
@@ -272,7 +274,8 @@ if player2=true &amp;&amp; (obj_player2.x &gt;= obj_whiskeybarrel.x -20 &amp;&am
 
 //CLIMBING THE LADDER #######################################################################################################
     
-if player3=true &amp;&amp; (obj_player3.x &gt;= obj_whiskeybarrel.x -20 &amp;&amp; obj_player3.x &lt;= obj_whiskeybarrel.x-10)//&lt;-ladder parameter
+if player3=true &amp;&amp; (obj_player3.x &gt;= obj_whiskeybarrel.x -20 &amp;&amp; obj_player3.x &lt;= obj_whiskeybarrel.x-10)
+    &amp;&amp; (obj_player3.y = obj_puzz4.y+70)//&lt;-ladder parameter
     &amp;&amp; obj_player3.state = 'idle'//&lt;------------------------------------------------------------------------state parameter
     &amp;&amp; obj_player3.key_action_press//&lt;----------------------------------------------------------------------press action button
 {
@@ -298,6 +301,7 @@ if player3=true &amp;&amp; (obj_player3.x &gt;= obj_whiskeybarrel.x -20 &amp;&am
 //CLIMBING THE LADDER #######################################################################################################
     
 if player4=true &amp;&amp; (obj_player4.x &gt;= obj_whiskeybarrel.x -20 &amp;&amp; obj_player4.x &lt;= obj_whiskeybarrel.x-10)//&lt;-ladder parameter
+    &amp;&amp; (obj_player4.y = obj_puzz4.y+70)
     &amp;&amp; obj_player4.state = 'idle'//&lt;------------------------------------------------------------------------state parameter
     &amp;&amp; obj_player4.key_action_press//&lt;----------------------------------------------------------------------press action button
 {
@@ -407,6 +411,7 @@ if conditions_met = true &amp;&amp; key_dropped = false
 if key_dropped = true
 {
     obj_whiskeybarrel.image_speed = 0;
+    obj_whiskeybarrel.image_index = 0;
 }
 
 if begin_alarm = true
