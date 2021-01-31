@@ -62,6 +62,7 @@
       <sprite>sprites\spr_plunger</sprite>
       <sprite>sprites\spr_explosion</sprite>
       <sprite>sprites\spr_rafters</sprite>
+      <sprite>sprites\spr_boundary</sprite>
     </sprites>
     <sprites name="backgrounds">
       <sprite>sprites\spr_saloon</sprite>
@@ -171,6 +172,8 @@
     <object>objects\obj_GameControls</object>
     <objects name="PUZZLE OBJECTS">
       <object>objects\obj_puzztestobj</object>
+      <object>objects\obj_pianiboundleft</object>
+      <object>objects\obj_pianiboundright</object>
       <object>objects\obj_piani</object>
       <object>objects\obj_shelf</object>
       <object>objects\obj_lever</object>

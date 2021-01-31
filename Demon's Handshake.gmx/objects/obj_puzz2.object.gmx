@@ -25,8 +25,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>instance_create(obj_puzz2.x+80,obj_puzz2.y+63,obj_piani);
-keymade = false;
+            <string>//set player check variables
+player1 = false;
+player2 = false;
+player3 = false;
+player4 = false;
 
 //interaction icon
 p1exclaim = false;
@@ -34,17 +37,19 @@ p2exclaim = false;
 p3exclaim = false;
 p4exclaim = false;
 
+full_piani_lift = false;
+keymade = false;
+keycollected = false;
+
 a_lift = false;
 b_lift = false;
 
-full_piani_lift = false;
-keycollected = false;
 
-//set player check variables
-player1 = false;
-player2 = false;
-player3 = false;
-player4 = false;
+instance_create(obj_puzz2.x+80,obj_puzz2.y+63,obj_piani);
+instance_create(obj_piani.x-25,obj_piani.y+5,obj_pianiboundleft)
+instance_create(obj_piani.x+20,obj_piani.y+5,obj_pianiboundright)
+obj_piani.visible = false;
+
 
 </string>
           </argument>
@@ -91,219 +96,6 @@ if instance_exists(obj_player4)
 
 GameControls(obj_puzz2); //&lt;-----Initiate controller controls
 
-//Lifting the Piani
-    
-if player1=true &amp;&amp; keycollected = false
-   &amp;&amp; (obj_player1.x &gt;= obj_piani.x -25 &amp;&amp; obj_player1.x &lt;= obj_piani.x-20) //&lt;-- x position param
-   &amp;&amp; (obj_player1.y = obj_piani.y +7) //&lt;--- y position param
-   &amp;&amp; obj_player1.key_action_press //&lt;--------------------------------------------------------key action param
-{
-    a_lift = true;
-    obj_player1.state = 'aim'  //&lt;------------------LIFT THE PIANI SIDE A (LEFT)
-}
-
-else if player1=true 
-   &amp;&amp; (obj_player1.x &gt;= obj_piani.x -25 &amp;&amp; obj_player1.x &lt;= obj_piani.x-20) 
-   &amp;&amp; (obj_player1.y = obj_piani.y +7)
-   &amp;&amp; obj_player1.state = 'aim'
-   &amp;&amp; obj_player1.key_action_release //DROP THE PIANI
-{
-    a_lift = false;
-    obj_player1.state = 'idle'
-}
-
-if player1=true &amp;&amp; keycollected = false
-   &amp;&amp; (obj_player1.x &gt;= obj_piani.x +22 &amp;&amp; obj_player1.x &lt;= obj_piani.x +27)
-   &amp;&amp; (obj_player1.y = obj_piani.y +7)
-   &amp;&amp; obj_player1.key_action_press //&lt;-------------LIFT THE PIANI SIDE B (RIGHT
-{
-    b_lift = true
-    obj_player1.state = 'aim'
-}
-
-else if player1=true 
-   &amp;&amp; (obj_player1.x &gt;= obj_piani.x +22 &amp;&amp; obj_player1.x &lt;= obj_piani.x +27) 
-   &amp;&amp; (obj_player1.y = obj_piani.y +7)
-   &amp;&amp; obj_player1.state = 'aim'
-   &amp;&amp; obj_player1.key_action_release //DROP THE PIANI
-{
-    b_lift = false;
-    obj_player1.state = 'idle'
-}
-
-
-
-
-//Lifting the Piani  player 2
-  
-if player2=true &amp;&amp; keycollected = false
-   &amp;&amp; (obj_player2.x &gt;= obj_piani.x -25 &amp;&amp; obj_player2.x &lt;= obj_piani.x-20) //&lt;-- x position param
-   &amp;&amp; (obj_player2.y = obj_piani.y +7) //&lt;--- y position param
-   &amp;&amp; obj_player2.key_action_press //&lt;--------------------------------------------------------key action param
-{
-    a_lift = true;
-    obj_player2.state = 'aim'  //&lt;------------------LIFT THE PIANI SIDE A (LEFT)
-}
-
-else if player2=true 
-   &amp;&amp; (obj_player2.x &gt;= obj_piani.x -25 &amp;&amp; obj_player2.x &lt;= obj_piani.x-20) 
-   &amp;&amp; (obj_player2.y = obj_piani.y +7)
-   &amp;&amp; obj_player2.state = 'aim'
-   &amp;&amp; obj_player2.key_action_release //DROP THE PIANI
-{
-    a_lift = false;
-    obj_player2.state = 'idle'
-}
-
-if player2=true &amp;&amp; keycollected = false
-   &amp;&amp; (obj_player2.x &gt;= obj_piani.x +22 &amp;&amp; obj_player2.x &lt;= obj_piani.x +27)
-   &amp;&amp; (obj_player2.y = obj_piani.y +7)
-   &amp;&amp; obj_player2.key_action_press //&lt;-------------LIFT THE PIANI SIDE B (RIGHT
-{
-    b_lift = true
-    obj_player2.state = 'aim'
-}
-
-else if player2=true 
-   &amp;&amp; (obj_player2.x &gt;= obj_piani.x +22 &amp;&amp; obj_player2.x &lt;= obj_piani.x +27) 
-   &amp;&amp; (obj_player2.y = obj_piani.y +7)
-   &amp;&amp; obj_player2.state = 'aim'
-   &amp;&amp; obj_player2.key_action_release //DROP THE PIANI
-{
-    b_lift = false;
-    obj_player2.state = 'idle'
-}
-
-
-
-//Lifting the Piani player 3
-    
-if player3=true &amp;&amp; keycollected = false
-   &amp;&amp; (obj_player3.x &gt;= obj_piani.x -25 &amp;&amp; obj_player3.x &lt;= obj_piani.x-20) //&lt;-- x position param
-   &amp;&amp; (obj_player3.y = obj_piani.y +7) //&lt;--- y position param
-   &amp;&amp; obj_player3.key_action_press //&lt;--------------------------------------------------------key action param
-{
-    a_lift = true;
-    obj_player3.state = 'aim'  //&lt;------------------LIFT THE PIANI SIDE A (LEFT)
-}
-
-if player3=true 
-   &amp;&amp; (obj_player3.x &gt;= obj_piani.x -25 &amp;&amp; obj_player3.x &lt;= obj_piani.x-20) 
-   &amp;&amp; (obj_player3.y = obj_piani.y +7)
-   &amp;&amp; obj_player3.key_action_release //DROP THE PIANI
-{
-    a_lift = false;
-    obj_player3.state = 'idle'
-}
-
-if player3=true &amp;&amp; keycollected = false
-   &amp;&amp; (obj_player3.x &gt;= obj_piani.x +22 &amp;&amp; obj_player3.x &lt;= obj_piani.x +27)
-   &amp;&amp; (obj_player3.y = obj_piani.y +7)
-   &amp;&amp; obj_player3.key_action_press //&lt;-------------LIFT THE PIANI SIDE B (RIGHT
-{
-    b_lift = true
-    obj_player3.state = 'aim'
-}
-
-if player3=true 
-   &amp;&amp; (obj_player3.x &gt;= obj_piani.x +22 &amp;&amp; obj_player3.x &lt;= obj_piani.x +27) 
-   &amp;&amp; (obj_player3.y = obj_piani.y +7)
-   &amp;&amp; obj_player3.key_action_release //DROP THE PIANI
-{
-    b_lift = false;
-    obj_player3.state = 'idle';
-}
-
-
-
-
-
-
-
-//Lifting the Piani player4
-    
-if player4=true &amp;&amp; keycollected = false
-   &amp;&amp; (obj_player4.x &gt;= obj_piani.x -25 &amp;&amp; obj_player4.x &lt;= obj_piani.x-20) //&lt;-- x position param
-   &amp;&amp; (obj_player4.y = obj_piani.y +7) //&lt;--- y position param
-   &amp;&amp; obj_player4.key_action_press //&lt;--------------------------------------------------------key action param
-{
-    a_lift = true;
-    obj_player4.state = 'aim'  //&lt;------------------LIFT THE PIANI SIDE A (LEFT)
-}
-
-if player4=true 
-   &amp;&amp; (obj_player4.x &gt;= obj_piani.x -25 &amp;&amp; obj_player4.x &lt;= obj_piani.x-20) 
-   &amp;&amp; (obj_player4.y = obj_piani.y +7)
-   &amp;&amp; obj_player4.key_action_release //DROP THE PIANI
-{
-    a_lift = false;
-    obj_player4.state = 'idle'
-}
-
-if player4=true &amp;&amp; keycollected = false
-   &amp;&amp; (obj_player4.x &gt;= obj_piani.x +22 &amp;&amp; obj_player4.x &lt;= obj_piani.x +27)
-   &amp;&amp; (obj_player4.y = obj_piani.y +7)
-   &amp;&amp; obj_player4.key_action_press //&lt;-------------LIFT THE PIANI SIDE B (RIGHT
-{
-    b_lift = true
-    obj_player3.state = 'aim'
-}
-
-if player4=true 
-   &amp;&amp; (obj_player4.x &gt;= obj_piani.x +22 &amp;&amp; obj_player4.x &lt;= obj_piani.x +27) 
-   &amp;&amp; (obj_player4.y = obj_piani.y +7)
-   &amp;&amp; obj_player4.key_action_release //DROP THE PIANI
-{
-    b_lift = false;
-    obj_player4.state = 'idle'
-}
-
-
-
-
-
-//Make key appear / piano gets lifted
-
-if a_lift = true &amp;&amp; b_lift = true
-{
-    full_piani_lift = true;
-}
-
-if a_lift = false || b_lift = false
-{
-    full_piani_lift = false;
-}
-
-if full_piani_lift = true
-{
-    obj_piani.y = obj_puzz2.y + 59;
-    if !instance_exists(obj_puzz2key) &amp;&amp; keymade = false &amp;&amp; keycollected = false
-    {
-        instance_create(obj_piani.x,obj_piani.y+8,obj_puzz2key);                //&lt;-----Create decoy key
-        keymade = true;
-    }
-}
-
-else if full_piani_lift = false
-{
-    keymade = false;
-    obj_piani.y = obj_puzz2.y + 63;
-    if instance_exists(obj_puzz2key)
-    {
-        instance_destroy(obj_puzz2key);
-    }
-}
-
-if keymade = true
-{
-    if (position_meeting(obj_piani.x,obj_piani.y+8,obj_player1) || 
-       position_meeting(obj_piani.x,obj_piani.y+8,obj_player2) || 
-       position_meeting(obj_piani.x,obj_piani.y+8,obj_player3) || 
-       position_meeting(obj_piani.x,obj_piani.y+8,obj_player4))
-    {
-        keycollected = true;
-    }
-}
 </string>
           </argument>
         </arguments>
@@ -326,103 +118,65 @@ if keymade = true
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//player 1 exclamatory stuff
+            <string>//variable sets
+
+if (a_lift = true) &amp;&amp; (b_lift = true)
+{
+
+    full_piani_lift = true
+}
+
+
+else if a_lift = false || b_lift = false
+{
+
+    full_piani_lift = false;
+    if instance_exists(obj_puzz2key)
+    {
+        instance_destroy(obj_puzz2key)
+    }
+}
+
+
+if full_piani_lift = true
+{
+
+    draw_sprite(spr_piani,0,obj_puzz2.x+80,obj_puzz2.y+59)
+    if !instance_exists(obj_puzz2key) &amp;&amp; keycollected = false
+    {
+        instance_create(obj_piani.x,obj_piani.y+6,obj_puzz2key)
+    }
+}
+
+else
+{
+
+    draw_sprite(spr_piani,0,obj_puzz2.x+80,obj_puzz2.y+63)
+}
+
+//player 1 exclamatory stuff
 if p1exclaim = true
 {
     draw_sprite(spr_exclaim,image_index,obj_player1.x+5,obj_player1.y-6);
 }
 
-if player1 = true 
-&amp;&amp;(obj_player1.x &gt;= obj_piani.x -25 &amp;&amp; obj_player1.x &lt;= obj_piani.x-20) 
-&amp;&amp;(obj_player1.y = obj_piani.y+7)
-||(player1=true) 
-&amp;&amp;(obj_player1.x &gt;= obj_piani.x +22 &amp;&amp; obj_player1.x &lt;= obj_piani.x +27)
-&amp;&amp;(obj_player1.y = obj_piani.y+7)
-{
-   if keycollected = false
-   {
-    p1exclaim = true;
-   } 
-}
 
-else
-{
-    p1exclaim = false;
-}
-
-//player 2 exclamatory stuff
 if p2exclaim = true
 {
+
     draw_sprite(spr_exclaim,image_index,obj_player2.x+5,obj_player2.y-6);
 }
 
-if player2 = true 
-&amp;&amp;(obj_player2.x &gt;= obj_piani.x -25 &amp;&amp; obj_player2.x &lt;= obj_piani.x-20) 
-&amp;&amp;(obj_player2.y = obj_piani.y+7)
-||(player2=true) 
-&amp;&amp;(obj_player2.x &gt;= obj_piani.x +22 &amp;&amp; obj_player2.x &lt;= obj_piani.x +27)
-&amp;&amp;(obj_player2.y = obj_piani.y+7)
-{
-   if keycollected = false
-   {
-    p2exclaim = true;
-   } 
-}
-
-else
-{
-    p2exclaim = false;
-}
-
-
-//player 3 exclamatory stuff
 if p3exclaim = true
 {
     draw_sprite(spr_exclaim,image_index,obj_player3.x+5,obj_player3.y-6);
 }
 
-if player3 = true 
-&amp;&amp;(obj_player3.x &gt;= obj_piani.x -25 &amp;&amp; obj_player3.x &lt;= obj_piani.x-20) 
-&amp;&amp;(obj_player3.y = obj_piani.y+7)
-||(player3=true) 
-&amp;&amp;(obj_player3.x &gt;= obj_piani.x +22 &amp;&amp; obj_player3.x &lt;= obj_piani.x +27)
-&amp;&amp;(obj_player3.y = obj_piani.y+7)
-{
-   if keycollected = false
-   {
-    p3exclaim = true;
-   } 
-}
 
-else
-{
-    p3exclaim = false;
-}
-
-//player 4 exclamatory stuff
 if p4exclaim = true
 {
     draw_sprite(spr_exclaim,image_index,obj_player4.x+5,obj_player4.y-6);
 }
-
-if player4 = true 
-&amp;&amp;(obj_player4.x &gt;= obj_piani.x -25 &amp;&amp; obj_player4.x &lt;= obj_piani.x-20) 
-&amp;&amp;(obj_player4.y = obj_piani.y+7)
-||(player4=true) 
-&amp;&amp;(obj_player4.x &gt;= obj_piani.x +22 &amp;&amp; obj_player4.x &lt;= obj_piani.x +27)
-&amp;&amp;(obj_player4.y = obj_piani.y+7)
-{
-   if keycollected = false
-   {
-    p4exclaim = true;
-   } 
-}
-
-else
-{
-    p4exclaim = false;
-}
-
 
 
 </string>

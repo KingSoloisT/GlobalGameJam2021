@@ -111,8 +111,10 @@ obj_belt_lever3.image_index = 1;
 obj_belt_lever2.image_index = 1;
 
 //PLAYER 1 ENTERING EITHER BELT LEVER ACTIONS
-if (player1 = true and obj_player1.x &gt;= obj_belt_lever3.x-10 and obj_player1.x &lt;= obj_belt_lever3.x+10) or
- (player1 = true and obj_player1.x &gt;= obj_belt_lever2.x-10 and obj_player1.x &lt;= obj_belt_lever2.x+10)
+if (player1 = true and obj_player1.x &gt;= obj_belt_lever3.x-10 and obj_player1.x &lt;= obj_belt_lever3.x+10)and
+   (player1 = true and obj_player1.y = obj_belt_lever2.y+3) or
+   (player1 = true and obj_player1.x &gt;= obj_belt_lever2.x-10 and obj_player1.x &lt;= obj_belt_lever2.x+10) and
+   (player1 = true and obj_player1.y = obj_belt_lever2.y+3)
 {
     instance_create(obj_player1.x+5,obj_player1.y-6,obj_P1exclaim);
 } 
@@ -122,8 +124,10 @@ else
 }
     
 //PLAYER 2 ENTERING EITHER BELT LEVER ACTIONS
-if (player2 = true and obj_player2.x &gt;= obj_belt_lever3.x-10 and obj_player2.x &lt;= obj_belt_lever3.x+10) or
-(player2 = true and obj_player2.x &gt;= obj_belt_lever2.x-10 and obj_player2.x &lt;= obj_belt_lever2.x+10)
+if (player2 = true and obj_player2.x &gt;= obj_belt_lever3.x-10 and obj_player2.x &lt;= obj_belt_lever3.x+10)and
+   (player2 = true and obj_player2.y = obj_belt_lever2.y+3) or
+   (player2 = true and obj_player2.x &gt;= obj_belt_lever2.x-10 and obj_player2.x &lt;= obj_belt_lever2.x+10)and
+   (player2 = true and obj_player2.y = obj_belt_lever2.y+3)
     {
     instance_create(obj_player2.x+5,obj_player2.y-6,obj_P2exclaim);
     } else
@@ -132,8 +136,10 @@ if (player2 = true and obj_player2.x &gt;= obj_belt_lever3.x-10 and obj_player2.
     }
 
 //PLAYER 3 ENTERING EITHER BELT LEVER ACTIONS
-if (player3 = true and obj_player3.x &gt;= obj_belt_lever3.x-10 and obj_player3.x &lt;= obj_belt_lever3.x+10) or
-(player3 = true and obj_player3.x &gt;= obj_belt_lever2.x-10 and obj_player3.x &lt;= obj_belt_lever2.x+10)
+if (player3 = true and obj_player3.x &gt;= obj_belt_lever3.x-10 and obj_player3.x &lt;= obj_belt_lever3.x+10)and
+   (player3 = true and obj_player3.y = obj_belt_lever2.y+3) or
+   (player3 = true and obj_player3.x &gt;= obj_belt_lever2.x-10 and obj_player3.x &lt;= obj_belt_lever2.x+10)and
+   (player3 = true and obj_player3.y = obj_belt_lever2.y+3)
     {
     instance_create(obj_player3.x+5,obj_player3.y-6,obj_P3exclaim);
     } else
@@ -142,8 +148,10 @@ if (player3 = true and obj_player3.x &gt;= obj_belt_lever3.x-10 and obj_player3.
     }
     
 //PLAYER 4 ENTERING EITHER BELT LEVER ACTIONS
-if (player4 = true and obj_player4.x &gt;= obj_belt_lever3.x-10 and obj_player4.x &lt;= obj_belt_lever3.x+10) or
-(player4 = true and obj_player4.x &gt;= obj_belt_lever2.x-10 and obj_player4.x &lt;= obj_belt_lever2.x+10)
+if (player4 = true and obj_player4.x &gt;= obj_belt_lever3.x-10 and obj_player4.x &lt;= obj_belt_lever3.x+10)and
+   (player4 = true and obj_player4.y = obj_belt_lever2.y+3) or
+   (player4 = true and obj_player4.x &gt;= obj_belt_lever2.x-10 and obj_player4.x &lt;= obj_belt_lever2.x+10)and
+   (player4 = true and obj_player4.y = obj_belt_lever2.y+3)
     {
     instance_create(obj_player4.x+5,obj_player4.y-6,obj_P4exclaim);
     } else
