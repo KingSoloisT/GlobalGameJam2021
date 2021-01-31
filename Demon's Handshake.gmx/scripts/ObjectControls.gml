@@ -10,9 +10,10 @@ if (argument0 == "P1")
     || CurrentObject == obj_puzz3
     || CurrentObject == obj_puzz4
     || CurrentObject == obj_puzz5
-    || CurrentObject == obj_puzz9
-    //|| CurrentObject == obj_puzz6
+    || CurrentObject == obj_puzz6
     || CurrentObject == obj_puzz7
+    || CurrentObject == obj_puzz8
+    || CurrentObject == obj_puzz9
     //|| CurrentObject == 
     )
 }
@@ -25,9 +26,10 @@ else if (argument0 == "P2")
     || CurrentObject == obj_puzz3
     || CurrentObject == obj_puzz4
     || CurrentObject == obj_puzz5
-    || CurrentObject == obj_puzz9
-    //|| CurrentObject == obj_puzz6
+    || CurrentObject == obj_puzz6
     || CurrentObject == obj_puzz7
+    || CurrentObject == obj_puzz8
+    || CurrentObject == obj_puzz9
     //|| CurrentObject == 
     )
 }
@@ -40,9 +42,10 @@ else if (argument0 == "P3")
     || CurrentObject == obj_puzz3
     || CurrentObject == obj_puzz4
     || CurrentObject == obj_puzz5
-    || CurrentObject == obj_puzz9
-    //|| CurrentObject == obj_puzz6
+    || CurrentObject == obj_puzz6
     || CurrentObject == obj_puzz7
+    || CurrentObject == obj_puzz8
+    || CurrentObject == obj_puzz9
     //|| CurrentObject == 
     )
 }
@@ -55,9 +58,10 @@ else if (argument0 == "P4")
     || CurrentObject == obj_puzz3
     || CurrentObject == obj_puzz4
     || CurrentObject == obj_puzz5
-    || CurrentObject == obj_puzz9
-    //|| CurrentObject == obj_puzz6
+    || CurrentObject == obj_puzz6
     || CurrentObject == obj_puzz7
+    || CurrentObject == obj_puzz8
+    || CurrentObject == obj_puzz9
     //|| CurrentObject == 
     )
 }

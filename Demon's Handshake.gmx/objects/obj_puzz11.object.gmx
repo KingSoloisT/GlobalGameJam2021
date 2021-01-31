@@ -27,22 +27,34 @@
             <kind>1</kind>
             <string>global.playercount = 0;
 
-//CREATE BELT LEVER
+//CREATE BELT LEVER 1
 if !instance_exists(obj_belt_lever)
 {
     instance_create(75,67,obj_belt_lever);
 }
 
-//CREATE BELT
+//CREATE BELT LEVER 2
+if !instance_exists(obj_belt_lever2)
+{
+    instance_create(90,67,obj_belt_lever2);
+}
+
+//CREATE BELT 1
 if !instance_exists(obj_belt)
 {
     instance_create(30,30,obj_belt);
 }
 
+//CREATE BELT 2
+if !instance_exists(obj_belt2)
+{
+    instance_create(10,20,obj_belt2);
+}
+
 //CREATE KEY
 if !instance_exists(obj_key)
 {
-    instance_create(50,28,obj_key);
+    instance_create(50,18,obj_key);
 }
 
 //set player check variables
@@ -72,8 +84,8 @@ player4 = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>GameControls(obj_puzz7); //&lt;-----Initiate controller controls
-ObjectControls(obj_puzz7);
+            <string>GameControls(obj_puzz11); //&lt;-----Initiate controller controls
+ObjectControls(obj_puzz11);
 
 // CHECK WHICH PLAYERS ARE IN THE ROOM
 if instance_exists(obj_player1)
@@ -94,9 +106,11 @@ if instance_exists(obj_player4)
 }
 
 obj_belt_lever.image_index = 1;
+obj_belt_lever2.image_index = 1;
 
-//PLAYER 1 ENTERING BELT LEVER ACTION
-if (player1 = true and obj_player1.x &gt;= obj_belt_lever.x-10 and obj_player1.x &lt;= obj_belt_lever.x+10)
+//PLAYER 1 ENTERING EITHER BELT LEVER ACTIONS
+if (player1 = true and obj_player1.x &gt;= obj_belt_lever.x-10 and obj_player1.x &lt;= obj_belt_lever.x+10) or
+ (player1 = true and obj_player1.x &gt;= obj_belt_lever2.x-10 and obj_player1.x &lt;= obj_belt_lever2.x+10)
     {
     instance_create(obj_player1.x+5,obj_player1.y-6,obj_P1exclaim);
     } else
@@ -104,8 +118,9 @@ if (player1 = true and obj_player1.x &gt;= obj_belt_lever.x-10 and obj_player1.x
     instance_destroy(obj_P1exclaim);
     }
     
-//PLAYER 2 ENTERING BELT LEVER ACTION
-if (player2 = true and obj_player2.x &gt;= obj_belt_lever.x-10 and obj_player2.x &lt;= obj_belt_lever.x+10) //Player action cue displayed
+//PLAYER 2 ENTERING EITHER BELT LEVER ACTIONS
+if (player2 = true and obj_player2.x &gt;= obj_belt_lever.x-10 and obj_player2.x &lt;= obj_belt_lever.x+10) or
+(player2 = true and obj_player2.x &gt;= obj_belt_lever2.x-10 and obj_player2.x &lt;= obj_belt_lever2.x+10)
     {
     instance_create(obj_player2.x+5,obj_player2.y-6,obj_P2exclaim);
     } else
@@ -113,8 +128,9 @@ if (player2 = true and obj_player2.x &gt;= obj_belt_lever.x-10 and obj_player2.x
     instance_destroy(obj_P2exclaim);
     }
 
-//PLAYER 3 ENTERING BELT LEVER ACTION
-if (player3 = true and obj_player3.x &gt;= obj_belt_lever.x-10 and obj_player3.x &lt;= obj_belt_lever.x+10) //Player action cue displayed
+//PLAYER 3 ENTERING EITHER BELT LEVER ACTIONS
+if (player3 = true and obj_player3.x &gt;= obj_belt_lever.x-10 and obj_player3.x &lt;= obj_belt_lever.x+10) or
+(player3 = true and obj_player3.x &gt;= obj_belt_lever2.x-10 and obj_player3.x &lt;= obj_belt_lever2.x+10)
     {
     instance_create(obj_player3.x+5,obj_player3.y-6,obj_P3exclaim);
     } else
@@ -122,19 +138,22 @@ if (player3 = true and obj_player3.x &gt;= obj_belt_lever.x-10 and obj_player3.x
     instance_destroy(obj_P3exclaim);
     }
     
-//PLAYER 4 ENTERING BELT LEVER ACTION
-if (player4 = true and obj_player4.x &gt;= obj_belt_lever.x-10 and obj_player4.x &lt;= obj_belt_lever.x+10) //Player action cue displayed
+//PLAYER 4 ENTERING EITHER BELT LEVER ACTIONS
+if (player4 = true and obj_player4.x &gt;= obj_belt_lever.x-10 and obj_player4.x &lt;= obj_belt_lever.x+10) or
+(player4 = true and obj_player4.x &gt;= obj_belt_lever2.x-10 and obj_player4.x &lt;= obj_belt_lever2.x+10)
     {
     instance_create(obj_player4.x+5,obj_player4.y-6,obj_P4exclaim);
     } else
     {
     instance_destroy(obj_P4exclaim);
     }
-//PLAYERS 1 - 4 ACTIVATING BELT LEVER ACTIONS
+
+//PLAYERS 1 - 4 ACTIVATING FIRST BELT LEVER ACTION
 if (player1 = true and obj_player1.x &gt;= obj_belt_lever.x-10 and obj_player1.x &lt;= obj_belt_lever.x+10 and obj_player1.key_action) or
- (player2 = true and obj_player2.x &gt;= obj_belt_lever.x-10 and obj_player2.x &lt;= obj_belt_lever.x+10 and obj_player2.key_action) or
- (player3 = true and obj_player3.x &gt;= obj_belt_lever.x-10 and obj_player3.x &lt;= obj_belt_lever.x+10 and obj_player3.key_action) or
- (player4 = true and obj_player4.x &gt;= obj_belt_lever.x-10 and obj_player4.x &lt;= obj_belt_lever.x+10 and obj_player4.key_action)
+(player2 = true and obj_player2.x &gt;= obj_belt_lever.x-10 and obj_player2.x &lt;= obj_belt_lever.x+10 and obj_player2.key_action) or
+(player3 = true and obj_player3.x &gt;= obj_belt_lever.x-10 and obj_player3.x &lt;= obj_belt_lever.x+10 and obj_player3.key_action) or
+(player4 = true and obj_player4.x &gt;= obj_belt_lever.x-10 and obj_player4.x &lt;= obj_belt_lever.x+10 and obj_player4.key_action)
+    
     {
     obj_belt_lever.image_index = 0;
     obj_belt.image_speed = -.25;
@@ -150,7 +169,29 @@ if (player1 = true and obj_player1.x &gt;= obj_belt_lever.x-10 and obj_player1.x
             obj_key.hspeed = 0
             }
         }
- 
+
+//PLAYERS 1 - 4 ACTIVATING SECOND BELT LEVER ACTION
+if (player1 = true and obj_player1.x &gt;= obj_belt_lever2.x-10 and obj_player1.x &lt;= obj_belt_lever2.x+10 and obj_player1.key_action) or
+(player2 = true and obj_player2.x &gt;= obj_belt_lever2.x-10 and obj_player2.x &lt;= obj_belt_lever2.x+10 and obj_player2.key_action) or
+(player3 = true and obj_player3.x &gt;= obj_belt_lever2.x-10 and obj_player3.x &lt;= obj_belt_lever2.x+10 and obj_player3.key_action) or
+(player4 = true and obj_player4.x &gt;= obj_belt_lever2.x-10 and obj_player4.x &lt;= obj_belt_lever2.x+10 and obj_player4.key_action)
+
+    {
+    obj_belt_lever2.image_index = 2;
+    obj_belt2.image_speed = .25;
+    if instance_exists(obj_key)
+        {
+        obj_key.hspeed = .25
+        }
+    } else
+        {
+        if instance_exists(obj_key)
+            {
+            obj_belt2.image_speed = 0;
+            obj_key.hspeed = 0
+            }
+        }
+
 //ACTUAL BELT MOVEMENT
 if instance_exists(obj_key)
     { 
