@@ -55,8 +55,10 @@ draw_rectangle(0,0,1600,900,true);
 draw_rectangle(1600,0,3200,900,true);
 draw_rectangle(0,900,1600,1798,true);
 draw_rectangle(1600,900,3200,1798,true);
-//remove later testing stuff
 
+
+//remove later testing stuff
+/*
 if global.player_villan = 'player1'
 {
     draw_set_colour(c_red);
@@ -82,7 +84,7 @@ if global.player_villan = 'player4'
 }
 draw_set_colour(c_white);
 draw_text(100,790,global.key_total);
-
+*/
 
 
 draw_sprite_ext(spr_key,1,1350,825,20,20,0,c_white,1);
@@ -90,10 +92,10 @@ draw_sprite_ext(spr_key,1,2950,825,20,20,0,c_white,1);
 draw_sprite_ext(spr_key,1,1350,1725,20,20,0,c_white,1);
 draw_sprite_ext(spr_key,1,2950,1725,20,20,0,c_white,1);
 
-draw_text(1475,800,global.player1_key);
-draw_text(3075,800,global.player2_key);
-draw_text(1475,1700,global.player3_key);
-draw_text(3075,1700,global.player4_key);
+draw_text(1475,810,global.player1_key);
+draw_text(3075,810,global.player2_key);
+draw_text(1475,1710,global.player3_key);
+draw_text(3075,1710,global.player4_key);
 
 draw_sprite_ext(spr_player1_head,0,100,70,10,10,0,c_white,1);
 draw_sprite_ext(spr_player2_head,0,1700,70,10,10,0,c_white,1);

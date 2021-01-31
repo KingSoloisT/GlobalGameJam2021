@@ -52,22 +52,47 @@ goal = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if place_meeting(x,y,obj_player1)
+            <string>if place_meeting(x,y,obj_player1) || obj_player1.state = 'dead' 
 {
     player1 = true;
 }
 else
 {
-    if obj_player1.state = 'dead' 
-    { 
-        player1 = true;
-    }
-    else
-    {
-        player1 = false;
-    }
+    player1 = false;
 }
 
+if place_meeting(x,y,obj_player2) || obj_player2.state = 'dead' 
+{
+    player2 = true;
+}
+else
+{
+    player2 = false;
+}
+
+if place_meeting(x,y,obj_player3) || obj_player3.state = 'dead' 
+{
+    player3 = true;
+}
+else
+{
+    player3 = false;
+}
+
+if place_meeting(x,y,obj_player4) || obj_player4.state = 'dead' 
+{
+    player4 = true;
+}
+else
+{
+    player4 = false;
+}
+
+
+
+
+
+/*
 if place_meeting(x,y,obj_player2)
 {
     player2 = true;
@@ -115,6 +140,9 @@ else
         player4 = false;
     }
 }
+*/
+
+
 
 if player1 = true &amp;&amp; player2 = true &amp;&amp; player3 = true &amp;&amp; player4 = true 
 {
