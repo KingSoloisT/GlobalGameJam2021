@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string></string>
+            <string>audio_play_sound(fx_gunshot,1,false);
+</string>
           </argument>
         </arguments>
       </action>
