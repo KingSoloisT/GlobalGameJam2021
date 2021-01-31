@@ -36,7 +36,7 @@ if !instance_exists(obj_belt_lever)
 //CREATE BELT LEVER 2
 if !instance_exists(obj_belt_lever2)
 {
-    instance_create(90,67,obj_belt_lever2);
+    instance_create(105,67,obj_belt_lever2);
 }
 
 //CREATE BELT 1
@@ -48,13 +48,13 @@ if !instance_exists(obj_belt)
 //CREATE BELT 2
 if !instance_exists(obj_belt2)
 {
-    instance_create(10,20,obj_belt2);
+    instance_create(40,40,obj_belt2);
 }
 
 //CREATE KEY
-if !instance_exists(obj_key)
+if !instance_exists(obj_puzz11key)
 {
-    instance_create(50,18,obj_key);
+    instance_create(50,28,obj_puzz11key);
 }
 
 //set player check variables
@@ -84,8 +84,8 @@ player4 = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>GameControls(obj_puzz11); //&lt;-----Initiate controller controls
-ObjectControls(obj_puzz11);
+            <string>GameControls(obj_puzz7); //&lt;-----Initiate controller controls
+ObjectControls(obj_puzz7);
 
 // CHECK WHICH PLAYERS ARE IN THE ROOM
 if instance_exists(obj_player1)
@@ -147,71 +147,70 @@ if (player4 = true and obj_player4.x &gt;= obj_belt_lever.x-10 and obj_player4.x
     {
     instance_destroy(obj_P4exclaim);
     }
-
-//PLAYERS 1 - 4 ACTIVATING FIRST BELT LEVER ACTION
-if (player1 = true and obj_player1.x &gt;= obj_belt_lever.x-10 and obj_player1.x &lt;= obj_belt_lever.x+10 and obj_player1.key_action) or
-(player2 = true and obj_player2.x &gt;= obj_belt_lever.x-10 and obj_player2.x &lt;= obj_belt_lever.x+10 and obj_player2.key_action) or
-(player3 = true and obj_player3.x &gt;= obj_belt_lever.x-10 and obj_player3.x &lt;= obj_belt_lever.x+10 and obj_player3.key_action) or
-(player4 = true and obj_player4.x &gt;= obj_belt_lever.x-10 and obj_player4.x &lt;= obj_belt_lever.x+10 and obj_player4.key_action)
     
+//PLAYERS 1 - 4 ACTIVATING BELT LEVER ACTIONS
+if (player1 = true and obj_player1.x &gt;= obj_belt_lever.x-10 and obj_player1.x &lt;= obj_belt_lever.x+10 and obj_player1.key_action) or
+ (player2 = true and obj_player2.x &gt;= obj_belt_lever.x-10 and obj_player2.x &lt;= obj_belt_lever.x+10 and obj_player2.key_action) or
+ (player3 = true and obj_player3.x &gt;= obj_belt_lever.x-10 and obj_player3.x &lt;= obj_belt_lever.x+10 and obj_player3.key_action) or
+ (player4 = true and obj_player4.x &gt;= obj_belt_lever.x-10 and obj_player4.x &lt;= obj_belt_lever.x+10 and obj_player4.key_action)
     {
     obj_belt_lever.image_index = 0;
     obj_belt.image_speed = -.25;
-    if instance_exists(obj_key)
+    if instance_exists(obj_puzz11key)
         {
-        obj_key.hspeed = .25
+        obj_puzz11key.hspeed = .25
         }
     } else
         {
-        if instance_exists(obj_key)
+        if instance_exists(obj_puzz11key)
             {
             obj_belt.image_speed = 0;
-            obj_key.hspeed = 0
+            obj_puzz11key.hspeed = 0
             }
         }
-
-//PLAYERS 1 - 4 ACTIVATING SECOND BELT LEVER ACTION
-if (player1 = true and obj_player1.x &gt;= obj_belt_lever2.x-10 and obj_player1.x &lt;= obj_belt_lever2.x+10 and obj_player1.key_action) or
-(player2 = true and obj_player2.x &gt;= obj_belt_lever2.x-10 and obj_player2.x &lt;= obj_belt_lever2.x+10 and obj_player2.key_action) or
-(player3 = true and obj_player3.x &gt;= obj_belt_lever2.x-10 and obj_player3.x &lt;= obj_belt_lever2.x+10 and obj_player3.key_action) or
-(player4 = true and obj_player4.x &gt;= obj_belt_lever2.x-10 and obj_player4.x &lt;= obj_belt_lever2.x+10 and obj_player4.key_action)
-
-    {
-    obj_belt_lever2.image_index = 2;
-    obj_belt2.image_speed = .25;
-    if instance_exists(obj_key)
-        {
-        obj_key.hspeed = .25
-        }
-    } else
-        {
-        if instance_exists(obj_key)
-            {
-            obj_belt2.image_speed = 0;
-            obj_key.hspeed = 0
-            }
-        }
-
+ 
 //ACTUAL BELT MOVEMENT
-if instance_exists(obj_key)
+if instance_exists(obj_puzz11key)
     { 
-        if obj_key.x &gt;= 120
+        if obj_puzz11key.x &gt;= 120
         {
-            obj_key.vspeed = 2
-            obj_key.hspeed = 0
+            obj_puzz11key.vspeed = 2
+            obj_puzz11key.hspeed = 0
         }
     }
 
-if instance_exists(obj_key)
+if instance_exists(obj_puzz11key)
     { 
-    if obj_key.y &gt;= 68
+    if obj_puzz11key.y &gt;= 38
         {
-            obj_key.vspeed = 0
+            obj_puzz11key.vspeed = 0
+        }
+    }
+
+if instance_exists(obj_puzz11key)
+    { 
+    if obj_puzz11key.y &gt;= 38
+        {
+            obj_puzz11key.hspeed = 0
+        }
+    }
+
+if (player1 = true and obj_player1.x &gt;= obj_belt_lever2.x-10 and obj_player1.x &lt;= obj_belt_lever2.x+10 and obj_player1.key_action) or
+ (player2 = true and obj_player2.x &gt;= obj_belt_lever2.x-10 and obj_player2.x &lt;= obj_belt_lever2.x+10 and obj_player2.key_action) or
+ (player3 = true and obj_player3.x &gt;= obj_belt_lever2.x-10 and obj_player3.x &lt;= obj_belt_lever2.x+10 and obj_player3.key_action) or
+ (player4 = true and obj_player4.x &gt;= obj_belt_lever2.x-10 and obj_player4.x &lt;= obj_belt_lever2.x+10 and obj_player4.key_action) and
+ obj_puzz11key.y &gt;= 38
+ {
+ obj_belt_lever2.image_index = 2;
+    obj_belt2.image_speed = .25;
+    if instance_exists(obj_puzz11key)
+        {
+        obj_puzz11key.hspeed = -.25
         }
     }
         
- //KEY IS GONE, NO MORE BELT MOVEMENT
-if !instance_exists(obj_key)
+//KEY IS GONE, NO MORE BELT MOVEMENT
+if !instance_exists(obj_puzz11key)
 {
     if instance_exists(obj_P1exclaim)
     {

@@ -192,6 +192,7 @@
         <object>objects\obj_puzz0</object>
         <object>objects\obj_puzz7</object>
         <object>objects\obj_puzz11</object>
+        <object>objects\obj_puzzX</object>
       </objects>
       <objects name="Puzzle Key Decoys">
         <object>objects\obj_puzz1key</object>
@@ -199,6 +200,7 @@
         <object>objects\obj_puzz2key</object>
         <object>objects\obj_puzz3key</object>
         <object>objects\obj_puzz4key</object>
+        <object>objects\obj_puzz11key</object>
       </objects>
       <objects name="puzzlelocker">
         <object>objects\obj_safe</object>

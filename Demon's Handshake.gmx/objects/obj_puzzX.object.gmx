@@ -25,25 +25,36 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/*crank = 0; //When this variable hits 10 the key will fall to the ground
-global.playercount = 0;
+            <string>global.playercount = 0;
 
-//CREATE CRANK
-if !instance_exists(obj_crank)
+//CREATE BELT LEVER 1
+if !instance_exists(obj_belt_lever2)
 {
-    instance_create(75,65,obj_crank);
+    instance_create(75,67,obj_belt_lever2);
 }
 
-//CREATE CONVEYOR 
-if !instance_exists(obj_belt1)
+//CREATE BELT LEVER 2
+if !instance_exists(obj_belt_lever)
 {
-    instance_create(30,65,obj_belt1);
+    instance_create(90,67,obj_belt_lever);
+}
+
+//CREATE BELT 1
+if !instance_exists(obj_belt)
+{
+    instance_create(30,30,obj_belt);
+}
+
+//CREATE BELT 2
+if !instance_exists(obj_belt2)
+{
+    instance_create(10,20,obj_belt2);
 }
 
 //CREATE KEY
-if !instance_exists(obj_key)
+if !instance_exists(obj_puzz11key)
 {
-    instance_create(obj_lever.x,obj_lever.y-5,obj_key);
+    instance_create(50,18,obj_puzz11key);
 }
 
 //set player check variables
@@ -73,7 +84,8 @@ player4 = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/*GameControls(obj_puzz5); //&lt;-----Initiate controller controls
+            <string>GameControls(obj_puzz11); //&lt;-----Initiate controller controls
+ObjectControls(obj_puzz11);
 
 // CHECK WHICH PLAYERS ARE IN THE ROOM
 if instance_exists(obj_player1)
@@ -93,165 +105,121 @@ if instance_exists(obj_player4)
     player4=true;
 }
 
-//PLAYER 1 ENTERING LEVER AREA
-if player1 = true &amp;&amp; obj_player1.x &gt;= obj_lever.x-10 &amp;&amp; obj_player1.x &lt;= obj_lever.x+10
-{
-    if !instance_exists(obj_P1exclaim) //makes action cue appear
+obj_belt_lever.image_index = 1;
+obj_belt_lever2.image_index = 1;
+
+//PLAYER 1 ENTERING EITHER BELT LEVER ACTIONS
+if (player1 = true and obj_player1.x &gt;= obj_belt_lever.x-10 and obj_player1.x &lt;= obj_belt_lever.x+10) or
+ (player1 = true and obj_player1.x &gt;= obj_belt_lever2.x-10 and obj_player1.x &lt;= obj_belt_lever2.x+10)
     {
-        instance_create(obj_player1.x+5,obj_player1.y-6,obj_P1exclaim);   
+    instance_create(obj_player1.x+5,obj_player1.y-6,obj_P1exclaim);
+    } else
+    {
+    instance_destroy(obj_P1exclaim);
     }
     
-    if obj_player1.x &gt;= obj_lever.x-10 &amp;&amp; obj_player1.x &lt;= obj_lever.x //&lt;--pushing up the LEFT side of the lever
-    {   
-        if (obj_player1.key_action_press) &amp;&amp; (obj_lever.image_index != 1) &amp;&amp; global.playercount &gt;= 2 //x button
-        {
-            obj_lever.image_index = 1;
-            lever += 1;
-        }
+//PLAYER 2 ENTERING EITHER BELT LEVER ACTIONS
+if (player2 = true and obj_player2.x &gt;= obj_belt_lever.x-10 and obj_player2.x &lt;= obj_belt_lever.x+10) or
+(player2 = true and obj_player2.x &gt;= obj_belt_lever2.x-10 and obj_player2.x &lt;= obj_belt_lever2.x+10)
+    {
+    instance_create(obj_player2.x+5,obj_player2.y-6,obj_P2exclaim);
+    } else
+    {
+    instance_destroy(obj_P2exclaim);
+    }
+
+//PLAYER 3 ENTERING EITHER BELT LEVER ACTIONS
+if (player3 = true and obj_player3.x &gt;= obj_belt_lever.x-10 and obj_player3.x &lt;= obj_belt_lever.x+10) or
+(player3 = true and obj_player3.x &gt;= obj_belt_lever2.x-10 and obj_player3.x &lt;= obj_belt_lever2.x+10)
+    {
+    instance_create(obj_player3.x+5,obj_player3.y-6,obj_P3exclaim);
+    } else
+    {
+    instance_destroy(obj_P3exclaim);
     }
     
-    if obj_player1.x &gt;= obj_lever.x &amp;&amp; obj_player1.x &lt;= obj_lever.x+10 //&lt;--pushing up the RIGHT side of the lever
-    {   
-        if (obj_player1.key_action_press) &amp;&amp; (obj_lever.image_index != 2) &amp;&amp; global.playercount &gt;= 2//x button
-        {
-            obj_lever.image_index = 2;
-            lever += 1;
-        }
-    }
-}
-
-else
-{
-        if instance_exists(obj_P1exclaim) //gets rid of action cue
-        {
-            instance_destroy(obj_P1exclaim);
-        }
-}
-
-//PLAYER 2 ENTERING LEVER AREA
-if player2 = true &amp;&amp; obj_player2.x &gt;= obj_lever.x-10 &amp;&amp; obj_player2.x &lt;= obj_lever.x+10
-{
-    if !instance_exists(obj_P2exclaim)
+//PLAYER 4 ENTERING EITHER BELT LEVER ACTIONS
+if (player4 = true and obj_player4.x &gt;= obj_belt_lever.x-10 and obj_player4.x &lt;= obj_belt_lever.x+10) or
+(player4 = true and obj_player4.x &gt;= obj_belt_lever2.x-10 and obj_player4.x &lt;= obj_belt_lever2.x+10)
     {
-        instance_create(obj_player2.x+5,obj_player2.y-6,obj_P2exclaim);
+    instance_create(obj_player4.x+5,obj_player4.y-6,obj_P4exclaim);
+    } else
+    {
+    instance_destroy(obj_P4exclaim);
     }
+
+//PLAYERS 1 - 4 ACTIVATING FIRST BELT LEVER ACTION
+if (player1 = true and obj_player1.x &gt;= obj_belt_lever.x-10 and obj_player1.x &lt;= obj_belt_lever.x+10 and obj_player1.key_action) or
+(player2 = true and obj_player2.x &gt;= obj_belt_lever.x-10 and obj_player2.x &lt;= obj_belt_lever.x+10 and obj_player2.key_action) or
+(player3 = true and obj_player3.x &gt;= obj_belt_lever.x-10 and obj_player3.x &lt;= obj_belt_lever.x+10 and obj_player3.key_action) or
+(player4 = true and obj_player4.x &gt;= obj_belt_lever.x-10 and obj_player4.x &lt;= obj_belt_lever.x+10 and obj_player4.key_action)
     
-
-    if obj_player2.x &gt;= obj_lever.x-10 &amp;&amp; obj_player2.x &lt;= obj_lever.x //&lt;--pushing up the LEFT side of the lever
-    {   
-        if (obj_player2.key_action_press) &amp;&amp; (obj_lever.image_index != 1) &amp;&amp; global.playercount &gt;= 2//x button
-        {
-            obj_lever.image_index = 1;
-            lever += 1;
-        }
-    }
-    
-    if obj_player2.x &gt;= obj_lever.x &amp;&amp; obj_player2.x &lt;= obj_lever.x+10 //&lt;--pushing up the RIGHT side of the lever
-    {   
-        if (obj_player2.key_action_press) &amp;&amp; (obj_lever.image_index != 2) &amp;&amp; global.playercount &gt;= 2//x button
-        {
-            obj_lever.image_index = 2;
-            lever += 1;
-        }
-    }
-}
-
-else
-{
-    if instance_exists(obj_P2exclaim)
     {
-        instance_destroy(obj_P2exclaim);
-    }
-}
+    obj_belt_lever.image_index = 2;
+    obj_belt.image_speed = .25;
+    if instance_exists(obj_puzz11key)
+        {
+        obj_puzz11key.hspeed = -.25
+        }
+    } else
+        {
+        if instance_exists(obj_puzz11key)
+            {
+            obj_belt.image_speed = 0;
+            obj_puzz11key.hspeed = 0
+            }
+        }
 
-//PLAYER 3 ENTERING LEVER AREA
-if player3 = true &amp;&amp; obj_player3.x &gt;= obj_lever.x -10 &amp;&amp; obj_player3.x &lt;= obj_lever.x+10
-{
-    if !instance_exists(obj_P3exclaim)
+//PLAYERS 1 - 4 ACTIVATING SECOND BELT LEVER ACTION
+if (player1 = true and obj_player1.x &gt;= obj_belt_lever2.x-10 and obj_player1.x &lt;= obj_belt_lever2.x+10 and obj_player1.key_action) or
+(player2 = true and obj_player2.x &gt;= obj_belt_lever2.x-10 and obj_player2.x &lt;= obj_belt_lever2.x+10 and obj_player2.key_action) or
+(player3 = true and obj_player3.x &gt;= obj_belt_lever2.x-10 and obj_player3.x &lt;= obj_belt_lever2.x+10 and obj_player3.key_action) or
+(player4 = true and obj_player4.x &gt;= obj_belt_lever2.x-10 and obj_player4.x &lt;= obj_belt_lever2.x+10 and obj_player4.key_action)
+
     {
-        instance_create(obj_player3.x+5,obj_player3.y-6,obj_P3exclaim);
-    }
-    if obj_player3.x &gt;= obj_lever.x-10 &amp;&amp; obj_player3.x &lt;= obj_lever.x //&lt;--pushing up the LEFT side of the lever
-    {   
-        if (obj_player3.key_action_press) &amp;&amp; (obj_lever.image_index != 1) &amp;&amp; global.playercount &gt;= 2//x button
+    obj_belt_lever2.image_index = 0;
+    obj_belt2.image_speed = -.25;
+    if instance_exists(obj_puzz11key)
         {
-            obj_lever.image_index = 1;
-            lever += 1;
+        obj_puzz11key.hspeed = .25
+        }
+    } else
+        {
+        if instance_exists(obj_puzz11key)
+            {
+            obj_belt2.image_speed = 0;
+            obj_puzz11key.hspeed = 0
+            }
+        }
+
+//ACTUAL BELT MOVEMENT
+if instance_exists(obj_puzz11key)
+    { 
+        if obj_puzz11key.x &gt;= 120
+        {
+            obj_puzz11key.vspeed = 2
+            obj_puzz11key.hspeed = 0
         }
     }
-    
-    if obj_player3.x &gt;= obj_lever.x &amp;&amp; obj_player3.x &lt;= obj_lever.x+10 //&lt;--pushing up the RIGHT side of the lever
-    {   
-        if (obj_player3.key_action_press) &amp;&amp; (obj_lever.image_index != 2) &amp;&amp; global.playercount &gt;= 2//x button
+
+if instance_exists(obj_puzz11key)
+    { 
+    if obj_puzz11key.y &gt;= 30
         {
-            obj_lever.image_index = 2;
-            lever += 1;
+            obj_puzz11key.vspeed = 0
+        }
+    }    
+/*   
+if instance_exists(obj_puzz11key)
+    { 
+    if obj_puzz11key.y &gt;= 68
+        {
+            obj_puzz11key.vspeed = 0
         }
     }
-}
-
-else
-{
-        if instance_exists(obj_P3exclaim)
-        {
-            instance_destroy(obj_P3exclaim);
-        }
-}
-
-//PLAYER 4 ENTERING LEVER AREA
-if player4 = true &amp;&amp; obj_player4.x &gt;= obj_lever.x -10 &amp;&amp; obj_player4.x &lt;= obj_lever.x+10
-{
-    if !instance_exists(obj_P4exclaim)
-    {
-        instance_create(obj_player4.x+5,obj_player4.y-6,obj_P4exclaim);
-    }
-    if obj_player4.x &gt;= obj_lever.x-10 &amp;&amp; obj_player4.x &lt;= obj_lever.x //&lt;--pushing up the LEFT side of the lever
-    {   
-        if (obj_player4.key_action_press) &amp;&amp; (obj_lever.image_index != 1) &amp;&amp; global.playercount &gt;= 2//x button
-        {
-            obj_lever.image_index = 1;
-            lever += 1;
-        }
-    }
-    
-    if obj_player4.x &gt;= obj_lever.x &amp;&amp; obj_player4.x &lt;= obj_lever.x+10 //&lt;--pushing up the RIGHT side of the lever
-    {   
-        if (obj_player4.key_action_press) &amp;&amp; (obj_lever.image_index != 2) &amp;&amp; global.playercount &gt;= 2//x button
-        {
-            obj_lever.image_index = 2;
-            lever += 1;
-        }
-    }
-}
-
-else
-{
-        if instance_exists(obj_P4exclaim)
-        {
-            instance_destroy(obj_P4exclaim);
-        }
-}
-
-//ACTUAL LEVER LEVERAGING
-if lever &gt;= 10
-{
-    if instance_exists(obj_key)
-    {
-        obj_key.vspeed = 2;
-    }
-    obj_lever.image_index = 1;
-}
-
-if instance_exists(obj_key)
-{
-    if obj_key.y &gt;= 69
-    {
-        obj_key.vspeed = 0;
-    }
-}
-
-//KEY IS GONE, NO MORE LEVER LEVERAGE CUES
-if !instance_exists(obj_key)
+*/
+ //KEY IS GONE, NO MORE BELT MOVEMENT
+if !instance_exists(obj_puzz11key)
 {
     if instance_exists(obj_P1exclaim)
     {
