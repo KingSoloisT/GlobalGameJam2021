@@ -39,6 +39,11 @@ instance_create(92,68,obj_crate);
 
 cratex = 0;
 crate = false;
+crate2 = false;
+crate3 = false;
+crate4 = false;
+hole = true;
+key_created = false;
 
 
 
@@ -83,17 +88,53 @@ if instance_exists(obj_player4)
 {
     player4=true;
 }
-
-if crate = true &amp;&amp; obj_player1.key_action_press &amp;&amp; obj_player1.facing = 'right'
+//player 1
+if crate = true &amp;&amp; hole = true &amp;&amp; obj_player1.key_action_press &amp;&amp; obj_player1.facing = 'right' 
 {
-    crate += 1;
-    obj_crate.x+=1;
+    obj_crate.x+=2;
 }
 
-if crate = true &amp;&amp; obj_player1.key_action_press &amp;&amp; obj_player1.facing = 'left'
+if crate = true &amp;&amp; hole = true &amp;&amp; obj_player1.key_action_press &amp;&amp; obj_player1.facing = 'left' 
 {
-    crate -= 1;
-    obj_crate.x-=1;
+    obj_crate.x-=2;
+}
+//player 2
+if crate2 = true &amp;&amp; hole = true &amp;&amp; obj_player2.key_action_press &amp;&amp; obj_player2.facing = 'right' 
+{
+    obj_crate.x+=2;
+}
+
+if crate2 = true &amp;&amp; hole = true &amp;&amp; obj_player2.key_action_press &amp;&amp; obj_player2.facing = 'left' 
+{
+    obj_crate.x-=2;
+}
+
+//player 3
+if crate3 = true &amp;&amp; hole = true &amp;&amp; obj_player3.key_action_press &amp;&amp; obj_player3.facing = 'right' 
+{
+    obj_crate.x+=2;
+}
+
+if crate3 = true &amp;&amp; hole = true &amp;&amp; obj_player3.key_action_press &amp;&amp; obj_player3.facing = 'left' 
+{
+    obj_crate.x-=2;
+}
+
+//player 4
+if crate4 = true &amp;&amp; hole = true &amp;&amp; obj_player4.key_action_press &amp;&amp; obj_player4.facing = 'right' 
+{
+    obj_crate.x+=2;
+}
+
+if crate4 = true &amp;&amp; hole = true &amp;&amp; obj_player4.key_action_press &amp;&amp; obj_player4.facing = 'left' 
+{
+    obj_crate.x-=2;
+}
+//key create
+if key_created = false &amp;&amp; hole = false
+{
+    instance_create(obj_floorhole.x,obj_floorhole.y,obj_key);
+    key_created = true;
 }
 
 

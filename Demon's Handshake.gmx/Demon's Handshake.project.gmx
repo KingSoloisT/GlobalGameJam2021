@@ -86,6 +86,7 @@
     </sprites>
     <sprites name="gratepuzzle">
       <sprite>sprites\spr_grate</sprite>
+      <sprite>sprites\spr_gobin</sprite>
       <sprite>sprites\spr_chain</sprite>
       <sprite>sprites\spr_chain_up</sprite>
       <sprite>sprites\spr_chain_right</sprite>
@@ -176,6 +177,7 @@
         <object>objects\obj_puzz6</object>
         <object>objects\obj_puzz8</object>
         <object>objects\obj_puzz9</object>
+        <object>objects\obj_puzz10</object>
         <object>objects\obj_puzz0</object>
         <object>objects\obj_puzz7</object>
       </objects>
@@ -201,6 +203,10 @@
       <object>objects\obj_fork</object>
       <object>objects\obj_spade</object>
       <object>objects\obj_shovel</object>
+      <objects name="puzzlethatisgreat">
+        <object>objects\obj_grate</object>
+        <object>objects\obj_goblin</object>
+
     </objects>
     <object>objects\obj_goal</object>
     <objects name="Background Objects">

@@ -25,11 +25,21 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if !audio_is_playing(sng_spaghoot)
-{
-    audio_play_sound(sng_spaghoot,1,true);
-    audio_sound_gain(sng_spaghoot,.5,1);
-}
+            <string>//increases when a 'obj_P_exclaim' is created
+global.playercount = 0;
+
+//set player check variables
+player1 = false;
+player2 = false;
+player3 = false;
+player4 = false;
+
+instance_create(0,0,obj_grate);
+instance_create(0,0,obj_goblin);
+
+
+
+
 </string>
           </argument>
         </arguments>
@@ -52,138 +62,81 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//SPAWN PLAYERS
-if keyboard_check_pressed(ord("1"))
+            <string>GameControls(obj_puzz4); //&lt;-----Initiate controller controls
+
+// CHECK WHICH PLAYERS ARE IN THE ROOM
+if instance_exists(obj_player1)
 {
-    if !instance_exists(obj_player1)
-    {
-        instance_create(10,70,obj_player1);
-    }
+    player1=true;
+}
+if instance_exists(obj_player2)
+{
+    player2=true;
+}
+if instance_exists(obj_player3)
+{
+    player3=true;
+}
+if instance_exists(obj_player4)
+{
+    player4=true;
 }
 
-if keyboard_check_pressed(ord("2"))
+/*
+//player 1
+if crate = true &amp;&amp; hole = true &amp;&amp; obj_player1.key_action_press &amp;&amp; obj_player1.facing = 'right' 
 {
-    if !instance_exists(obj_player2)
-    {
-        instance_create(10,70,obj_player2);
-    }
+    obj_crate.x+=2;
 }
 
-if keyboard_check_pressed(ord("3"))
+if crate = true &amp;&amp; hole = true &amp;&amp; obj_player1.key_action_press &amp;&amp; obj_player1.facing = 'left' 
 {
-    if !instance_exists(obj_player3)
-    {
-        instance_create(10,70,obj_player3);
-    }
+    obj_crate.x-=2;
+}
+//player 2
+if crate2 = true &amp;&amp; hole = true &amp;&amp; obj_player2.key_action_press &amp;&amp; obj_player2.facing = 'right' 
+{
+    obj_crate.x+=2;
 }
 
-if keyboard_check_pressed(ord("4"))
+if crate2 = true &amp;&amp; hole = true &amp;&amp; obj_player2.key_action_press &amp;&amp; obj_player2.facing = 'left' 
 {
-    if !instance_exists(obj_player4)
-    {
-        instance_create(10,70,obj_player4);
-    }
+    obj_crate.x-=2;
 }
 
-//SPAWN PUZZLES
-
-//PUZZLE 1
-if keyboard_check_pressed(vk_numpad1)
+//player 3
+if crate3 = true &amp;&amp; hole = true &amp;&amp; obj_player3.key_action_press &amp;&amp; obj_player3.facing = 'right' 
 {
-    instance_create(0,0,obj_puzz1);
+    obj_crate.x+=2;
 }
 
-//PUZZLE 2
-if keyboard_check_pressed(vk_numpad2)
+if crate3 = true &amp;&amp; hole = true &amp;&amp; obj_player3.key_action_press &amp;&amp; obj_player3.facing = 'left' 
 {
-    if !instance_exists(obj_puzz2)
-    {
-        instance_create(0,0,obj_puzz2);
-    }
+    obj_crate.x-=2;
 }
 
-//PUZZLE 3
-if keyboard_check_pressed(vk_numpad3)
+//player 4
+if crate4 = true &amp;&amp; hole = true &amp;&amp; obj_player4.key_action_press &amp;&amp; obj_player4.facing = 'right' 
 {
-    if !instance_exists(obj_puzz3)
-    {
-        instance_create(0,0,obj_puzz3);
-    }
+    obj_crate.x+=2;
 }
 
-//PUZZLE 4
-if keyboard_check_pressed(vk_numpad4)
+if crate4 = true &amp;&amp; hole = true &amp;&amp; obj_player4.key_action_press &amp;&amp; obj_player4.facing = 'left' 
 {
-    if !instance_exists(obj_puzz4)
-    {
-        instance_create(0,0,obj_puzz4);
-    }
+    obj_crate.x-=2;
 }
-
-//PUZZLE 5
-if keyboard_check_pressed(vk_numpad5)
+//key create
+if key_created = false &amp;&amp; hole = false
 {
-    if !instance_exists(obj_puzz5)
-    {
-        instance_create(0,0,obj_puzz5);
-    }
-}
-
-//PUZZLE 6
-if keyboard_check_pressed(vk_numpad6)
-{
-    if !instance_exists(obj_puzz6)
-    {
-        instance_create(0,0,obj_puzz6);
-    }
-}
-
-//puzzle 8
-if keyboard_check_pressed(vk_numpad8)
-{
-    if !instance_exists(obj_puzz8)
-    {
-        instance_create(0,0,obj_puzz8);
-    }
-}
-
-//PUZZLE 9
-if keyboard_check_pressed(vk_numpad9)
-{
-    if !instance_exists(obj_puzz9)
-    {
-        instance_create(0,0,obj_puzz9);
-    }
-}
-
-//puzzle 10
-if keyboard_check_pressed(ord("0"))
-{
-    if !instance_exists(obj_puzz10)
-    {
-        instance_create(0,0,obj_puzz10);
-    }
+    instance_create(obj_floorhole.x,obj_floorhole.y,obj_key);
+    key_created = true;
 }
 
 
 
-//PUZZLE 0
-if keyboard_check_pressed(vk_numpad0)
-{
-    if !instance_exists(obj_puzz0)
-    {
-        instance_create(0,0,obj_puzz0);
-    }
-}
 
-//PUZZLE 7
-if keyboard_check_pressed(vk_numpad7)
-{
-    if !instance_exists(obj_puzz7)
-    {
-        instance_create(0,0,obj_puzz7);
-    }
-}
+
+
 </string>
           </argument>
         </arguments>
