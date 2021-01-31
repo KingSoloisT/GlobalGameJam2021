@@ -34,8 +34,8 @@ player2 = false;
 player3 = false;
 player4 = false;
 
-instance_create(92,67,obj_floorhole);
-instance_create(92,68,obj_crate);
+instance_create(obj_puzz8.x+92,obj_puzz8.y+67,obj_floorhole);
+instance_create(obj_puzz8.x+92,obj_puzz8.y+68,obj_crate);
 
 cratex = 0;
 crate = false;

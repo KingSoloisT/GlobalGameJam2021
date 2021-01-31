@@ -41,13 +41,16 @@ ListofLeftandRightHalls = ds_list_create();
 //ds_list_add(ListofPuzzles, obj_PuzzleTemplateGREEN);
 
 //ADD ALL THE PUZZLES HERE
-ds_list_add(ListofPuzzles, obj_puzz1,
+ds_list_add(ListofPuzzles, 
+obj_puzz0,
+obj_puzz1,
 obj_puzz2,
 obj_puzz3,
 obj_puzz4,
 obj_puzz5,
-obj_puzz6
-//obj_puzz7,
+obj_puzz6,
+obj_puzz7,
+obj_puzz8
 );
 
 //ADD LEFT WALLS
