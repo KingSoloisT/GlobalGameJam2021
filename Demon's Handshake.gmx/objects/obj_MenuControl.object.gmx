@@ -49,10 +49,40 @@
             <kind>1</kind>
             <string>GameControls(obj_MenuControl);
 
-if (key_action)
+if (key_action_release)
 {
-    if room = rm_StartMenu {room_goto(rm_ready);}
-    if room = rm_howtoplay {room_goto(rm_StartMenu);}
+    if (obj_StartButton.menu == 1)
+    {
+        room_goto(rm_ready);
+    }
+    if (obj_StartButton.menu == 2)
+    {
+        room_goto(rm_howtoplay);
+    }
+    if (obj_StartButton.menu == 3)
+    {
+        game_end();
+    }
+}
+
+if (key_down_release)
+{
+    obj_StartButton.menu += 1;
+}
+
+if (key_up_release)
+{
+    obj_StartButton.menu -= 1;
+}
+
+if (obj_StartButton.menu &gt;= 3)
+{
+    obj_StartButton.menu = 3;
+}
+
+if (obj_StartButton.menu &lt;= 1)
+{
+    obj_StartButton.menu = 1;
 }
 </string>
           </argument>

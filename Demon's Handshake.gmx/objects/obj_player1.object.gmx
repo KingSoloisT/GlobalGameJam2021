@@ -88,8 +88,10 @@ if (key_menu)
 }
 
 //Center Camera in the view properly while going up and down stairs.
-//view_yview[0] = obj_player1.y + 20 - 90; //USE THIS FOR NORMAL OPERATION
-view_yview[0] = obj_player1.y + 20 - 90 - 180; //USE THIS FOR CODING AND TESTING
+////////////////////////////////////////////////////////////////////
+view_yview[0] = obj_player1.y + 20 - 90; //USE THIS FOR NORMAL OPERATION
+//view_yview[0] = obj_player1.y + 20 - 90 - 180; //USE THIS FOR CODING AND TESTING
+//////////////////////////////////////////////////////////////////////
 
 //test_controller1();
 //vibe

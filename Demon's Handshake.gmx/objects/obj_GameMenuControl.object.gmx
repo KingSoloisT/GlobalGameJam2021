@@ -59,14 +59,14 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (obj_player1.key_menu)
-{
+            <string>//if (obj_player1.key_menu)
+//{
     //instance_create(view_xport[1], view_yport[1], obj_GameMenu);
     //view_xport[0]
     //view_xview[1]
     
     //instance_create(view_xview[1], view_yview[1], obj_GameMenu);
-}
+//}
 </string>
           </argument>
         </arguments>

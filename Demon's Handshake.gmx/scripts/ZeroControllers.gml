@@ -5,6 +5,10 @@ CurrentObject = argument0;
 //if (CurrentObject == obj_player1) 
 if (ObjectControls("P1"))
 {
+
+    key_up_release = keyboard_check_released(ord('W'));    
+    key_down_release = keyboard_check_released(ord('S'));
+    
     //KEYBOARD 1
     key_up = keyboard_check(ord('W'));
     key_left = keyboard_check(ord('A'));

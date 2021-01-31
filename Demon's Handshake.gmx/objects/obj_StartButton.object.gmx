@@ -26,6 +26,10 @@
           <argument>
             <kind>1</kind>
             <string>menu = 1;
+
+//2 is How tom play
+
+//3 quit game
 </string>
           </argument>
         </arguments>

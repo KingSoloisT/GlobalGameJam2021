@@ -346,10 +346,11 @@
     <object>objects\obj_GameMenuControl</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\rm_howtoplay</room>
+    <room>rooms\rm_BUGFIX</room>
+    <room>rooms\rm_game</room>
     <room>rooms\rm_StartMenu</room>
     <room>rooms\rm_ready</room>
-    <room>rooms\rm_game</room>
+    <room>rooms\rm_howtoplay</room>
     <room>rooms\rm_result</room>
     <room>rooms\testing</room>
     <room>rooms\rm_puzz</room>

@@ -26,7 +26,9 @@ global.player4_key = 0;
 global.player_villan = choose('player1','player2','player3','player4');
 global.winner = ' ' ;
 
-instance_create(0,0,obj_PuzzleRandomizer);</code>
+instance_create(0,0,obj_PuzzleRandomizer);
+
+room_goto(rm_StartMenu);</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
