@@ -10,7 +10,23 @@
   <persistent>0</persistent>
   <colour>0</colour>
   <showcolour>-1</showcolour>
-  <code>instance_create(x,y,obj_ready);</code>
+  <code>instance_create(x,y,obj_ready);
+audio_play_sound(fx_gunshot,1,false);
+
+if instance_exists(obj_cursorfx1)
+{
+    instance_destroy(obj_cursorfx1)
+}
+
+if instance_exists(obj_cursorfx2)
+{
+    instance_destroy(obj_cursorfx2)
+}
+
+if instance_exists(obj_cursorfx3)
+{
+    instance_destroy(obj_cursorfx3)
+}</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>

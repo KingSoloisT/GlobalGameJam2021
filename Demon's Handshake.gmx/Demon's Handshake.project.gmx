@@ -8,6 +8,17 @@
     <sound>sound\sng_spaghoot</sound>
     <sound>sound\fx_gunshot</sound>
     <sound>sound\fx_keycatch</sound>
+    <sound>sound\fx_bucketslide</sound>
+    <sound>sound\fx_whiskeypour</sound>
+    <sound>sound\fx_button1</sound>
+    <sound>sound\fx_button2</sound>
+    <sound>sound\fx_button3</sound>
+    <sound>sound\fx_button4</sound>
+    <sound>sound\fx_cursor</sound>
+    <sound>sound\fx_goblinchain</sound>
+    <sound>sound\fx_shelfthump</sound>
+    <sound>sound\fx_lockeropen</sound>
+    <sound>sound\fx_conveyor</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_player1</sprite>
@@ -344,6 +355,21 @@
     <object>objects\obj_ready</object>
     <object>objects\obj_results</object>
     <object>objects\obj_GameMenuControl</object>
+    <objects name="Music/Sound Related">
+      <object>objects\obj_soundcontroller</object>
+      <object>objects\obj_cursorfx1</object>
+      <object>objects\obj_cursorfx2</object>
+      <object>objects\obj_cursorfx3</object>
+      <object>objects\obj_rdy1</object>
+      <object>objects\obj_rdy2</object>
+      <object>objects\obj_rdy3</object>
+      <object>objects\obj_rdy4</object>
+      <object>objects\obj_lockerfx1</object>
+      <object>objects\obj_lockerfx2</object>
+      <object>objects\obj_lockerfx3</object>
+      <object>objects\obj_lockerfx4</object>
+      <object>objects\obj_lockerfx5</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_BUGFIX</room>

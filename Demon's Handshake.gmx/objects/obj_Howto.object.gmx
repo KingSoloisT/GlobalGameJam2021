@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>menu = 1;
+audio_play_sound(fx_gunshot,1,false)
 </string>
           </argument>
         </arguments>

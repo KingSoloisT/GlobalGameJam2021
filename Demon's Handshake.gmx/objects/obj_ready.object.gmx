@@ -57,21 +57,37 @@ fade = 0;
 if gamepad_button_check_pressed(0, gp_face1) || keyboard_check_pressed(ord('F'))
 {
     player1 = true;
+    if !instance_exists(obj_rdy1)
+    {
+        instance_create(x,y,obj_rdy1)
+    }
 }
 
 if gamepad_button_check_pressed(1, gp_face1) || keyboard_check_pressed(ord('O'))
 {
     player2 = true;
+    if !instance_exists(obj_rdy2)
+    {
+        instance_create(x,y,obj_rdy2)
+    }
 }
 
 if gamepad_button_check_pressed(2, gp_face1) || keyboard_check_pressed(188)
 {
     player3 = true;
+    if !instance_exists(obj_rdy3)
+    {
+        instance_create(x,y,obj_rdy3)
+    }
 }
 
 if gamepad_button_check_pressed(3, gp_face1) || keyboard_check_pressed(vk_add)
 {
     player4 = true;
+    if !instance_exists(obj_rdy4)
+    {
+        instance_create(x,y,obj_rdy4)
+    }
 }
     
 
