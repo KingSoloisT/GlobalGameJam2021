@@ -42,6 +42,13 @@
     <sprite>sprites\spr_PuzzleTemplateRED</sprite>
     <sprite>sprites\spr_PuzzleTemplateGREEN</sprite>
     <sprite>sprites\spr_PuzzleTemplateBLUE</sprite>
+    <sprites name="skeetpuzzle">
+      <sprite>sprites\spr_skeet_gun_fire</sprite>
+      <sprite>sprites\spr_skeet_gun</sprite>
+      <sprite>sprites\spr_plates</sprite>
+      <sprite>sprites\spr_plate_throw</sprite>
+      <sprite>sprites\spr_skeet_bullet</sprite>
+    </sprites>
     <sprites name="PUZZLE SPRITES">
       <sprite>sprites\spr_shelf</sprite>
       <sprite>sprites\spr_piani</sprite>
@@ -181,6 +188,7 @@
         <object>objects\obj_puzz8</object>
         <object>objects\obj_puzz9</object>
         <object>objects\obj_puzz10</object>
+        <object>objects\obj_puzz12</object>
         <object>objects\obj_puzz0</object>
         <object>objects\obj_puzz7</object>
         <object>objects\obj_puzz11</object>
@@ -214,6 +222,13 @@
         <object>objects\obj_goblin</object>
         <object>objects\obj_chain</object>
         <object>objects\obj_great_key</object>
+      </objects>
+      <objects name="skeetshoot">
+        <object>objects\obj_skeet_gun</object>
+        <object>objects\obj_skeet_plates</object>
+        <object>objects\obj_skeet_target</object>
+        <object>objects\obj_skeet_bullet</object>
+        <object>objects\obj_skeet_key</object>
       </objects>
     </objects>
     <object>objects\obj_goal</object>
