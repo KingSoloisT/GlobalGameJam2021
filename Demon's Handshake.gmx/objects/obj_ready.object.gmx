@@ -100,24 +100,24 @@ if gamepad_button_check_pressed(3, gp_face1) || keyboard_check_pressed(vk_add)
             <string>
 draw_set_alpha(0.8);
 draw_set_colour(c_black);
-draw_rectangle(0,0,1600*4,900*4,false);
+draw_rectangle(0,0,1600*2,900*2,false);
 draw_set_alpha(1);
 draw_set_font(font_hud);
 draw_set_colour(c_white);
-draw_rectangle(0,0,800,450,true);
-draw_rectangle(800,0,1599,900,true);
-draw_rectangle(0,450,800,898,true);
-draw_rectangle(800,450,1598,898,true);
+draw_rectangle(0,0,800*2,450*2,true);
+draw_rectangle(800*2,0,1599*2,900*2,true);
+draw_rectangle(0,450*2,800*2,898*2,true);
+draw_rectangle(800*2,450*2,1598*2,898*2,true);
 draw_set_halign(fa_center);
 draw_set_valign(fa_center);
-if player1 = false{draw_text(400,225,'PRESS A')}
-if player2 = false{draw_text(1200,225,'PRESS A')}
-if player3 = false{draw_text(400,725,'PRESS A')}
-if player4 = false{draw_text(1200,725,'PRESS A')}
-if player1 = true{draw_text(400,225,'READY!')}
-if player2 = true{draw_text(1200,255,'READY!')}
-if player3 = true{draw_text(400,725,'READY!')}
-if player4 = true{draw_text(1200,725,'READY!')}
+if player1 = false{draw_text(400*2,225*2,'PRESS A')}
+if player2 = false{draw_text(1200*2,225*2,'PRESS A')}
+if player3 = false{draw_text(400*2,725*2,'PRESS A')}
+if player4 = false{draw_text(1200*2,725*2,'PRESS A')}
+if player1 = true{draw_text(400*2,225*2,'READY!')}
+if player2 = true{draw_text(1200*2,255*2,'READY!')}
+if player3 = true{draw_text(400*2,725*2,'READY!')}
+if player4 = true{draw_text(1200*2,725*2,'READY!')}
 background_hspeed[0] = 0.25;
 
 if player1 = true &amp;&amp; player2 = true &amp;&amp; player3 = true &amp;&amp; player4 = true
@@ -128,7 +128,7 @@ if player1 = true &amp;&amp; player2 = true &amp;&amp; player3 = true &amp;&amp;
 
 draw_set_colour(c_black);
 draw_set_alpha(fade);
-draw_rectangle(0,0,1600,900,false);
+draw_rectangle(0,0,1600*2,900*2,false);
 
 
 </string>

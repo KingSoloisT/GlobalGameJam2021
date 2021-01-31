@@ -90,10 +90,10 @@ draw_sprite_ext(spr_key,1,2950,825,20,20,0,c_white,1);
 draw_sprite_ext(spr_key,1,1350,1725,20,20,0,c_white,1);
 draw_sprite_ext(spr_key,1,2950,1725,20,20,0,c_white,1);
 
-draw_text(1475,790,global.player1_key);
-draw_text(3075,790,global.player2_key);
-draw_text(1475,1690,global.player3_key);
-draw_text(3075,1690,global.player4_key);
+draw_text(1475,792,global.player1_key);
+draw_text(3075,792,global.player2_key);
+draw_text(1475,1692,global.player3_key);
+draw_text(3075,1692,global.player4_key);
 draw_sprite_ext(spr_player1_head,0,100,70,10,10,0,c_white,1);
 draw_sprite_ext(spr_player2_head,0,1700,70,10,10,0,c_white,1);
 draw_sprite_ext(spr_player3_head,0,100,970,10,10,0,c_white,1);
@@ -128,7 +128,7 @@ if (global.player_villan = 'player1' &amp;&amp;  obj_player1.state = 'dead')
 ||
 (global.player_villan = 'player4' &amp;&amp;  obj_player4.state = 'dead')
 {
- global.winner = 'villian' ;   
+ global.winner = 'heroes' ;   
 }
 /* //maybe i think the original idea is beauty but sure maybe this
 if !instance_exists(obj_key) &amp;&amp; obj_door.sprite_index = spr_door_locked

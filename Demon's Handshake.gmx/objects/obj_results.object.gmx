@@ -97,16 +97,16 @@ draw_rectangle(0,0,1600,900,false);
             <kind>1</kind>
             <string>draw_set_alpha(0.8);
 draw_set_colour(c_black);
-draw_rectangle(0,0,1600,900,false);
+draw_rectangle(0,0,1600*2,900*2,false);
 draw_set_alpha(1);
 draw_set_font(font_hud);
 draw_set_colour(c_white);
 draw_set_halign(fa_center);
 draw_set_valign(fa_center);
-if fade &lt;= 0.25 &amp;&amp; global.winner = 'heroes' {draw_text(800,450,'HEROES WIN');}
-if fade &lt;= 0.25 &amp;&amp; global.winner = 'villian' {draw_text(800,450,'THE VILLIAN WINS');}
+if fade &lt;= 0.25 &amp;&amp; global.winner = 'heroes' {draw_text(800*2,450*2,'HEROES WIN');}
+if fade &lt;= 0.25 &amp;&amp; global.winner = 'villian' {draw_text(800*2,450*2,'THE VILLIAN WINS');}
 
-if fade &gt;= 0.25 {draw_text(800,450,
+if fade &gt;= 0.25 {draw_text(800*2,450*2,
 'Made by ##Jarret Barton,##Gregory Blomquist,##Cory Rupert,##Richard Semenuik
 ');}
 
@@ -115,7 +115,7 @@ background_hspeed[0] = 0.25;
 
 draw_set_colour(c_black);
 draw_set_alpha(fade);
-draw_rectangle(0,0,1600,900,false);
+draw_rectangle(0,0,1600*2,900*2,false);
 
 fade += 0.002;
 
