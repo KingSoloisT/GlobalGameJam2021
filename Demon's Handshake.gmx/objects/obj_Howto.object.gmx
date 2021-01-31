@@ -2,7 +2,7 @@
 <object>
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
-  <visible>0</visible>
+  <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
@@ -25,12 +25,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string></string>
+            <string>menu = 1;
+</string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="0">
+    <event eventtype="8" enumb="64">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -47,13 +48,52 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>GameControls(obj_MenuControl);
+            <string>draw_set_alpha(0.8);
+draw_set_colour(c_black);
+draw_rectangle(0,0,1600,900,false);
+draw_set_alpha(1);
+draw_set_font(font_how);
+draw_set_colour(c_white);
+draw_set_halign(fa_left);
+draw_text(25,5,
+'
+MOVE        ACTION        AIM        SHOOT
+D-Pad         A           LT          RT
 
-if (key_action)
-{
-    if room = rm_StartMenu {room_goto(rm_ready);}
-    if room = rm_howtoplay {room_goto(rm_StartMenu);}
-}
+COLLECT ENOUGH KEYS TO UNLOCK THE DOOR BY COMPLETING PUZZLES 
+
+THROUGHOUT THE SALOON. 
+
+AN EXCLAMATION POINT WILL APPEAR OVER YOUR HEAD WHEN YOU ARE
+
+NEAR A PUZZLE AREA. 
+
+ONCE YOU COLLECT THE PUZZLE KEY, THE PUZZLE IS COMPLETE.
+
+EACH PLAYER HOLDS THEIR OWN KEYS--MAKE SURE YOU GET ENOUGH
+
+KEYS AMONGST YOUR PARTY TO UNLOCK THE DOOR
+
+WORK TOGETHER TO SOLVE THE PUZZLES BUT BE ON THE LOOK OUT 
+
+FOR THE VILLAIN WHO WILL TRY TO STEAL KEYS, 
+
+PREVENTING YOUR ESCAPE.
+
+SHOOT THE TRAITOR TO PREVENT THEM FROM STEALING ALL THE 
+
+KEYS BUT BE CERTAIN OF YOUR TARGET. 
+
+IF AN INNOCENT PARTY MEMBER DIES, 
+
+YOU MAY NOT HAVE ENOUGH KEYS TO ESCAPE!
+
+IF THE VILLAIN MANAGES TO ESCAPE WITH THE PARTY, 
+
+THE PARTY WILL ALSO LOSE!');
+
+
+//draw_set_valign(fa_center);
 </string>
           </argument>
         </arguments>

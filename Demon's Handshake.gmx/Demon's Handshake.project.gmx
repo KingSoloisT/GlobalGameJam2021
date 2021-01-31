@@ -146,7 +146,10 @@
   </scripts>
   <fonts name="fonts">
     <font>fonts\font_hud</font>
+    <font>fonts\font_logo</font>
+    <font>fonts\font_screen</font>
     <font>fonts\font_game</font>
+    <font>fonts\font_how</font>
   </fonts>
   <objects name="objects">
     <object>objects\obj_bulletR</object>
@@ -334,11 +337,13 @@
       </objects>
     </objects>
     <object>objects\obj_StartButton</object>
+    <object>objects\obj_Howto</object>
     <object>objects\obj_MenuControl</object>
     <object>objects\obj_ready</object>
     <object>objects\obj_results</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_howtoplay</room>
     <room>rooms\rm_StartMenu</room>
     <room>rooms\rm_ready</room>
     <room>rooms\rm_game</room>
