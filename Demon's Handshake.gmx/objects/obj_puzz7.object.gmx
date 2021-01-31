@@ -40,10 +40,9 @@ if !instance_exists(obj_belt)
 }
 
 //CREATE KEY
-if !instance_exists(obj_key)
-{
-    instance_create(obj_puzz7.x + 50, obj_puzz7.y + 28,obj_key);
-}
+
+    instance_create(obj_puzz7.x + 50, obj_puzz7.y + 28,obj_puzz7key);
+
 
 //set player check variables
 player1 = false;
@@ -135,42 +134,44 @@ if (player1 = true and obj_player1.x &gt;= obj_belt_lever.x-10 and obj_player1.x
  (player2 = true and obj_player2.x &gt;= obj_belt_lever.x-10 and obj_player2.x &lt;= obj_belt_lever.x+10 and obj_player2.key_action) or
  (player3 = true and obj_player3.x &gt;= obj_belt_lever.x-10 and obj_player3.x &lt;= obj_belt_lever.x+10 and obj_player3.key_action) or
  (player4 = true and obj_player4.x &gt;= obj_belt_lever.x-10 and obj_player4.x &lt;= obj_belt_lever.x+10 and obj_player4.key_action)
-    {
+ {
     obj_belt_lever.image_index = 0;
     obj_belt.image_speed = -.25;
-    if instance_exists(obj_key)
-        {
-        obj_key.hspeed = .25
-        }
-    } else
-        {
-        if instance_exists(obj_key)
-            {
-            obj_belt.image_speed = 0;
-            obj_key.hspeed = 0
-            }
-        }
+    
+    if instance_exists(obj_puzz7key)
+    {
+        obj_puzz7key.hspeed = .25
+    }
+} 
+else
+{
+    if instance_exists(obj_puzz7key)
+    {
+        obj_belt.image_speed = 0;
+        obj_puzz7key.hspeed = 0
+    }
+}
  
 //ACTUAL BELT MOVEMENT
-if instance_exists(obj_key)
-    { 
-        if obj_key.x &gt;= 120
-        {
-            obj_key.vspeed = 2
-            obj_key.hspeed = 0
-        }
+if instance_exists(obj_puzz7key)
+{ 
+    if obj_puzz7key.x &gt;= obj_puzz7.x + 120
+    {
+        obj_puzz7key.vspeed = 2
+        obj_puzz7key.hspeed = 0
     }
+}
 
-if instance_exists(obj_key)
-    { 
-    if obj_key.y &gt;= 68
-        {
-            obj_key.vspeed = 0
-        }
+if instance_exists(obj_puzz7key)
+{ 
+if obj_puzz7key.y &gt;= obj_puzz7.y + 68
+    {
+        obj_puzz7key.vspeed = 0
     }
+}
         
  //KEY IS GONE, NO MORE BELT MOVEMENT
-if !instance_exists(obj_key)
+if !instance_exists(obj_puzz7key)
 {
     if instance_exists(obj_P1exclaim)
     {

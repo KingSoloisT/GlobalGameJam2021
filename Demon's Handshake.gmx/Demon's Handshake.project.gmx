@@ -200,6 +200,7 @@
         <object>objects\obj_puzz2key</object>
         <object>objects\obj_puzz3key</object>
         <object>objects\obj_puzz4key</object>
+        <object>objects\obj_puzz7key</object>
         <object>objects\obj_puzz11key</object>
       </objects>
       <objects name="puzzlelocker">
