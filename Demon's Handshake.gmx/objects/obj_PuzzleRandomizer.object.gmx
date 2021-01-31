@@ -52,7 +52,8 @@ obj_puzz6,
 obj_puzz7,
 obj_puzz8,
 //obj_puzz9,
-obj_puzz10
+obj_puzz10,
+obj_puzz11
 );
 
 //ADD LEFT WALLS

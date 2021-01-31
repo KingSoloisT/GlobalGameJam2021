@@ -28,33 +28,33 @@
             <string>global.playercount = 0;
 
 //CREATE BELT LEVER 1
-if !instance_exists(obj_belt_lever)
+if !instance_exists(obj_belt_lever3)
 {
-    instance_create(75,67,obj_belt_lever);
+    instance_create(obj_puzz11.x + 75, obj_puzz11.y + 67,obj_belt_lever3);
 }
 
 //CREATE BELT LEVER 2
 if !instance_exists(obj_belt_lever2)
 {
-    instance_create(105,67,obj_belt_lever2);
+    instance_create(obj_puzz11.x + 105,obj_puzz11.y + 67,obj_belt_lever2);
 }
 
 //CREATE BELT 1
-if !instance_exists(obj_belt)
+if !instance_exists(obj_belt3)
 {
-    instance_create(30,30,obj_belt);
+    instance_create(obj_puzz11.x + 30,obj_puzz11.y + 30,obj_belt3);
 }
 
 //CREATE BELT 2
 if !instance_exists(obj_belt2)
 {
-    instance_create(40,40,obj_belt2);
+    instance_create(obj_puzz11.x + 40,obj_puzz11.y + 40,obj_belt2);
 }
 
 //CREATE KEY
 if !instance_exists(obj_puzz11key)
 {
-    instance_create(50,28,obj_puzz11key);
+    instance_create(obj_puzz11.x + 50,obj_puzz11.y + 28,obj_puzz11key);
 }
 
 //set player check variables
@@ -62,6 +62,8 @@ player1 = false;
 player2 = false;
 player3 = false;
 player4 = false;
+
+keydroppedOnBelt = false;
 </string>
           </argument>
         </arguments>
@@ -84,8 +86,8 @@ player4 = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>GameControls(obj_puzz7); //&lt;-----Initiate controller controls
-ObjectControls(obj_puzz7);
+            <string>GameControls(obj_puzz11); //&lt;-----Initiate controller controls
+ObjectControls(obj_puzz11);
 
 // CHECK WHICH PLAYERS ARE IN THE ROOM
 if instance_exists(obj_player1)
@@ -105,21 +107,22 @@ if instance_exists(obj_player4)
     player4=true;
 }
 
-obj_belt_lever.image_index = 1;
+obj_belt_lever3.image_index = 1;
 obj_belt_lever2.image_index = 1;
 
 //PLAYER 1 ENTERING EITHER BELT LEVER ACTIONS
-if (player1 = true and obj_player1.x &gt;= obj_belt_lever.x-10 and obj_player1.x &lt;= obj_belt_lever.x+10) or
+if (player1 = true and obj_player1.x &gt;= obj_belt_lever3.x-10 and obj_player1.x &lt;= obj_belt_lever3.x+10) or
  (player1 = true and obj_player1.x &gt;= obj_belt_lever2.x-10 and obj_player1.x &lt;= obj_belt_lever2.x+10)
-    {
+{
     instance_create(obj_player1.x+5,obj_player1.y-6,obj_P1exclaim);
-    } else
-    {
+} 
+else
+{
     instance_destroy(obj_P1exclaim);
-    }
+}
     
 //PLAYER 2 ENTERING EITHER BELT LEVER ACTIONS
-if (player2 = true and obj_player2.x &gt;= obj_belt_lever.x-10 and obj_player2.x &lt;= obj_belt_lever.x+10) or
+if (player2 = true and obj_player2.x &gt;= obj_belt_lever3.x-10 and obj_player2.x &lt;= obj_belt_lever3.x+10) or
 (player2 = true and obj_player2.x &gt;= obj_belt_lever2.x-10 and obj_player2.x &lt;= obj_belt_lever2.x+10)
     {
     instance_create(obj_player2.x+5,obj_player2.y-6,obj_P2exclaim);
@@ -129,7 +132,7 @@ if (player2 = true and obj_player2.x &gt;= obj_belt_lever.x-10 and obj_player2.x
     }
 
 //PLAYER 3 ENTERING EITHER BELT LEVER ACTIONS
-if (player3 = true and obj_player3.x &gt;= obj_belt_lever.x-10 and obj_player3.x &lt;= obj_belt_lever.x+10) or
+if (player3 = true and obj_player3.x &gt;= obj_belt_lever3.x-10 and obj_player3.x &lt;= obj_belt_lever3.x+10) or
 (player3 = true and obj_player3.x &gt;= obj_belt_lever2.x-10 and obj_player3.x &lt;= obj_belt_lever2.x+10)
     {
     instance_create(obj_player3.x+5,obj_player3.y-6,obj_P3exclaim);
@@ -139,7 +142,7 @@ if (player3 = true and obj_player3.x &gt;= obj_belt_lever.x-10 and obj_player3.x
     }
     
 //PLAYER 4 ENTERING EITHER BELT LEVER ACTIONS
-if (player4 = true and obj_player4.x &gt;= obj_belt_lever.x-10 and obj_player4.x &lt;= obj_belt_lever.x+10) or
+if (player4 = true and obj_player4.x &gt;= obj_belt_lever3.x-10 and obj_player4.x &lt;= obj_belt_lever3.x+10) or
 (player4 = true and obj_player4.x &gt;= obj_belt_lever2.x-10 and obj_player4.x &lt;= obj_belt_lever2.x+10)
     {
     instance_create(obj_player4.x+5,obj_player4.y-6,obj_P4exclaim);
@@ -147,68 +150,123 @@ if (player4 = true and obj_player4.x &gt;= obj_belt_lever.x-10 and obj_player4.x
     {
     instance_destroy(obj_P4exclaim);
     }
+
     
-//PLAYERS 1 - 4 ACTIVATING BELT LEVER ACTIONS
-if (player1 = true and obj_player1.x &gt;= obj_belt_lever.x-10 and obj_player1.x &lt;= obj_belt_lever.x+10 and obj_player1.key_action) or
- (player2 = true and obj_player2.x &gt;= obj_belt_lever.x-10 and obj_player2.x &lt;= obj_belt_lever.x+10 and obj_player2.key_action) or
- (player3 = true and obj_player3.x &gt;= obj_belt_lever.x-10 and obj_player3.x &lt;= obj_belt_lever.x+10 and obj_player3.key_action) or
- (player4 = true and obj_player4.x &gt;= obj_belt_lever.x-10 and obj_player4.x &lt;= obj_belt_lever.x+10 and obj_player4.key_action)
+if (!keydroppedOnBelt)
+{
+    if (player1 = true and obj_player1.x &gt;= obj_belt_lever2.x-10 and obj_player1.x &lt;= obj_belt_lever2.x+10 and obj_player1.key_action) or
+     (player2 = true and obj_player2.x &gt;= obj_belt_lever2.x-10 and obj_player2.x &lt;= obj_belt_lever2.x+10 and obj_player2.key_action) or
+     (player3 = true and obj_player3.x &gt;= obj_belt_lever2.x-10 and obj_player3.x &lt;= obj_belt_lever2.x+10 and obj_player3.key_action) or
+     (player4 = true and obj_player4.x &gt;= obj_belt_lever2.x-10 and obj_player4.x &lt;= obj_belt_lever2.x+10 and obj_player4.key_action) and
+     obj_puzz11key.y &gt;= obj_puzz11.y + 38
     {
-    obj_belt_lever.image_index = 0;
-    obj_belt.image_speed = -.25;
-    if instance_exists(obj_puzz11key)
-        {
-        obj_puzz11key.hspeed = .25
-        }
-    } else
-        {
+        obj_belt2.image_speed = .25;
+    }
+    else
+    {
+        obj_belt2.image_speed = 0;
+    }
+
+    //PLAYERS 1 - 4 ACTIVATING BELT LEVER ACTIONS
+    if (player1 = true and obj_player1.x &gt;= obj_belt_lever3.x-10 and obj_player1.x &lt;= obj_belt_lever3.x+10 and obj_player1.key_action) or
+     (player2 = true and obj_player2.x &gt;= obj_belt_lever3.x-10 and obj_player2.x &lt;= obj_belt_lever3.x+10 and obj_player2.key_action) or
+     (player3 = true and obj_player3.x &gt;= obj_belt_lever3.x-10 and obj_player3.x &lt;= obj_belt_lever3.x+10 and obj_player3.key_action) or
+     (player4 = true and obj_player4.x &gt;= obj_belt_lever3.x-10 and obj_player4.x &lt;= obj_belt_lever3.x+10 and obj_player4.key_action)
+    {
+        obj_belt_lever3.image_index = 0;
+        obj_belt3.image_speed = -.25;
+        
         if instance_exists(obj_puzz11key)
-            {
-            obj_belt.image_speed = 0;
-            obj_puzz11key.hspeed = 0
-            }
+        {
+            obj_puzz11key.hspeed = .25
         }
- 
-//ACTUAL BELT MOVEMENT
-if instance_exists(obj_puzz11key)
+    } 
+    else
+    {
+        if instance_exists(obj_puzz11key)
+        {
+            obj_belt3.image_speed = 0;
+            obj_puzz11key.hspeed = 0
+        }
+    
+    }
+    
+    //ACTUAL BELT MOVEMENT
+    if instance_exists(obj_puzz11key)
     { 
-        if obj_puzz11key.x &gt;= 120
+        if obj_puzz11key.x &gt;= obj_puzz11.x + 120
+        {
+            obj_puzz11key.vspeed = 2;
+            obj_puzz11key.hspeed = 0;
+        }
+        
+        if obj_puzz11key.y &gt;= obj_puzz11.y + 38
+        {
+            keydroppedOnBelt = true;
+            obj_puzz11key.vspeed = 0;
+            obj_puzz11key.hspeed = 0;
+        }
+    }
+}
+
+if (keydroppedOnBelt)
+{
+
+    obj_belt3.image_speed = 0;
+    
+    if (player1 = true and obj_player1.x &gt;= obj_belt_lever3.x-10 and obj_player1.x &lt;= obj_belt_lever3.x+10 and obj_player1.key_action) or
+     (player2 = true and obj_player2.x &gt;= obj_belt_lever3.x-10 and obj_player2.x &lt;= obj_belt_lever3.x+10 and obj_player2.key_action) or
+     (player3 = true and obj_player3.x &gt;= obj_belt_lever3.x-10 and obj_player3.x &lt;= obj_belt_lever3.x+10 and obj_player3.key_action) or
+     (player4 = true and obj_player4.x &gt;= obj_belt_lever3.x-10 and obj_player4.x &lt;= obj_belt_lever3.x+10 and obj_player4.key_action)
+    {
+        obj_belt3.image_speed = -.25;
+    }
+    else
+    {
+        obj_belt3.image_speed = 0;
+    }
+
+    if (player1 = true and obj_player1.x &gt;= obj_belt_lever2.x-10 and obj_player1.x &lt;= obj_belt_lever2.x+10 and obj_player1.key_action) or
+     (player2 = true and obj_player2.x &gt;= obj_belt_lever2.x-10 and obj_player2.x &lt;= obj_belt_lever2.x+10 and obj_player2.key_action) or
+     (player3 = true and obj_player3.x &gt;= obj_belt_lever2.x-10 and obj_player3.x &lt;= obj_belt_lever2.x+10 and obj_player3.key_action) or
+     (player4 = true and obj_player4.x &gt;= obj_belt_lever2.x-10 and obj_player4.x &lt;= obj_belt_lever2.x+10 and obj_player4.key_action) and
+     obj_puzz11key.y &gt;= obj_puzz11.y + 38
+    {
+        obj_belt_lever2.image_index = 2;
+        obj_belt2.image_speed = .25;
+        
+        if instance_exists(obj_puzz11key)
+        {
+            obj_puzz11key.hspeed = -.25
+        }
+    }
+    else
+    {
+        if instance_exists(obj_puzz11key)
+        {
+            obj_belt2.image_speed = 0;
+            obj_puzz11key.hspeed = 0;
+        }
+    }
+    
+    //ACTUAL BELT MOVEMENT
+    if instance_exists(obj_puzz11key)
+    { 
+        if obj_puzz11key.x &lt;= obj_puzz11.x + 40
         {
             obj_puzz11key.vspeed = 2
             obj_puzz11key.hspeed = 0
         }
-    }
-
-if instance_exists(obj_puzz11key)
-    { 
-    if obj_puzz11key.y &gt;= 38
-        {
-            obj_puzz11key.vspeed = 0
-        }
-    }
-
-if instance_exists(obj_puzz11key)
-    { 
-    if obj_puzz11key.y &gt;= 38
-        {
-            obj_puzz11key.hspeed = 0
-        }
-    }
-
-if (player1 = true and obj_player1.x &gt;= obj_belt_lever2.x-10 and obj_player1.x &lt;= obj_belt_lever2.x+10 and obj_player1.key_action) or
- (player2 = true and obj_player2.x &gt;= obj_belt_lever2.x-10 and obj_player2.x &lt;= obj_belt_lever2.x+10 and obj_player2.key_action) or
- (player3 = true and obj_player3.x &gt;= obj_belt_lever2.x-10 and obj_player3.x &lt;= obj_belt_lever2.x+10 and obj_player3.key_action) or
- (player4 = true and obj_player4.x &gt;= obj_belt_lever2.x-10 and obj_player4.x &lt;= obj_belt_lever2.x+10 and obj_player4.key_action) and
- obj_puzz11key.y &gt;= 38
- {
- obj_belt_lever2.image_index = 2;
-    obj_belt2.image_speed = .25;
-    if instance_exists(obj_puzz11key)
-        {
-        obj_puzz11key.hspeed = -.25
-        }
-    }
         
+        if obj_puzz11key.y &gt;= obj_puzz11.y + 68
+        {
+            //keydroppedOnBelt = true;
+            obj_puzz11key.vspeed = 0;
+            obj_puzz11key.hspeed = 0;
+        }
+    }
+}
+     
 //KEY IS GONE, NO MORE BELT MOVEMENT
 if !instance_exists(obj_puzz11key)
 {

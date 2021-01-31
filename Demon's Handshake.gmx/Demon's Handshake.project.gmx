@@ -168,8 +168,10 @@
       <object>objects\obj_plunger</object>
       <object>objects\obj_explosion</object>
       <object>objects\obj_belt</object>
+      <object>objects\obj_belt3</object>
       <object>objects\obj_belt2</object>
       <object>objects\obj_belt_lever</object>
+      <object>objects\obj_belt_lever3</object>
       <object>objects\obj_belt_lever2</object>
       <object>objects\obj_P1exclaim</object>
       <object>objects\obj_P2exclaim</object>
