@@ -34,8 +34,17 @@ player2 = false;
 player3 = false;
 player4 = false;
 
-instance_create(0,0,obj_grate);
-instance_create(0,0,obj_goblin);
+instance_create(obj_puzz10.x,obj_puzz10.y,obj_grate);
+instance_create(obj_puzz10.x,obj_puzz10.y,obj_goblin);
+instance_create(obj_puzz10.x+105,obj_puzz10.y,obj_chain);
+
+chain = false;
+chain2 = false;
+chain3 = false;
+chain4 = false;
+solved = false;
+key_created = false;
+
 
 
 
@@ -82,13 +91,87 @@ if instance_exists(obj_player4)
     player4=true;
 }
 
-/*
+
 //player 1
-if crate = true &amp;&amp; hole = true &amp;&amp; obj_player1.key_action_press &amp;&amp; obj_player1.facing = 'right' 
+if chain = true &amp;&amp; obj_player1.key_action &amp;&amp; solved = false
 {
-    obj_crate.x+=2;
+    obj_chain.x = obj_player1.x
+    if obj_chain.x &lt;= 104 {obj_chain.x = 105;}
+        if obj_chain.x &gt;= 139 {obj_chain.x = 138;}
+    if obj_player1.facing = 'right' {obj_chain.sprite_index = spr_chain_right}
+    if obj_player1.facing = 'left' {obj_chain.sprite_index = spr_chain_left}
+}
+else
+
+{
+    if solved = false {obj_chain.sprite_index = spr_chain}
+    if solved = true {obj_chain.sprite_index = spr_chain_up}
+    
 }
 
+//player 2
+if chain2 = true &amp;&amp; obj_player2.key_action &amp;&amp; solved = false
+{
+    obj_chain.x = obj_player2.x
+    if obj_chain.x &lt;= 104 {obj_chain.x = 105;}
+        if obj_chain.x &gt;= 139 {obj_chain.x = 138;}
+    if obj_player2.facing = 'right' {obj_chain.sprite_index = spr_chain_right}
+    if obj_player2.facing = 'left' {obj_chain.sprite_index = spr_chain_left}
+}
+else
+
+{
+    if solved = false {obj_chain.sprite_index = spr_chain}
+    if solved = true {obj_chain.sprite_index = spr_chain_up}
+    
+}
+
+//player 2
+if chain3 = true &amp;&amp; obj_player3.key_action &amp;&amp; solved = false
+{
+    obj_chain.x = obj_player3.x
+    if obj_chain.x &lt;= 104 {obj_chain.x = 105;}
+        if obj_chain.x &gt;= 139 {obj_chain.x = 138;}
+    if obj_player3.facing = 'right' {obj_chain.sprite_index = spr_chain_right}
+    if obj_player3.facing = 'left' {obj_chain.sprite_index = spr_chain_left}
+}
+else
+
+{
+    if solved = false {obj_chain.sprite_index = spr_chain}
+    if solved = true {obj_chain.sprite_index = spr_chain_up}
+    
+}
+
+//player 4
+if chain4 = true &amp;&amp; obj_player4.key_action &amp;&amp; solved = false
+{
+    obj_chain.x = obj_player4.x
+    if obj_chain.x &lt;= 104 {obj_chain.x = 105;}
+        if obj_chain.x &gt;= 139 {obj_chain.x = 138;}
+    if obj_player4.facing = 'right' {obj_chain.sprite_index = spr_chain_right}
+    if obj_player4.facing = 'left' {obj_chain.sprite_index = spr_chain_left}
+}
+else
+
+{
+    if solved = false {obj_chain.sprite_index = spr_chain}
+    if solved = true {obj_chain.sprite_index = spr_chain_up}
+    
+}
+
+if obj_chain.x = 138
+{
+    solved = true;
+}
+
+if solved = true &amp;&amp; key_created = false
+{
+    instance_create(obj_chain.x,obj_chain.y+50,obj_great_key);
+    key_created = true;
+}
+
+/*
 if crate = true &amp;&amp; hole = true &amp;&amp; obj_player1.key_action_press &amp;&amp; obj_player1.facing = 'left' 
 {
     obj_crate.x-=2;

@@ -210,6 +210,8 @@
       <objects name="puzzlethatisgreat">
         <object>objects\obj_grate</object>
         <object>objects\obj_goblin</object>
+        <object>objects\obj_chain</object>
+        <object>objects\obj_great_key</object>
       </objects>
     </objects>
     <object>objects\obj_goal</object>
