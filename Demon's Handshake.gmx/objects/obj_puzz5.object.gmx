@@ -31,7 +31,7 @@ global.playercount = 0;
 //CREATE PLUNGER
 if !instance_exists(obj_lever)
 {
-    instance_create(75,65,obj_lever);
+    instance_create(obj_puzz5.x + 75, obj_puzz5.y + 65, obj_lever);
 }
 
 //CREATE KEY

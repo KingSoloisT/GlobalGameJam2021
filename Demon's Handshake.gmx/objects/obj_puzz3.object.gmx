@@ -31,14 +31,15 @@ global.playercount = 0;
 //CREATE PLUNGER
 if !instance_exists(obj_plunger)
 {
-    instance_create(75,65,obj_plunger);
+    instance_create(obj_puzz3.x + 75, obj_puzz3.y + 65,obj_plunger);
 }
 
 //CREATE KEY
-if !instance_exists(obj_key)
-{
-    instance_create(obj_plunger.x+30,obj_plunger.y-30,obj_key);
-}
+//if !instance_exists(obj_key)
+//{
+    //instance_create(obj_plunger.x+30,obj_plunger.y-30,obj_key);
+    instance_create(obj_plunger.x+30,obj_plunger.y-30,obj_puzz3key);
+//}
 
 //set player check variables
 player1 = false;
@@ -153,27 +154,27 @@ if (player4 = true) and obj_player4.x &gt;= obj_plunger.x-10 and obj_player4.x &
 //ACTUAL PLUNGER PLUNGING
 if plunger = 1
     {
-    if instance_exists(obj_key) 
+    if instance_exists(obj_puzz3key)
         {
-        instance_create(obj_key.x,obj_key.y,obj_explosion)
+        instance_create(obj_puzz3key.x,obj_puzz3key.y,obj_explosion)
         }
-    if instance_exists(obj_key)
+    if instance_exists(obj_puzz3key)
         {
-        obj_key.vspeed = 2;
+        obj_puzz3key.vspeed = 2;
         }
     obj_plunger.image_index = 0;
     }
 
-if instance_exists(obj_key)
+if instance_exists(obj_puzz3key)
     {
-    if obj_key.y &gt;= 68
+    if obj_puzz3key.y &gt;= obj_puzz3.y + 68
         {
-        obj_key.vspeed = 0;
+        obj_puzz3key.vspeed = 0;
         }
     }
 
 //KEY IS GONE, NO MORE PLUNGER PLUNGING
-if !instance_exists(obj_key)
+if !instance_exists(obj_puzz3key)
 {
     if instance_exists(obj_P1exclaim)
     {

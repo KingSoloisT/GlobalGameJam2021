@@ -227,7 +227,29 @@ x=clamp(x, 0, room_width);
 y=clamp(y, 0, room_height);
 
 
-if place_meeting(x,y,obj_key)
+if (place_meeting(x,y,(obj_key))
+|| place_meeting(x,y,(obj_puzz0key)) 
+|| place_meeting(x,y,(obj_puzz1key)) 
+|| place_meeting(x,y,(obj_puzz2key)) 
+|| place_meeting(x,y,(obj_puzz3key))
+|| place_meeting(x,y,(obj_puzz4key))
+//|| place_meeting(x,y,(obj_puzz5key))
+//|| place_meeting(x,y,(obj_puzz6key))
+//|| place_meeting(x,y,(obj_puzz7key))
+//|| place_meeting(x,y,(obj_puzz8key))
+//|| place_meeting(x,y,(obj_puzz9key))
+//|| place_meeting(x,y,(obj_puzz10key))
+//|| place_meeting(x,y,(obj_puzz11key))
+//|| place_meeting(x,y,(obj_puzz12key))
+//|| place_meeting(x,y,(obj_puzz13key))
+//|| place_meeting(x,y,(obj_puzz14key))
+//|| place_meeting(x,y,(obj_puzz15key))
+//|| place_meeting(x,y,(obj_puzz16key))
+//|| place_meeting(x,y,(obj_puzz17key))
+//|| place_meeting(x,y,(obj_puzz18key))
+//|| place_meeting(x,y,(obj_puzz19key))
+
+)
 {
     global.player1_key +=1;
     

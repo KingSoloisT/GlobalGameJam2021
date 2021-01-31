@@ -187,7 +187,9 @@
       </objects>
       <objects name="Puzzle Key Decoys">
         <object>objects\obj_puzz1key</object>
+        <object>objects\obj_puzz0key</object>
         <object>objects\obj_puzz2key</object>
+        <object>objects\obj_puzz3key</object>
         <object>objects\obj_puzz4key</object>
       </objects>
       <objects name="puzzlelocker">

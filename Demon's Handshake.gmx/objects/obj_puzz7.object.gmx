@@ -30,19 +30,19 @@
 //CREATE BELT LEVER
 if !instance_exists(obj_belt_lever)
 {
-    instance_create(75,67,obj_belt_lever);
+    instance_create(obj_puzz7.x + 75,obj_puzz7.y + 67,obj_belt_lever);
 }
 
 //CREATE BELT
 if !instance_exists(obj_belt)
 {
-    instance_create(30,30,obj_belt);
+    instance_create(obj_puzz7.x + 30,obj_puzz7.y + 30,obj_belt);
 }
 
 //CREATE KEY
 if !instance_exists(obj_key)
 {
-    instance_create(50,28,obj_key);
+    instance_create(obj_puzz7.x + 50, obj_puzz7.y + 28,obj_key);
 }
 
 //set player check variables
