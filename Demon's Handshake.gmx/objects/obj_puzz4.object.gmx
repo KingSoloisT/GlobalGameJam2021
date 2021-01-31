@@ -38,14 +38,14 @@ player4 = false;
 
 if !instance_exists(obj_whiskeybarrel)
 {
-    instance_create(obj_puzz4.x+80,46,obj_whiskeybarrel)
+    instance_create(obj_puzz4.x+80,obj_puzz4.y+46,obj_whiskeybarrel)
 }
 
 //bring in the bucket baby
 
 if !instance_exists(obj_bucket)
 {
-    instance_create(random_range(obj_puzz4.x,obj_puzz4.x+150),70,obj_bucket)
+    instance_create(random_range(obj_puzz4.x,obj_puzz4.x+150),obj_puzz4.y+70,obj_bucket)
 }
 
 ladderclimbed = false; //obvious   puzzle complete condition 1
@@ -142,8 +142,8 @@ if player1=true &amp;&amp; (obj_player1.x &gt;= obj_whiskeybarrel.x -20 &amp;&am
     &amp;&amp; obj_player1.state = 'idle'//&lt;------------------------------------------------------------------------state parameter
     &amp;&amp; obj_player1.key_action_press//&lt;----------------------------------------------------------------------press action button
 {
-    obj_player1.x = 70;
-    obj_player1.y = 35;             //yay! you're up the ladder now!
+    obj_player1.x = obj_puzz4.x+70;
+    obj_player1.y = obj_puzz4.y+35;             //yay! you're up the ladder now!
     obj_player1.state = 'aim'
     ladderclimbed = true;
 }
@@ -152,8 +152,8 @@ if player1=true &amp;&amp; (obj_player1.x &gt;= obj_whiskeybarrel.x -20 &amp;&am
     &amp;&amp; obj_player1.state = 'aim' //&lt;------------------------------------------------------------------------state parameter
     &amp;&amp; obj_player1.key_action_release //&lt;-------------------------------------------------------------------release action key
 {
-    obj_player1.x = 60;
-    obj_player1.y = 70;             //you have safely descended the ladder!
+    obj_player1.x = obj_puzz4.x+60;
+    obj_player1.y = obj_puzz4.y+70;             //you have safely descended the ladder!
     obj_player1.state = 'idle'
     ladderclimbed = false;
 }
@@ -216,8 +216,8 @@ if player2=true &amp;&amp; (obj_player2.x &gt;= obj_whiskeybarrel.x -20 &amp;&am
     &amp;&amp; obj_player2.state = 'idle'//&lt;------------------------------------------------------------------------state parameter
     &amp;&amp; obj_player2.key_action_press//&lt;----------------------------------------------------------------------press action button
 {
-    obj_player2.x = 70;
-    obj_player2.y = 35;             //yay! you're up the ladder now!
+    obj_player2.x = obj_puzz4.x+70;
+    obj_player2.y = obj_puzz4.y+35;             //yay! you're up the ladder now!
     obj_player2.state = 'aim'
     ladderclimbed = true;
 }
@@ -226,8 +226,8 @@ if player2=true &amp;&amp; (obj_player2.x &gt;= obj_whiskeybarrel.x -20 &amp;&am
     &amp;&amp; obj_player2.state = 'aim' //&lt;------------------------------------------------------------------------state parameter
     &amp;&amp; obj_player2.key_action_release //&lt;-------------------------------------------------------------------release action key
 {
-    obj_player2.x = 60;
-    obj_player2.y = 70;             //you have safely descended the ladder!
+    obj_player2.x = obj_puzz4.x+60;
+    obj_player2.y = obj_puzz4.y+70;             //you have safely descended the ladder!
     obj_player2.state = 'idle'
     ladderclimbed = false;
 }
@@ -286,8 +286,8 @@ if player3=true &amp;&amp; (obj_player3.x &gt;= obj_whiskeybarrel.x -20 &amp;&am
     &amp;&amp; obj_player3.state = 'idle'//&lt;------------------------------------------------------------------------state parameter
     &amp;&amp; obj_player3.key_action_press//&lt;----------------------------------------------------------------------press action button
 {
-    obj_player3.x = 70;
-    obj_player3.y = 35;             //yay! you're up the ladder now!
+    obj_player3.x = obj_puzz4.x+70;
+    obj_player3.y = obj_puzz4.y+35;             //yay! you're up the ladder now!
     obj_player3.state = 'aim'
     ladderclimbed = true;
 }
@@ -296,8 +296,8 @@ if player3=true &amp;&amp; (obj_player3.x &gt;= obj_whiskeybarrel.x -20 &amp;&am
     &amp;&amp; obj_player3.state = 'aim' //&lt;------------------------------------------------------------------------state parameter
     &amp;&amp; obj_player3.key_action_release //&lt;-------------------------------------------------------------------release action key
 {
-    obj_player3.x = 60;
-    obj_player3.y = 70;             //you have safely descended the ladder!
+    obj_player3.x = obj_puzz4.x+60;
+    obj_player3.y = obj_puzz4.y+70;             //you have safely descended the ladder!
     obj_player3.state = 'idle'
     ladderclimbed = false;
 }
@@ -356,8 +356,8 @@ if player4=true &amp;&amp; (obj_player4.x &gt;= obj_whiskeybarrel.x -20 &amp;&am
     &amp;&amp; obj_player4.state = 'idle'//&lt;------------------------------------------------------------------------state parameter
     &amp;&amp; obj_player4.key_action_press//&lt;----------------------------------------------------------------------press action button
 {
-    obj_player4.x = 70;
-    obj_player4.y = 35;             //yay! you're up the ladder now!
+    obj_player4.x = obj_puzz4.x+70;
+    obj_player4.y = obj_puzz4.y+35;             //yay! you're up the ladder now!
     obj_player4.state = 'aim'
     ladderclimbed = true;
 }
@@ -366,8 +366,8 @@ if player4=true &amp;&amp; (obj_player4.x &gt;= obj_whiskeybarrel.x -20 &amp;&am
     &amp;&amp; obj_player4.state = 'aim' //&lt;------------------------------------------------------------------------state parameter
     &amp;&amp; obj_player4.key_action_release //&lt;-------------------------------------------------------------------release action key
 {
-    obj_player4.x = 60;
-    obj_player4.y = 70;             //you have safely descended the ladder!
+    obj_player4.x = obj_puzz4.x+60;
+    obj_player4.y = obj_puzz4.y+70;             //you have safely descended the ladder!
     obj_player4.state = 'idle'
     ladderclimbed = false;
 }
@@ -422,7 +422,7 @@ if alarm[0] &lt;= -1
 {
     if !instance_exists(obj_puzz4key) &amp;&amp; key_dropped = false
     {
-        instance_create(obj_bucket.x,65,obj_puzz4key)
+        instance_create(obj_bucket.x,obj_puzz4.y+65,obj_puzz4key)
         key_dropped = true;
     }
 }

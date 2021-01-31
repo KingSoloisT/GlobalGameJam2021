@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>instance_create(obj_puzz2.x+80,63,obj_piani);
+            <string>instance_create(obj_puzz2.x+80,obj_puzz2.y+63,obj_piani);
 keymade = false;
 global.playercount = 0;
 /*piani_lift1 = false;
