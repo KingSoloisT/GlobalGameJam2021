@@ -10,7 +10,14 @@ if (ObjectControls("P1"))
     //gamepad_set_vibration(device, left_motor, right_motor);
     //Ex. gamepad_set_vibration(0, 1, 1);
     
+    //key_up_release = keyboard_check_released(ord('W'));    
+    //key_down_release = keyboard_check_released(ord('S'));
+    
     //CONTROLLER 1
+    
+    key_up_release = gamepad_button_check_released(0, gp_padu);
+    key_down_release = gamepad_button_check_released(0, gp_padd);
+    
     key_up = gamepad_button_check(0, gp_padu);
     key_left = gamepad_button_check(0, gp_padl);
     key_down = gamepad_button_check(0, gp_padd);
