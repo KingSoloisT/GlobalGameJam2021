@@ -26,7 +26,9 @@
           <argument>
             <kind>1</kind>
             <string>draw_self();
+depth = -10;
 draw_sprite_ext(spr_end_wall, 0, x, y + 15, 1, 1, 0, c_white, 1);
+depth = 10;
 </string>
           </argument>
         </arguments>

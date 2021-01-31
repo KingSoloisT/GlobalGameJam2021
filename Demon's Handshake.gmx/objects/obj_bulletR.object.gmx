@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>audio_play_sound(fx_gunshot,1,false);
+bulletOrigin = x;
 </string>
           </argument>
         </arguments>
@@ -73,11 +74,74 @@ if place_meeting(x-10,y,obj_player4) &amp;&amp; obj_player4.alive = true
     obj_player4.alive = false;
 }
 
-if place_meeting(x,y,obj_open_door) 
+if (x &gt; bulletOrigin + 120)
 {
     instance_destroy();
 }
 
+/*
+if place_meeting(x,y,
+obj_open_door
+|| obj_RoomLeftWallRed
+|| obj_RoomLeftWallRedWood
+|| obj_RoomLeftWallGreen
+|| obj_RoomLeftWallGreenWood
+|| obj_RoomLeftWallBrown
+|| obj_RoomLeftWallBrownWood
+|| obj_RoomLeftWallGrey
+|| obj_RoomLeftWallGreyWood
+|| obj_RoomLeftWallTan
+|| obj_RoomLeftWallTanWood
+
+|| obj_RoomRightWallRed
+|| obj_RoomRightWallRedWood
+|| obj_RoomRightWallGreen
+|| obj_RoomRightWallGreenWood
+|| obj_RoomRightWallBrown
+|| obj_RoomRightWallBrownWood
+|| obj_RoomRightWallGrey
+|| obj_RoomRightWallGreyWood
+|| obj_RoomRightWallTan
+|| obj_RoomRightWallTanWood
+
+|| obj_RoomLeftHallRed
+|| obj_RoomLeftHallRedWood
+|| obj_RoomLeftHallGreen
+|| obj_RoomLeftHallGreenWood
+|| obj_RoomLeftHallBrown
+|| obj_RoomLeftHallBrownWood
+|| obj_RoomLeftHallGrey
+|| obj_RoomLeftHallGreyWood
+|| obj_RoomLeftHallTan
+|| obj_RoomLeftHallTanWood
+
+|| obj_RoomRightHallRed
+|| obj_RoomRightHallRedWood
+|| obj_RoomRightHallGreen
+|| obj_RoomRightHallGreenWood
+|| obj_RoomRightHallBrown
+|| obj_RoomRightHallBrownWood
+|| obj_RoomRightHallGrey
+|| obj_RoomRightHallGreyWood
+|| obj_RoomRightHallTan
+|| obj_RoomRightHallTanWood
+
+|| obj_RoomLeftandRightHallRed
+|| obj_RoomLeftandRightHallRedWood
+|| obj_RoomLeftandRightHallGreen
+|| obj_RoomLeftandRightHallGreenWood
+|| obj_RoomLeftandRightHallBrown
+|| obj_RoomLeftandRightHallBrownWood
+|| obj_RoomLeftandRightHallGrey
+|| obj_RoomLeftandRightHallGreyWood
+|| obj_RoomLeftandRightHallTan
+|| obj_RoomLeftandRightHallTanWood
+
+)
+{
+    instance_destroy();
+}
+*/
 </string>
           </argument>
         </arguments>
