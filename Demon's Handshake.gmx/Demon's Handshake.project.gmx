@@ -206,7 +206,7 @@
       <objects name="puzzlethatisgreat">
         <object>objects\obj_grate</object>
         <object>objects\obj_goblin</object>
-		</objects>
+      </objects>
     </objects>
     <object>objects\obj_goal</object>
     <objects name="Background Objects">
