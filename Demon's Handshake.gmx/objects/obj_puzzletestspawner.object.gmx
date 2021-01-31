@@ -147,6 +147,15 @@ if keyboard_check_pressed(vk_numpad8)
     }
 }
 
+//PUZZLE 9
+if keyboard_check_pressed(vk_numpad9)
+{
+    if !instance_exists(obj_puzz9)
+    {
+        instance_create(0,0,obj_puzz9);
+    }
+}
+
 //PUZZLE 0
 if keyboard_check_pressed(vk_numpad0)
 {
@@ -156,12 +165,12 @@ if keyboard_check_pressed(vk_numpad0)
     }
 }
 
-//PUZZLE 0
-if keyboard_check_pressed(vk_numpad9)
+//PUZZLE 7
+if keyboard_check_pressed(vk_numpad7)
 {
-    if !instance_exists(obj_puzz9)
+    if !instance_exists(obj_puzz7)
     {
-        instance_create(0,0,obj_puzz9);
+        instance_create(0,0,obj_puzz7);
     }
 }
 </string>

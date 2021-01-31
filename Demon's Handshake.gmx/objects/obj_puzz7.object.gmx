@@ -25,19 +25,24 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>plunger = 0; //When this variable hits 1 the key will fall to the ground
-global.playercount = 0;
+            <string>global.playercount = 0;
 
-//CREATE PLUNGER
-if !instance_exists(obj_plunger)
+//CREATE BELT LEVER
+if !instance_exists(obj_belt_lever)
 {
-    instance_create(75,65,obj_plunger);
+    instance_create(75,67,obj_belt_lever);
+}
+
+//CREATE BELT
+if !instance_exists(obj_belt)
+{
+    instance_create(30,30,obj_belt);
 }
 
 //CREATE KEY
 if !instance_exists(obj_key)
 {
-    instance_create(obj_plunger.x+30,obj_plunger.y-30,obj_key);
+    instance_create(50,28,obj_key);
 }
 
 //set player check variables
@@ -67,31 +72,31 @@ player4 = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>GameControls(obj_puzz3);
-ObjectControls(obj_puzz3);
+            <string>GameControls(obj_puzz7); //&lt;-----Initiate controller controls
+ObjectControls(obj_puzz7);
 
-//CHECK WHICH PLAYERS ARE IN THE ROOM
+// CHECK WHICH PLAYERS ARE IN THE ROOM
 if instance_exists(obj_player1)
 {
-    player1 = true
+    player1=true;
 }
 if instance_exists(obj_player2)
 {
-    player2 = true;
+    player2=true;
 }
 if instance_exists(obj_player3)
 {
-    player3 = true;
+    player3=true;
 }
 if instance_exists(obj_player4)
 {
-    player4 = true;
+    player4=true;
 }
 
-obj_plunger.image_index = 0;
+obj_belt_lever.image_index = 1;
 
-//PLAYER 1 ENTERING PLUNGER ACTION
-if (player1 = true and obj_player1.x &gt;= obj_plunger.x-10 and obj_player1.x &lt;= obj_plunger.x+10)
+//PLAYER 1 ENTERING BELT LEVER ACTION
+if (player1 = true and obj_player1.x &gt;= obj_belt_lever.x-10 and obj_player1.x &lt;= obj_belt_lever.x+10)
     {
     instance_create(obj_player1.x+5,obj_player1.y-6,obj_P1exclaim);
     } else
@@ -99,29 +104,17 @@ if (player1 = true and obj_player1.x &gt;= obj_plunger.x-10 and obj_player1.x &l
     instance_destroy(obj_P1exclaim);
     }
     
-if (player1 = true and obj_player1.x &gt;= obj_plunger.x-10 and obj_player1.x &lt;= obj_plunger.x+10 and obj_player1.key_action)
-    {
-    obj_plunger.image_index = 1;
-    plunger += 1;
-    }
-
-//PLAYER 2 ENTERING PLUNGER ACTION
-if (player2 = true and obj_player2.x &gt;= obj_plunger.x-10 and obj_player2.x &lt;= obj_plunger.x+10)
+//PLAYER 2 ENTERING BELT LEVER ACTION
+if (player2 = true and obj_player2.x &gt;= obj_belt_lever.x-10 and obj_player2.x &lt;= obj_belt_lever.x+10) //Player action cue displayed
     {
     instance_create(obj_player2.x+5,obj_player2.y-6,obj_P2exclaim);
     } else
     {
     instance_destroy(obj_P2exclaim);
     }
-    
-if (player2 = true and obj_player2.x &gt;= obj_plunger.x-10 and obj_player2.x &lt;= obj_plunger.x+10 and obj_player2.key_action)
-    {
-    obj_plunger.image_index = 1;
-    plunger += 1;
-    } 
 
-//PLAYER 3 ENTERING PLUNGER ACTION
-if (player3 = true) and obj_player3.x &gt;= obj_plunger.x-10 and obj_player3.x &lt;= obj_plunger.x+10
+//PLAYER 3 ENTERING BELT LEVER ACTION
+if (player3 = true and obj_player3.x &gt;= obj_belt_lever.x-10 and obj_player3.x &lt;= obj_belt_lever.x+10) //Player action cue displayed
     {
     instance_create(obj_player3.x+5,obj_player3.y-6,obj_P3exclaim);
     } else
@@ -129,50 +122,50 @@ if (player3 = true) and obj_player3.x &gt;= obj_plunger.x-10 and obj_player3.x &
     instance_destroy(obj_P3exclaim);
     }
     
-if (player3 = true) and obj_player3.x &gt;= obj_plunger.x-10 and obj_player3.x &lt;= obj_plunger.x+10 and obj_player3.key_action
-    {
-    obj_plunger.image_index = 1;
-    plunger += 1;
-    } 
-
-//PLAYER 4 ENTERING PLUNGER ACTION
-if (player4 = true) and obj_player4.x &gt;= obj_plunger.x-10 and obj_player4.x &lt;= obj_plunger.x+10
+//PLAYER 4 ENTERING BELT LEVER ACTION
+if (player4 = true and obj_player4.x &gt;= obj_belt_lever.x-10 and obj_player4.x &lt;= obj_belt_lever.x+10) //Player action cue displayed
     {
     instance_create(obj_player4.x+5,obj_player4.y-6,obj_P4exclaim);
     } else
     {
     instance_destroy(obj_P4exclaim);
     }
-    
-if (player4 = true) and obj_player4.x &gt;= obj_plunger.x-10 and obj_player4.x &lt;= obj_plunger.x+10 and obj_player4.key_action
+//PLAYERS 1 - 4 ACTIVATING BELT LEVER ACTIONS
+if (player1 = true and obj_player1.x &gt;= obj_belt_lever.x-10 and obj_player1.x &lt;= obj_belt_lever.x+10 and obj_player1.key_action) or
+ (player2 = true and obj_player2.x &gt;= obj_belt_lever.x-10 and obj_player2.x &lt;= obj_belt_lever.x+10 and obj_player2.key_action) or
+ (player3 = true and obj_player3.x &gt;= obj_belt_lever.x-10 and obj_player3.x &lt;= obj_belt_lever.x+10 and obj_player3.key_action) or
+ (player4 = true and obj_player4.x &gt;= obj_belt_lever.x-10 and obj_player4.x &lt;= obj_belt_lever.x+10 and obj_player4.key_action)
     {
-    obj_plunger.image_index = 1;
-    plunger += 1;
-    } 
-   
-//ACTUAL PLUNGER PLUNGING
-if plunger = 1
-    {
-    if instance_exists(obj_key) 
+    obj_belt_lever.image_index = 0;
+    obj_belt.image_speed = -.25;
+    obj_key.hspeed = .25
+    } else
         {
-        instance_create(obj_key.x,obj_key.y,obj_explosion)
+        if instance_exists(obj_key)
+            {
+            obj_belt.image_speed = 0;
+            obj_key.hspeed = 0
+            }
         }
-    if instance_exists(obj_key)
+ 
+//ACTUAL BELT MOVEMENT
+if instance_exists(obj_key)
+    { 
+        if obj_key.x &gt;= 120
         {
-        obj_key.vspeed = 2;
+            obj_key.vspeed = 2
+            obj_key.hspeed = 0
         }
-    obj_plunger.image_index = 0;
     }
 
 if instance_exists(obj_key)
-    {
+    { 
     if obj_key.y &gt;= 68
         {
-        obj_key.vspeed = 0;
+            obj_key.vspeed = 0
         }
-    }
-
-//KEY IS GONE, NO MORE PLUNGER PLUNGING
+    
+//KEY IS GONE, NO MORE BELT MOVEMENT
 if !instance_exists(obj_key)
 {
     if instance_exists(obj_P1exclaim)
@@ -191,7 +184,7 @@ if !instance_exists(obj_key)
     {
         instance_destroy(obj_P4exclaim);
     }
-}
+}}
 </string>
           </argument>
         </arguments>
