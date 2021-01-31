@@ -155,6 +155,15 @@ if keyboard_check_pressed(vk_numpad0)
         instance_create(0,0,obj_puzz0);
     }
 }
+
+//PUZZLE 0
+if keyboard_check_pressed(vk_numpad9)
+{
+    if !instance_exists(obj_puzz9)
+    {
+        instance_create(0,0,obj_puzz9);
+    }
+}
 </string>
           </argument>
         </arguments>

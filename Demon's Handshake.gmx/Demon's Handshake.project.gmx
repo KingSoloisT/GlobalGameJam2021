@@ -47,9 +47,14 @@
       <sprite>sprites\spr_piani</sprite>
       <sprite>sprites\spr_lever</sprite>
       <sprite>sprites\spr_whiskeybarrel</sprite>
+      <sprite>sprites\spr_broom</sprite>
+      <sprite>sprites\spr_shovel</sprite>
+      <sprite>sprites\spr_fork</sprite>
+      <sprite>sprites\spr_spade</sprite>
       <sprite>sprites\spr_bucket</sprite>
       <sprite>sprites\spr_plunger</sprite>
       <sprite>sprites\spr_explosion</sprite>
+      <sprite>sprites\spr_rafters</sprite>
     </sprites>
     <sprites name="backgrounds">
       <sprite>sprites\spr_saloon</sprite>
@@ -169,6 +174,7 @@
         <object>objects\obj_puzz5</object>
         <object>objects\obj_puzz6</object>
         <object>objects\obj_puzz8</object>
+        <object>objects\obj_puzz9</object>
         <object>objects\obj_puzz0</object>
         <object>objects\obj_puzzX</object>
       </objects>
@@ -189,6 +195,11 @@
         <object>objects\obj_crate</object>
         <object>objects\obj_floorhole</object>
       </objects>
+      <object>objects\obj_rafters</object>
+      <object>objects\obj_broom</object>
+      <object>objects\obj_fork</object>
+      <object>objects\obj_spade</object>
+      <object>objects\obj_shovel</object>
     </objects>
     <object>objects\obj_goal</object>
     <objects name="Background Objects">
