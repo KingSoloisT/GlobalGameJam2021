@@ -25,7 +25,7 @@ global.player2_key = 0;
 global.player3_key = 0;
 global.player4_key = 0;
 global.player_villan = choose('player1','player2','player3','player4');
-global.winner = 'villian' ;
+global.winner = 'heroes' ;
 
 instance_create(0,0,obj_PuzzleRandomizer);
 
@@ -81,8 +81,12 @@ if !audio_is_playing(sng_spaghoot)
     <instance objName="obj_player4" x="605" y="160" name="inst_E32D6882" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_control" x="9" y="5" name="inst_FF22FA65" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_puzztestobj" x="40" y="5" name="inst_04AD7B57" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_goal" x="0" y="90" name="inst_36AE2F76" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_goal" x="0" y="89" name="inst_36AE2F76" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_GameMenuControl" x="68" y="5" name="inst_14C41735" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_candle1" x="55" y="136" name="inst_0759E8AA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_candle2" x="73" y="136" name="inst_A5FDF620" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_candle3" x="103" y="136" name="inst_89909DA7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_candle4" x="124" y="136" name="inst_58D5276A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

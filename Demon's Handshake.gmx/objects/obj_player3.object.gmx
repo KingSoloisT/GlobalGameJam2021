@@ -83,42 +83,43 @@ gamepad_set_vibration(2,0,0);
 
 if (key_menu)
 {
-    //room_goto(rm_StartMenu);
+    room_goto(rm_StartMenu);
     //instance_create(view_xview[1], view_yview[1], obj_GameMenu);
 }
 
 //Center Camera in the view properly while going up and down stairs.
-view_yview[2] = obj_player3.y + 20 - 90;
+////////////////////////////////////////////////////////////////////
+view_yview[2] = obj_player3.y + 20 - 90; //USE THIS FOR NORMAL OPERATION
+//view_yview[0] = obj_player3.y + 20 - 90 - 180; //USE THIS FOR CODING AND TESTING
+//////////////////////////////////////////////////////////////////////
 
-//test_controller3();
-
-
-
+//test_controller1();
+//vibe
 if global.player_villan = 'player3' &amp;&amp; vibe = false
 {
     if alarm[0] &lt;= -1 { alarm[0] = 5}
-    gamepad_set_vibration(2,0,1);
+    gamepad_set_vibration(0,0,1);
 
 }
 
-if state = 'idle'
+if state = "idle"
 {
     sprite_index = spr_player3;
-     if (key_left)
+     if (key_left)//variable
     {
-        state = 'left';
+        state = "left";
     }
     
     if (key_right)
     {
-        state = 'right';
+        state = "right";
     }
     
     if (key_aim)
     {
-        state = 'draw';
+        state = "draw";
     }
-    
+    //stair 1
         if place_meeting(x,y,obj_stairs_up) &amp;&amp; (key_up) //add press up
     {
         x = obj_stairs_down.x
@@ -130,7 +131,8 @@ if state = 'idle'
         x = obj_stairs_up.x
         y = obj_stairs_up.y
     }
-        //stair2
+    
+    //stair2
         if place_meeting(x,y,obj_stairs_up2) &amp;&amp; (key_up) 
     {
         x = obj_stairs_down2.x
@@ -146,32 +148,33 @@ if state = 'idle'
     if place_meeting(x,y,obj_door) &amp;&amp; (key_action_press) &amp;&amp; global.key_total = global.key_needed &amp;&amp; obj_goal.goal = true
     {
         obj_door.sprite_index = spr_hall;
+        state = 'out';
     }
 }
 
-if state = 'left'
+if state = "left"
 {
     
     sprite_index = spr_player3_walk;
     image_xscale = -1;
-    facing = 'left';
+    facing = "left";
     if (key_left)
     {
         x -= spd; //variable spd
     } 
     else
     {
-    state = 'idle';
+    state = "idle";
     }
 }
 
-if state = 'right'
+if state = "right"
 {
     
     sprite_index = spr_player3_walk;
     image_xscale = 1;
     facing = 'right';
-    if (key_right)
+    if key_right
     {
         x += spd;
     } 
@@ -181,7 +184,7 @@ if state = 'right'
     }
 }
 
-if state = 'draw'
+if state = "draw"
 {
     if (key_aim)
     {
@@ -198,12 +201,12 @@ if state = 'draw'
                     flash = true;
                     bullet -= 1;
                 
-                if facing = 'right'
+                if facing = "right"
                 {
                 if !instance_exists(obj_bulletR){instance_create(x+10,y-8,obj_bulletR)}
                 }
                             
-                if facing = 'left'
+                if facing = "left"
                 {
                 if !instance_exists(obj_bulletL){instance_create(x-10,y-8,obj_bulletL)}
                 }
@@ -212,12 +215,12 @@ if state = 'draw'
     }
     else
     {
-    state = 'idle';
+    state = "idle";
     }
     
 }
 
-if state = 'dead'
+if state = "dead"
 {
 
     sprite_index = spr_player3_death;
@@ -228,19 +231,24 @@ if state = 'dead'
 }
 
 //col
-if (place_meeting(x,y,(obj_key)
-|| place_meeting(x,y,(obj_puzz0key)) 
-|| place_meeting(x,y,(obj_puzz1key)) 
-|| place_meeting(x,y,(obj_puzz2key)) 
-|| place_meeting(x,y,(obj_puzz3key))
-|| place_meeting(x,y,(obj_puzz4key))
+
+x=clamp(x, 0, room_width);
+y=clamp(y, 0, room_height);
+
+
+if place_meeting(x,y,obj_key)
+|| place_meeting(x,y,obj_puzz0key) 
+|| place_meeting(x,y,obj_puzz1key) 
+|| place_meeting(x,y,obj_puzz2key) 
+|| place_meeting(x,y,obj_puzz3key)
+|| place_meeting(x,y,obj_puzz4key)
 //|| place_meeting(x,y,(obj_puzz5key))
 //|| place_meeting(x,y,(obj_puzz6key))
-|| place_meeting(x,y,(obj_puzz7key))
+|| place_meeting(x,y,obj_puzz7key)
 //|| place_meeting(x,y,(obj_puzz8key))
 //|| place_meeting(x,y,(obj_puzz9key))
 //|| place_meeting(x,y,(obj_puzz10key))
-|| place_meeting(x,y,(obj_puzz11key))
+|| place_meeting(x,y,obj_puzz11key)
 //|| place_meeting(x,y,(obj_puzz12key))
 //|| place_meeting(x,y,(obj_puzz13key))
 //|| place_meeting(x,y,(obj_puzz14key))
@@ -250,8 +258,6 @@ if (place_meeting(x,y,(obj_key)
 //|| place_meeting(x,y,(obj_puzz18key))
 //|| place_meeting(x,y,(obj_puzz19key))
 
-)
-)
 {
     global.player3_key +=1;
     
@@ -267,28 +273,11 @@ if place_meeting(x,y,obj_bulletR) || place_meeting(x,y,obj_bulletL)
     state = 'dead'
 }
 
-//col 
-
-x=clamp(x, 0, room_width);
-y=clamp(y, 0, room_height);
-
-if place_meeting(x,y,obj_stairs_up) &amp;&amp; (key_up) //add press up
+if state = 'out'
 {
-    x = obj_stairs_down.x
-    y = obj_stairs_down.y
+    x = -50;
+    visible = false;
 }
-
-if place_meeting(x,y,obj_stairs_down) &amp;&amp; (key_down) //add press up
-{
-    x = obj_stairs_up.x
-    y = obj_stairs_up.y
-}
-
-if place_meeting(x,y,obj_door) &amp;&amp; (key_action_press) &amp;&amp; global.key_total = global.key_needed &amp;&amp; obj_goal.goal = true
-{
-    obj_door.sprite_index = spr_hall;
-}
-
 
 </string>
           </argument>
@@ -340,11 +329,12 @@ flash = false;
           <argument>
             <kind>1</kind>
             <string>draw_self();
-if place_meeting(x,y,obj_door) 
+if place_meeting(x,y,obj_door) &amp;&amp; obj_door.sprite_index = spr_door_locked
 {
     draw_set_font(font_game);
+    draw_set_halign(fa_center);
     draw_set_colour(c_white);
-    draw_text(x-10,y-25,global.key_needed);
+    draw_text(x,y-25,global.key_needed);
 }
 </string>
           </argument>

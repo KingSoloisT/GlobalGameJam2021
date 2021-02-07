@@ -52,98 +52,63 @@ goal = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if place_meeting(x,y,obj_player1) || obj_player1.state = 'dead' 
+            <string>goal = true;
+
+if place_meeting(x,y,obj_player1)
 {
-    player1 = true;
+    player1 = true
+    obj_candle1.sprite_index = spr_candle_on
 }
+
 else
+
 {
     player1 = false;
+    obj_candle1.sprite_index = spr_candle_out
 }
 
-if place_meeting(x,y,obj_player2) || obj_player2.state = 'dead' 
-{
-    player2 = true;
-}
-else
-{
-    player2 = false;
-}
-
-if place_meeting(x,y,obj_player3) || obj_player3.state = 'dead' 
-{
-    player3 = true;
-}
-else
-{
-    player3 = false;
-}
-
-if place_meeting(x,y,obj_player4) || obj_player4.state = 'dead' 
-{
-    player4 = true;
-}
-else
-{
-    player4 = false;
-}
-
-
-
-
-
-/*
 if place_meeting(x,y,obj_player2)
 {
-    player2 = true;
+    player2 = true
+    obj_candle2.sprite_index = spr_candle_on
 }
+
 else
+
 {
-    if obj_player2.state = 'dead' 
-    { 
-        player2 = true;
-    }
-    else
-    {
-        player2 = false;
-    }
+    player2 = false;
+    obj_candle2.sprite_index = spr_candle_out
 }
+
 
 if place_meeting(x,y,obj_player3)
 {
-    player3 = true;
+    player3 = true
+    obj_candle3.sprite_index = spr_candle_on
 }
+
 else
+
 {
-    if obj_player3.state = 'dead' 
-    { 
-        player3 = true;
-    }
-    else
-    {
-        player3 = false;
-    }
+    player3 = false;
+    obj_candle3.sprite_index = spr_candle_out
 }
+
 
 if place_meeting(x,y,obj_player4)
 {
-    player4 = true;
+    player4 = true
+    obj_candle4.sprite_index = spr_candle_on
 }
+
 else
+
 {
-    if obj_player4.state = 'dead'
-    { 
-        player4 = true;
-    }
-    else
-    {
-        player4 = false;
-    }
+    player4 = false;
+    obj_candle4.sprite_index = spr_candle_out
 }
-*/
 
-
-
+/*
 if player1 = true &amp;&amp; player2 = true &amp;&amp; player3 = true &amp;&amp; player4 = true 
 {
     goal = true;

@@ -30,7 +30,7 @@
 //CREATE KEY
 //if !instance_exists(obj_key)
 //{
-    instance_create(obj_puzz0.x + 75,obj_puzz0.y + 68,obj_puzz0key);
+    instance_create(obj_puzz0.x + 75,obj_puzz0.y + 68,obj_key);
 //}
 
 //set player check variables

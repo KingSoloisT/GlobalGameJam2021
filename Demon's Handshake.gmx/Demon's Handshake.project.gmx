@@ -22,12 +22,12 @@
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_player1</sprite>
-    <sprite>sprites\spr_exclaim</sprite>
     <sprite>sprites\spr_player1_death</sprite>
     <sprite>sprites\spr_player1_walk</sprite>
     <sprite>sprites\spr_player1_draw</sprite>
     <sprite>sprites\spr_player1_head</sprite>
     <sprite>sprites\spr_player2</sprite>
+    <sprite>sprites\spr_fortune_teller</sprite>
     <sprite>sprites\spr_player2_draw</sprite>
     <sprite>sprites\spr_player2_walk</sprite>
     <sprite>sprites\spr_player2_death</sprite>
@@ -42,6 +42,13 @@
     <sprite>sprites\spr_player4_draw</sprite>
     <sprite>sprites\spr_player4_death</sprite>
     <sprite>sprites\spr_player4_head</sprite>
+    <sprite>sprites\spr_candle_out</sprite>
+    <sprite>sprites\spr_candle_on</sprite>
+    <sprite>sprites\spr_demon</sprite>
+    <sprite>sprites\spr_demon2</sprite>
+    <sprite>sprites\spr_demonbox</sprite>
+    <sprite>sprites\spr_pentagram</sprite>
+    <sprite>sprites\spr_exclaim</sprite>
     <sprite>sprites\spr_bullet</sprite>
     <sprite>sprites\spr_key</sprite>
     <sprite>sprites\spr_master_key</sprite>
@@ -186,6 +193,10 @@
     <object>objects\obj_PuzzleTemplateBLUE</object>
     <object>objects\obj_PuzzleRandomizer</object>
     <object>objects\obj_GameControls</object>
+    <object>objects\obj_candle1</object>
+    <object>objects\obj_candle2</object>
+    <object>objects\obj_candle3</object>
+    <object>objects\obj_candle4</object>
     <objects name="PUZZLE OBJECTS">
       <object>objects\obj_puzztestobj</object>
       <object>objects\obj_pianiboundleft</object>
@@ -226,6 +237,7 @@
         <object>objects\obj_puzz14</object>
         <object>objects\obj_puzz15</object>
         <object>objects\obj_puzz16</object>
+        <object>objects\obj_puzz17</object>
         <object>objects\obj_puzzX</object>
       </objects>
       <objects name="Puzzle Key Decoys">
@@ -370,6 +382,7 @@
       <object>objects\obj_lockerfx4</object>
       <object>objects\obj_lockerfx5</object>
     </objects>
+    <object>objects\obj_fortune</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_BUGFIX</room>

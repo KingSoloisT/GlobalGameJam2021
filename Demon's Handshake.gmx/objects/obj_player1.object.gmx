@@ -84,16 +84,12 @@ gamepad_set_vibration(0,0,0);
 if (key_menu)
 {
     room_goto(rm_StartMenu);
-    //instance_create(view_xview[1], view_yview[1], obj_GameMenu);
 }
 
 //Center Camera in the view properly while going up and down stairs.
-////////////////////////////////////////////////////////////////////
-view_yview[0] = obj_player1.y + 20 - 90; //USE THIS FOR NORMAL OPERATION
-//view_yview[0] = obj_player1.y + 20 - 90 - 180; //USE THIS FOR CODING AND TESTING
-//////////////////////////////////////////////////////////////////////
+view_yview[0] = obj_player1.y + 20 - 90;
 
-//test_controller1();
+
 //vibe
 if global.player_villan = 'player1' &amp;&amp; vibe = false
 {
@@ -148,7 +144,7 @@ if state = "idle"
     if place_meeting(x,y,obj_door) &amp;&amp; (key_action_press) &amp;&amp; global.key_total = global.key_needed &amp;&amp; obj_goal.goal = true
     {
         obj_door.sprite_index = spr_hall;
-        room_goto(rm_result);  
+        state = 'out' 
     }
 }
 
@@ -272,6 +268,12 @@ if (place_meeting(x,y,(obj_key))
 if place_meeting(x,y,obj_bulletR) || place_meeting(x,y,obj_bulletL)
 {
     state = 'dead'
+}
+
+if state = 'out'
+{
+    x = -50;
+    visible = false;
 }
 
 

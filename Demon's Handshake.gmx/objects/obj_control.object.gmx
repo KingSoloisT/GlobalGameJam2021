@@ -25,7 +25,108 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string></string>
+            <string>player1 = 'alive'
+player2 = 'alive'
+player3 = 'alive'
+player4 = 'alive'
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/*
+villian wins
+if all players are dead 
+if villian gets out
+
+heros win if
+all players but villan gets out
+*/
+
+//check which players are alive
+
+if obj_player1.state = 'dead'
+{
+    player1 = 'dead'
+}
+if obj_player2.state = 'dead'
+{
+    player2 = 'dead'
+}
+if obj_player3.state = 'dead'
+{
+    player3 = 'dead'
+}
+if obj_player4.state = 'dead'
+{
+    player4 = 'dead'
+}
+
+if player1 = 'dead' &amp;&amp; player2 = 'dead' &amp;&amp; player3 = 'dead' &amp;&amp; player4 = 'dead'
+{
+    //add fade here
+    global.winner = 'villian' ;
+
+}
+
+//check which players are out
+
+if obj_player1.state = 'out'
+{
+    player1 = 'out'
+}
+if obj_player2.state = 'out'
+{
+    player2 = 'out'
+}
+if obj_player3.state = 'out'
+{
+    player3 = 'out'
+}
+if obj_player4.state = 'out'
+{
+    player4 = 'out'
+}
+
+if player1 = 'out' &amp;&amp; player2 = 'out' &amp;&amp; player3 = 'out' &amp;&amp; player4 = 'out'
+{
+    //add fade here
+    if global.player_villan = 'player1' {global.winner = 'villian';}
+    if global.player_villan = 'player2' {global.winner = 'villian';}
+    if global.player_villan = 'player3' {global.winner = 'villian';}
+    if global.player_villan = 'player4' {global.winner = 'villian';}
+
+}
+
+//game end
+
+if (player1 = 'out' || player1 = 'dead') &amp;&amp; (player2 = 'out' || player2 = 'dead') &amp;&amp;
+(player3 = 'out' || player3 = 'dead') &amp;&amp; (player4 = 'out' || player4 = 'dead')
+
+{
+    room_goto(rm_result);
+}
+
+
+
+</string>
           </argument>
         </arguments>
       </action>
@@ -92,10 +193,10 @@ draw_sprite_ext(spr_key,1,2950,825,20,20,0,c_white,1);
 draw_sprite_ext(spr_key,1,1350,1725,20,20,0,c_white,1);
 draw_sprite_ext(spr_key,1,2950,1725,20,20,0,c_white,1);
 
-draw_text(1475,810,global.player1_key);
-draw_text(3075,810,global.player2_key);
-draw_text(1475,1710,global.player3_key);
-draw_text(3075,1710,global.player4_key);
+draw_text(1485,820,global.player1_key);
+draw_text(3085,820,global.player2_key);
+draw_text(1485,1720,global.player3_key);
+draw_text(3085,1720,global.player4_key);
 
 draw_sprite_ext(spr_player1_head,0,100,70,10,10,0,c_white,1);
 draw_sprite_ext(spr_player2_head,0,1700,70,10,10,0,c_white,1);
@@ -123,16 +224,7 @@ if obj_player4.bullet = 1
 else
 {draw_sprite_ext(spr_bullet_spent,0,3100,970,10,10,0,c_white,1);}
 
-if (global.player_villan = 'player1' &amp;&amp;  obj_player1.state = 'dead')
-||
-(global.player_villan = 'player2' &amp;&amp;  obj_player2.state = 'dead')
-||
-(global.player_villan = 'player3' &amp;&amp;  obj_player3.state = 'dead')
-||
-(global.player_villan = 'player4' &amp;&amp;  obj_player4.state = 'dead')
-{
- global.winner = 'heroes' ;   
-}
+
 /* //maybe i think the original idea is beauty but sure maybe this
 if !instance_exists(obj_key) &amp;&amp; obj_door.sprite_index = spr_door_locked
 {
